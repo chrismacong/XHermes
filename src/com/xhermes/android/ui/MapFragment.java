@@ -5,22 +5,21 @@ import java.util.ArrayList;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.BaiduMapOptions;
+import com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapStatus;
@@ -33,7 +32,6 @@ import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.Polyline;
 import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.map.UiSettings;
-import com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.core.SearchResult;
 import com.baidu.mapapi.search.geocode.GeoCodeResult;
@@ -106,6 +104,7 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 		View rootview = inflater.inflate(R.layout.posiiton_view, container, false);
 		mapRelativeLayout = (RelativeLayout)rootview.findViewById(R.id.map_relative_layout);
 		carView = (ImageView)rootview.findViewById(R.id.bcarView);
+		carView.setVisibility(View.GONE);
 		mMapView = (MapView) rootview.findViewById(R.id.bmapView);  
 		//		BaiduMapOptions opt=new BaiduMapOptions()
 		//		.overlookingGesturesEnabled(false)
@@ -216,7 +215,6 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 		i+=dataList.size();
 		Log.d("updateData"," point:"+point+" i:"+i);
 		for(PositionData d:dataList){
-			System.out.println(d.getTime());
 			ConvertMapCoord(d);
 		}
 	}
@@ -263,13 +261,10 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 	public void UpdateMap(){
 		if(desLatLng!=null){
 			float zlevel=mBaiduMap.getMapStatus().zoom;
-			System.out.println(latlng.size());
 			if(latlng.size()>=2){
 				LatLng olddesLatLng = latlng.get(latlng.size()-2);
-				System.out.println(olddesLatLng);
 				MapStatus oldmapsta=new MapStatus.Builder().target(olddesLatLng).zoom(zlevel).build();
 				MapStatusUpdate oldupdateSta=MapStatusUpdateFactory.newMapStatus(oldmapsta);
-				System.out.println(isOver);
 				if(isOver){
 					mBaiduMap.setMapStatus(oldupdateSta);
 				}
@@ -277,8 +272,10 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 			animate();
 
 			carM.setVisible(false);
-			carView.setRotation((float)-agl);
-			carView.setVisibility(View.VISIBLE);
+			if (VERSION.SDK_INT >= 11 ) {
+				carView.setRotation((float)-agl);
+				carView.setVisibility(View.VISIBLE);
+			}
 			mUiSettings.setScrollGesturesEnabled(false);
 			MapStatus mapsta=new MapStatus.Builder().target(desLatLng).zoom(zlevel).build();
 			MapStatusUpdate updateSta=MapStatusUpdateFactory.newMapStatus(mapsta);
@@ -298,7 +295,6 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 								mUiSettings.setScrollGesturesEnabled(true);
 								carView.setVisibility(View.GONE);
 								carM.setVisible(true);
-								System.out.println(carView.getRotation());
 							}
 						});
 
