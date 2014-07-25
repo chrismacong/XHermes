@@ -2,18 +2,22 @@ package com.xhermes.android.ui;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BaiduMapOptions;
@@ -28,8 +32,15 @@ import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.Polyline;
 import com.baidu.mapapi.map.PolylineOptions;
-import com.baidu.mapapi.map.Projection;
+import com.baidu.mapapi.map.UiSettings;
+import com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.search.core.SearchResult;
+import com.baidu.mapapi.search.geocode.GeoCodeResult;
+import com.baidu.mapapi.search.geocode.GeoCoder;
+import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
+import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
+import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.baidu.mapapi.utils.CoordinateConverter;
 import com.baidu.mapapi.utils.CoordinateConverter.CoordType;
 import com.xhermes.android.R;
@@ -37,8 +48,9 @@ import com.xhermes.android.dao.PositionDataDao;
 import com.xhermes.android.model.PositionData;
 import com.xhermes.android.network.DataReceiver;
 
-public class MapFragment extends Fragment{
+public class MapFragment extends Fragment implements OnGetGeoCoderResultListener {
 	private MapView mMapView;
+	private RelativeLayout mapRelativeLayout;
 	private BaiduMap mBaiduMap;
 	private PositionDataDao pDao;
 	private Marker carM;
@@ -54,7 +66,10 @@ public class MapFragment extends Fragment{
 	private Context act;
 	private int i=0;
 	private int point=0;
+	private ImageView carView;
 	private boolean flag,isOver=false,isAdd=false,isFirst=true;
+	private UiSettings mUiSettings;
+	GeoCoder mSearch = null; // 搜索模块，也可去掉地图模块独立使用
 	BitmapDescriptor caricon=BitmapDescriptorFactory.fromResource(R.drawable.cartest);
 
 	class MyHandler extends Handler{
@@ -88,16 +103,100 @@ public class MapFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		BaiduMapOptions opt=new BaiduMapOptions()
-		.overlookingGesturesEnabled(false)
-		.rotateGesturesEnabled(false)
-		.mapStatus(new MapStatus.Builder().zoom(15).build());
-		mMapView = new MapView(act, opt);
+		View rootview = inflater.inflate(R.layout.posiiton_view, container, false);
+		mapRelativeLayout = (RelativeLayout)rootview.findViewById(R.id.map_relative_layout);
+		carView = (ImageView)rootview.findViewById(R.id.bcarView);
+		mMapView = (MapView) rootview.findViewById(R.id.bmapView);  
+		//		BaiduMapOptions opt=new BaiduMapOptions()
+		//		.overlookingGesturesEnabled(false)
+		//		.rotateGesturesEnabled(false)
+		//		.mapStatus(new MapStatus.Builder().zoom(15).build());
+		//		mMapView = new MapView(act, opt);
 		mMapView.removeViewAt(1);
 		mBaiduMap = mMapView.getMap();
 		mMapView.setEnabled(false);
+		MapStatus mapStatus = new MapStatus.Builder().zoom(15).build();
+		MapStatusUpdate msu = MapStatusUpdateFactory.newMapStatus(mapStatus);
+		mBaiduMap.setMapStatus(msu);
+		mUiSettings = mBaiduMap.getUiSettings();
+		mUiSettings.setRotateGesturesEnabled(false);
+		mUiSettings.setOverlookingGesturesEnabled(false);
+		mUiSettings.setCompassEnabled(false);
+		// 初始化搜索模块，注册事件监听
+		mSearch = GeoCoder.newInstance();
+		mSearch.setOnGetGeoCodeResultListener(this);
 		set();
-		return mMapView;
+
+		mBaiduMap.setOnMarkerClickListener(new OnMarkerClickListener() {
+
+			@Override
+			public boolean onMarkerClick(Marker marker) {
+				// TODO Auto-generated method stub
+				if(marker==carM){
+					mSearch.reverseGeoCode(new ReverseGeoCodeOption()
+					.location(desLatLng));
+				}
+				return true;
+			}
+
+		});
+
+		/*MainActivity.MyOnTouchListener myOnTouchListener=new MainActivity.MyOnTouchListener() {
+
+			int[] tempUp = new int[] { 0, 0 };
+			int[] tempDown = new int[] { 0, 0 };
+			@Override
+			public boolean onTouch(MotionEvent ev) {
+				// TODO Auto-generated method stub
+				int action = ev.getAction();
+				int x = (int) ev.getRawX();
+				int y = (int) ev.getRawY();
+				int p = (int) ev.getX();
+				int q = (int) ev.getY();
+				switch(action) {
+				case MotionEvent.ACTION_DOWN:
+					tempDown[0] = (int) ev.getX();
+					tempDown[1] = (int) ev.getY();
+					//					System.out.println("Down:" + tempDown[0] + " " + tempDown[1]);
+					break;
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_UP:
+					tempUp[0] = (int) ev.getX();
+					tempUp[1] = (int) ev.getY();
+				}
+				return false;
+			}
+		};
+		((MainActivity)getActivity()).registerMyOnTouchListener(myOnTouchListener);
+		mapRelativeLayout.setOnTouchListener(new OnTouchListener(){
+
+			@Override
+			public boolean onTouch(View arg0, MotionEvent arg1) {
+				// TODO Auto-generated method stub
+				int action = arg1.getAction();
+				int x = (int) arg1.getRawX();
+				int y = (int) arg1.getRawY();
+				int p = (int) arg1.getX();
+				int q = (int) arg1.getY();
+				int[] temp = new int[] { 0, 0 };
+				System.out.println("Touch");
+				switch(action) {
+				case MotionEvent.ACTION_DOWN:
+					temp[0] = (int) arg1.getX();
+					temp[1] = y - arg0.getTop();
+					System.out.println("Down");
+					break;
+				case MotionEvent.ACTION_MOVE:
+					int l = x - temp[0];
+					int t = y - temp[1];
+					System.out.println(l + " " + t);
+				}
+				return false;
+			}
+
+		});*/
+		return rootview;
 	}
 
 	public void set(){
@@ -109,32 +208,6 @@ public class MapFragment extends Fragment{
 	public void refresh(){
 		UpdateData();
 		UpdateMap();
-		//		final Handler h=new Handler();
-		//		new Thread(){
-		//			public void run(){
-		//				flag=true;
-		//				while(flag){
-		//					h.post(new Runnable(){
-		//						public void run() {
-		//							if(point<i){
-		//								desLatLng=latlng.get(point);
-		//								Log.d("refresh","move to "+desLatLng);
-		//								UpdateMap();
-		//								point++;
-		//								Log.d("thread"," point:"+point+" i:"+i);
-		//							}else
-		//								flag=false;
-		//						}
-		//					});
-		//
-		//					try {
-		//						Thread.sleep(500);
-		//					} catch (InterruptedException e) {
-		//						e.printStackTrace();
-		//					}
-		//				}
-		//			}
-		//		}.start();
 	}
 
 	public void UpdateData(){
@@ -186,19 +259,60 @@ public class MapFragment extends Fragment{
 		}
 	}
 
+	@SuppressLint("NewApi")
 	public void UpdateMap(){
 		if(desLatLng!=null){
+			float zlevel=mBaiduMap.getMapStatus().zoom;
+			System.out.println(latlng.size());
+			if(latlng.size()>=2){
+				LatLng olddesLatLng = latlng.get(latlng.size()-2);
+				System.out.println(olddesLatLng);
+				MapStatus oldmapsta=new MapStatus.Builder().target(olddesLatLng).zoom(zlevel).build();
+				MapStatusUpdate oldupdateSta=MapStatusUpdateFactory.newMapStatus(oldmapsta);
+				System.out.println(isOver);
+				if(isOver){
+					mBaiduMap.setMapStatus(oldupdateSta);
+				}
+			}
 			animate();
 
-			float zlevel=mBaiduMap.getMapStatus().zoom;
+			carM.setVisible(false);
+			carView.setRotation((float)-agl);
+			carView.setVisibility(View.VISIBLE);
+			mUiSettings.setScrollGesturesEnabled(false);
 			MapStatus mapsta=new MapStatus.Builder().target(desLatLng).zoom(zlevel).build();
 			MapStatusUpdate updateSta=MapStatusUpdateFactory.newMapStatus(mapsta);
-
-			if(isOver)
+			if(isOver){
 				mBaiduMap.animateMapStatus(updateSta,1500);
-			else
-				mBaiduMap.setMapStatus(updateSta);
+				final Handler h=new Handler();
+				new Thread(){
+					public void run(){
+						try {
+							Thread.sleep(1500);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
 
+						h.post(new Runnable(){
+							public void run() {
+								mUiSettings.setScrollGesturesEnabled(true);
+								carView.setVisibility(View.GONE);
+								carM.setVisible(true);
+								System.out.println(carView.getRotation());
+							}
+						});
+
+					}
+				}.start();
+			}
+			else{
+				mBaiduMap.setMapStatus(updateSta);
+				mUiSettings.setScrollGesturesEnabled(true);
+				carView.setVisibility(View.GONE);
+				carM.setVisible(true);
+			}
+			mSearch.reverseGeoCode(new ReverseGeoCodeOption()
+			.location(desLatLng));
 			if(latlng.size()>=2){
 				if(isAdd)
 					lineOverlay.setPoints(latlng);
@@ -214,6 +328,8 @@ public class MapFragment extends Fragment{
 			//carM.setVisible(true);
 		}
 	}
+
+
 
 	public void ConvertMapCoord(PositionData d){
 		double lat=Double.parseDouble(d.getLat());
@@ -270,6 +386,22 @@ public class MapFragment extends Fragment{
 		// TODO Auto-generated method stub
 		super.onResume();
 		mMapView.onResume();
-		refresh();
+	}
+
+	@Override
+	public void onGetGeoCodeResult(GeoCodeResult arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onGetReverseGeoCodeResult(ReverseGeoCodeResult result) {
+		// TODO Auto-generated method stub
+		if (result == null || result.error != SearchResult.ERRORNO.NO_ERROR) {
+			Toast.makeText(this.getActivity(), "抱歉，未能找到结果", Toast.LENGTH_LONG)
+			.show();
+		}
+		Toast.makeText(this.getActivity(), result.getAddress(),
+				Toast.LENGTH_LONG).show();
 	}
 }

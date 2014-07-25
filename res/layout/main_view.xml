@@ -75,7 +75,7 @@
             android:layout_height="0dp"
             android:layout_below="@id/exm_mark"
             android:layout_marginLeft="30dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:singleLine="false" />
 
 
@@ -98,13 +98,14 @@
                 android:orientation="vertical" >
 
                 <LinearLayout
+                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
                     <ImageView
                         android:id="@+id/distance_imageview"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="15dp"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
@@ -122,6 +123,7 @@
 
                 <TextView
                     android:id="@+id/distance_intro"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -134,19 +136,18 @@
                 android:background="#FFFFFF"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="2"
+                android:layout_weight="1.5"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical" >
 
                 <LinearLayout
-                    android:layout_marginLeft="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
                     <ImageView
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="15dp"
                         android:id="@+id/oil_imageview"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
@@ -175,7 +176,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginRight="4dp"
                 android:background="#FFFFFF"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
@@ -185,12 +185,13 @@
                 android:orientation="vertical" >
 
                 <LinearLayout
+                	android:layout_marginRight="15dp"                    
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
                     <ImageView
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="15dp"
                         android:id="@+id/time_imageview"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
@@ -208,6 +209,7 @@
                 </LinearLayout>
 
                 <TextView
+                	android:layout_marginRight="15dp"                    
                     android:id="@+id/speed_intro"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"

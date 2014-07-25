@@ -43,7 +43,7 @@ public class DataReceiver extends BroadcastReceiver {
 				data.setEqid(eqid);
 				PositionDataDao positionDao=new PositionDataDao(context);
 				boolean b =positionDao.insert(data);
-				if(mapHandler!=null)
+				if(mapHandler!=null&&b)
 					mapHandler.sendEmptyMessage(0);
 			}else if(title.contains("0007")){	//行程信息
 				TravelInfo info=new TravelInfo(message);

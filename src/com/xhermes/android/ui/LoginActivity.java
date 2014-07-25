@@ -43,7 +43,7 @@ import com.xhermes.android.util.MyThread;
 public class LoginActivity extends Activity {
 
 	private TextView forget_pwd_textview;
-	private final String TEST_USER_NAME = "user@gmail.com";
+	private final String TEST_USER_NAME = "temp@gmail.com";
 	private EditText username_edittext;
 	private EditText password_edittext;
 	private Button sign_in_as_user;

@@ -1,21 +1,26 @@
 package com.xhermes.android.ui;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -31,21 +36,21 @@ public class MainActivity extends SherlockFragmentActivity {
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
 		super.onPrepareOptionsMenu(menu);
-		
+
 		int random_test_num = (int) (Math.random()*11);
 		MenuItem menuItem = menu.findItem(R.id.mail);
 		int test_int_str[] = {0,1,2,3,4,5,6,7,8,9,10};
 		int test_R_str[] = {R.drawable.mail_icon,
-						R.drawable.mail_icon_1,
-						R.drawable.mail_icon_2,
-						R.drawable.mail_icon_3,
-						R.drawable.mail_icon_4,
-						R.drawable.mail_icon_5,
-						R.drawable.mail_icon_6,
-						R.drawable.mail_icon_7,
-						R.drawable.mail_icon_8,
-						R.drawable.mail_icon_9,
-						R.drawable.mail_icon_n
+				R.drawable.mail_icon_1,
+				R.drawable.mail_icon_2,
+				R.drawable.mail_icon_3,
+				R.drawable.mail_icon_4,
+				R.drawable.mail_icon_5,
+				R.drawable.mail_icon_6,
+				R.drawable.mail_icon_7,
+				R.drawable.mail_icon_8,
+				R.drawable.mail_icon_9,
+				R.drawable.mail_icon_n
 		};
 		for(int i=0;i<test_int_str.length;i++){
 			if(test_int_str[i]==random_test_num){
@@ -74,8 +79,8 @@ public class MainActivity extends SherlockFragmentActivity {
 		inflator.inflate(R.menu.main, menu);  
 		return true;
 	}
-	
-	
+
+
 
 	private int[] leftViewIcons;
 	private String[] iconNames;
@@ -83,7 +88,9 @@ public class MainActivity extends SherlockFragmentActivity {
 	private SlidingMenu menu;
 	Bundle bundle;
 	String terminalId;
-
+	private static final String TAG = MainActivity.class.getSimpleName(); 
+	private long clickTime = 0; 
+	private Fragment currentFragment;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -97,16 +104,71 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.backcolor));
 		actionBar.setIcon(R.drawable.menu_icon);
+		actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.backcolor));
 		actionBar.setTitle("");
 		MainViewFragment mFragment = new MainViewFragment();
 		mFragment.setArguments(bundle);
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		transaction.replace(R.id.fragment_container, mFragment);
 		transaction.addToBackStack(null);
+		currentFragment=mFragment;
 		transaction.commit();
 	}
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+		if (keyCode == KeyEvent.KEYCODE_BACK&& event.getRepeatCount() == 0) {
+			MainViewFragment mFragment = new MainViewFragment();
+			mFragment.setArguments(bundle);
+			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+			transaction.replace(R.id.fragment_container, mFragment);
+			transaction.addToBackStack(null);
+			transaction.commit();
+			exit();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+
+	}
+	//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	//		// TODO Auto-generated method stub
+	//
+	//
+	//		Log.d("ActionBar", "OnKey事件");
+	//		//        	System.out.print("shi");  
+	//		//	        MainViewFragment mFragment = new MainViewFragment();
+	//		//			mFragment.setArguments(bundle);
+	//		//			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+	//		//			transaction.replace(R.id.fragment_container, mFragment);
+	//		//			transaction.addToBackStack(null);
+	//		FragmentManager fm=getSupportFragmentManager();
+	//		Fragment fragment=(Fragment) fm.getBackStackEntryAt(0);
+	//		FragmentTransaction transaction = fm.beginTransaction();
+	//		transaction.replace(R.id.fragment_container, fragment); 
+	//		transaction.commit();
+	//		return true;
+	//
+	//
+	//	}
+
+	private void exit() { 
+
+		if ((System.currentTimeMillis() - clickTime) > 2000) { 
+
+			Toast.makeText(getApplicationContext(), "再按一次后退键退出程序", Toast.LENGTH_SHORT).show(); 
+
+			clickTime = System.currentTimeMillis(); 
+
+		} 
+		else { 
+
+			Log.e(TAG, "exit application"); 
+
+			this.finish(); 
+		} 
+	} 
+
+
 
 
 	private void setMenu() {
@@ -162,9 +224,13 @@ public class MainActivity extends SherlockFragmentActivity {
 				case 1:
 					Bundle arguments = new Bundle();
 					arguments.putString("terminalId", terminalId);
-					VehicleInfoFragment vFragment = new VehicleInfoFragment();
+					VehicleExmFragment vFragment = new VehicleExmFragment();
 					vFragment.setArguments(arguments);
-					getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, vFragment).commit();
+					//getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, vFragment).commit();
+					FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+					transaction.replace(R.id.fragment_container, vFragment); 
+					transaction.addToBackStack(null);
+					transaction.commit();
 				}
 			}
 
@@ -223,5 +289,25 @@ public class MainActivity extends SherlockFragmentActivity {
 			return tv;
 		}
 
+	}
+	private ArrayList<MyOnTouchListener> onTouchListeners = new ArrayList<MyOnTouchListener>(
+			10);
+
+	@Override
+	public boolean dispatchTouchEvent(MotionEvent ev) {
+		for (MyOnTouchListener listener : onTouchListeners) {
+			listener.onTouch(ev);
+		}
+		return super.dispatchTouchEvent(ev);
+	}
+
+	public void registerMyOnTouchListener(MyOnTouchListener myOnTouchListener) {
+		onTouchListeners.add(myOnTouchListener);
+	}
+	public void unregisterMyOnTouchListener(MyOnTouchListener myOnTouchListener) {
+		onTouchListeners.remove(myOnTouchListener) ;
+	}
+	public interface MyOnTouchListener {
+		public boolean onTouch(MotionEvent ev);
 	}
 }
