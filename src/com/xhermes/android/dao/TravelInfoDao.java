@@ -54,6 +54,8 @@ public class TravelInfoDao  extends Dao{
 			tempData.setTimeOut(cursor.getString(cursor.getColumnIndex("timeOut")));
 			tempData.setBrakes(cursor.getString(cursor.getColumnIndex("brakes")));
 			tempData.setEmBrakes(cursor.getString(cursor.getColumnIndex("emBrakes")));
+			tempData.setSpeedUp(cursor.getString(cursor.getColumnIndex("speedUp")));
+			tempData.setEmSpeedUp(cursor.getString(cursor.getColumnIndex("emSpeedUp")));
 			tempData.setAverSpeed(cursor.getString(cursor.getColumnIndex("averSpeed")));
 			tempData.setWaterTemp(cursor.getString(cursor.getColumnIndex("waterTemp")));
 			tempData.setRpm(cursor.getString(cursor.getColumnIndex("rpm")));
@@ -87,6 +89,8 @@ public class TravelInfoDao  extends Dao{
 			tempData.setTimeOut(cursor.getString(cursor.getColumnIndex("timeOut")));
 			tempData.setBrakes(cursor.getString(cursor.getColumnIndex("brakes")));
 			tempData.setEmBrakes(cursor.getString(cursor.getColumnIndex("emBrakes")));
+			tempData.setSpeedUp(cursor.getString(cursor.getColumnIndex("speedUp")));
+			tempData.setEmSpeedUp(cursor.getString(cursor.getColumnIndex("emSpeedUp")));
 			tempData.setAverSpeed(cursor.getString(cursor.getColumnIndex("averSpeed")));
 			tempData.setWaterTemp(cursor.getString(cursor.getColumnIndex("waterTemp")));
 			tempData.setRpm(cursor.getString(cursor.getColumnIndex("rpm")));
@@ -116,6 +120,8 @@ public class TravelInfoDao  extends Dao{
 		value.put("timeOut",info.getTimeOut());
 		value.put("brakes",info.getBrakes());
 		value.put("emBrakes",info.getEmBrakes());
+		value.put("speedUp", info.getSpeedUp());
+		value.put("emSpeedUp", info.getEmSpeedUp());
 		value.put("averSpeed",info.getAverSpeed());
 		value.put("waterTemp",info.getWaterTemp());
 		value.put("rpm",info.getRpm());

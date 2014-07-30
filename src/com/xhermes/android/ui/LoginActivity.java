@@ -43,7 +43,7 @@ import com.xhermes.android.util.MyThread;
 public class LoginActivity extends Activity {
 
 	private TextView forget_pwd_textview;
-	private final String TEST_USER_NAME = "temp@gmail.com";
+	private final String TEST_USER_NAME = "user@gmail.com";
 	private EditText username_edittext;
 	private EditText password_edittext;
 	private Button sign_in_as_user;
@@ -171,21 +171,22 @@ public class LoginActivity extends Activity {
 												Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 												Bundle bundle = new Bundle();//　　Bundle的底层是一个HashMap<String, Object
 												bundle.putString("terminalId", terminalId);
-												bundle.putString("vehicleexm_score",signs[2]);
-												bundle.putString("vehicleexm_comment", signs[3]);
-												bundle.putString("today_distance",signs[4]);
-												bundle.putString("today_total_oil", signs[5]);
-												bundle.putString("today_avg_oil", signs[6]);
-												bundle.putString("today_avg_speed", signs[7]);
-												bundle.putString("today_total_time", signs[8]);
-												bundle.putString("today_brake_times", signs[9]);
-												bundle.putString("today_emer_brake_times", signs[10]);
-												bundle.putString("today_speedup_times", signs[11]);
-												bundle.putString("today_emer_speedup_times", signs[12]);
-												bundle.putString("today_max_speed", signs[13]);
-												bundle.putString("today_travel_times", signs[14]);
-												bundle.putString("city", signs[15]);
-												bundle.putString("cityNum", signs[16]);
+												bundle.putString("car_number",signs[2]);
+												bundle.putString("vehicleexm_score",signs[3]);
+												bundle.putString("vehicleexm_comment", signs[4]);
+												bundle.putString("today_distance",signs[5]);
+												bundle.putString("today_total_oil", signs[6]);
+												bundle.putString("today_avg_oil", signs[7]);
+												bundle.putString("today_avg_speed", signs[8]);
+												bundle.putString("today_total_time", signs[9]);
+												bundle.putString("today_brake_times", signs[10]);
+												bundle.putString("today_emer_brake_times", signs[11]);
+												bundle.putString("today_speedup_times", signs[12]);
+												bundle.putString("today_emer_speedup_times", signs[13]);
+												bundle.putString("today_max_speed", signs[14]);
+												bundle.putString("today_travel_times", signs[15]);
+												bundle.putString("city", signs[16]);
+												bundle.putString("cityNum", signs[17]);
 												intent.putExtra("bundle", bundle);
 												pd.dismiss();
 												startActivity(intent);

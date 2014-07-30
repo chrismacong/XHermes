@@ -155,7 +155,7 @@
         <!-- Baidu Map API -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="wGBfQQPvXP5sG082vKR3970N" />
+            android:value="uusSUW53WzStAZShCyF2f6bO" />
     </application>
 
 </manifest>

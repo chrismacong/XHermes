@@ -58,6 +58,7 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 	private ArrayList<LatLng> latlng;
 	private ArrayList<Double> angList;
 	private ArrayList<PositionData> dataList;
+	private String latestDate;
 	private LatLng desLatLng = null;
 	private double agl;
 	private Handler handler;
@@ -213,6 +214,8 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 		point=i;
 		dataList=pDao.query(tid,"time asc", i+",210");
 		i+=dataList.size();
+		if(dataList.size()>0)
+			latestDate = "\n" + dataList.get(dataList.size()-1).getTime();
 		Log.d("updateData"," point:"+point+" i:"+i);
 		for(PositionData d:dataList){
 			ConvertMapCoord(d);
@@ -397,7 +400,7 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 			Toast.makeText(this.getActivity(), "抱歉，未能找到结果", Toast.LENGTH_LONG)
 			.show();
 		}
-		Toast.makeText(this.getActivity(), result.getAddress(),
+		Toast.makeText(this.getActivity(), result.getAddress() + latestDate,
 				Toast.LENGTH_LONG).show();
 	}
 }

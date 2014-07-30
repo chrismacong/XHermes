@@ -59,10 +59,8 @@ public class PositionDataDao extends Dao{
 	
 	public boolean insert(String[] str){
 		db=helper.getReadableDatabase();
-		SimpleDateFormat sDateFormat =new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");       
-		String date = sDateFormat.format(new java.util.Date()); 
 		ContentValues value=new ContentValues();
-		value.put("time", date);
+		value.put("time", str[4]);
 		value.put("lat", str[0]);
 		value.put("lon", str[1]);
 		value.put("angle", str[2]);

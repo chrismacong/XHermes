@@ -1,6 +1,7 @@
 package com.xhermes.android.ui;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,7 +10,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -30,8 +30,35 @@ import com.actionbarsherlock.view.MenuItem;
 import com.slidingmenu.lib.SlidingMenu;
 import com.xhermes.android.R;
 import com.xhermes.android.network.DataReceiver;
+import com.xhermes.android.util.OverallFragmentController;
 
 public class MainActivity extends SherlockFragmentActivity {
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		HashMap map = OverallFragmentController.popFragment();
+		if(map!=null){
+			if(map.get("tag").equals("main")){
+				if(OverallFragmentController.onMain){
+					exit();
+				}
+				else{
+					Fragment f = (Fragment) map.get("fragment");
+					FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+					transaction.replace(R.id.fragment_container, f);
+					transaction.commit();
+				}
+			}
+			else{
+				Fragment f = (Fragment) map.get("fragment");
+				FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+				transaction.replace(R.id.fragment_container, f);
+				transaction.commit();
+			}
+		}
+	}
+
+
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
@@ -90,7 +117,6 @@ public class MainActivity extends SherlockFragmentActivity {
 	String terminalId;
 	private static final String TAG = MainActivity.class.getSimpleName(); 
 	private long clickTime = 0; 
-	private Fragment currentFragment;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -110,46 +136,12 @@ public class MainActivity extends SherlockFragmentActivity {
 		MainViewFragment mFragment = new MainViewFragment();
 		mFragment.setArguments(bundle);
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-		transaction.replace(R.id.fragment_container, mFragment);
-		transaction.addToBackStack(null);
-		currentFragment=mFragment;
+		transaction.add(R.id.fragment_container, mFragment);
+		//transaction.addToBackStack(null);
 		transaction.commit();
+		OverallFragmentController.removeAll();
+		OverallFragmentController.addFragment("main", mFragment);
 	}
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-		if (keyCode == KeyEvent.KEYCODE_BACK&& event.getRepeatCount() == 0) {
-			MainViewFragment mFragment = new MainViewFragment();
-			mFragment.setArguments(bundle);
-			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-			transaction.replace(R.id.fragment_container, mFragment);
-			transaction.addToBackStack(null);
-			transaction.commit();
-			exit();
-			return true;
-		}
-		return super.onKeyDown(keyCode, event);
-
-	}
-	//	public boolean onKeyDown(int keyCode, KeyEvent event) {
-	//		// TODO Auto-generated method stub
-	//
-	//
-	//		Log.d("ActionBar", "OnKeyÊÂ¼þ");
-	//		//        	System.out.print("shi");  
-	//		//	        MainViewFragment mFragment = new MainViewFragment();
-	//		//			mFragment.setArguments(bundle);
-	//		//			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-	//		//			transaction.replace(R.id.fragment_container, mFragment);
-	//		//			transaction.addToBackStack(null);
-	//		FragmentManager fm=getSupportFragmentManager();
-	//		Fragment fragment=(Fragment) fm.getBackStackEntryAt(0);
-	//		FragmentTransaction transaction = fm.beginTransaction();
-	//		transaction.replace(R.id.fragment_container, fragment); 
-	//		transaction.commit();
-	//		return true;
-	//
-	//
-	//	}
 
 	private void exit() { 
 
@@ -170,7 +162,7 @@ public class MainActivity extends SherlockFragmentActivity {
 
 
 
-
+	//private void changeFragment
 	private void setMenu() {
 		View lv= getLayoutInflater().inflate(R.layout.leftlistview,null);
 
@@ -226,31 +218,31 @@ public class MainActivity extends SherlockFragmentActivity {
 					arguments.putString("terminalId", terminalId);
 					VehicleExmFragment vFragment = new VehicleExmFragment();
 					vFragment.setArguments(arguments);
-					//getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, vFragment).commit();
-					FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-					transaction.replace(R.id.fragment_container, vFragment); 
-					transaction.addToBackStack(null);
-					transaction.commit();
+					OverallFragmentController.removeFragment("exam");
+					OverallFragmentController.addFragment("exam", vFragment);
+					FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
+					transaction1.replace(R.id.fragment_container, vFragment,"exam"); 
+					transaction1.commit();
+					break;
+				case 4:
+
+					Bundle arguments2 = new Bundle();
+					arguments2.putString("terminalId", terminalId);
+					TravelInfoFragment tFragment = new TravelInfoFragment();
+					tFragment.setArguments(arguments2);
+					OverallFragmentController.removeFragment("travelinfo");
+					OverallFragmentController.addFragment("travelinfo", tFragment);
+					FragmentTransaction transaction4 = getSupportFragmentManager().beginTransaction();
+					transaction4.replace(R.id.fragment_container, tFragment,"travelinfo"); 
+					transaction4.commit();
+					break;
 				}
+				menu.toggle();
 			}
 
 		});
 
 	}
-
-
-	//	@Override
-	//	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-	//		// TODO Auto-generated method stub
-	//		return super.onMenuItemSelected(featureId, item);
-	//	}
-	//	
-	//	@Override
-	//	public boolean onCreateOptionsMenu(Menu menu) {
-	//		// Inflate the menu; this adds items to the action bar if it is present.
-	//		getMenuInflater().inflate(R.menu.main, menu);
-	//		return true;
-	//	}
 
 	class MyAdapter extends BaseAdapter{
 		private int[] icons;

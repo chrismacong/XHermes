@@ -26,9 +26,10 @@ import android.widget.TextView;
 
 import com.xhermes.android.R;
 import com.xhermes.android.util.MyThreadFor;
+import com.xhermes.android.util.OverallFragmentController;
 
 public class MainViewFragment extends Fragment{
-	private TextView exm_mark_title;
+//	private TextView exm_mark_title;
 	private TextView exm_mark;
 	private TextView exm_comment;
 	private Button button_functional_1;
@@ -39,9 +40,11 @@ public class MainViewFragment extends Fragment{
 	private TextView distance_introview;
 	private TextView oil_introview;
 	private TextView speed_introview;
+	private TextView car_number_textview;
 	String terminalId;
 	String vehicleexm_score;
 	String vehicleexm_comment;
+	String car_number;
 	String today_distance;
 	String today_avg_oil;
 	String today_total_time;
@@ -52,6 +55,7 @@ public class MainViewFragment extends Fragment{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		terminalId = getArguments().getString("terminalId");
+		car_number = getArguments().getString("car_number");
 		vehicleexm_score = getArguments().getString("vehicleexm_score");
 		vehicleexm_comment = getArguments().getString("vehicleexm_comment");
 		today_distance = getArguments().getString("today_distance");
@@ -69,20 +73,21 @@ public class MainViewFragment extends Fragment{
 		// TODO Auto-generated method stub
 		View rootview = inflater.inflate(R.layout.main_view, container, false);
 		exm_mark = (TextView)rootview.findViewById(R.id.exm_mark);
-		exm_mark_title = (TextView)rootview.findViewById(R.id.exm_mark_title);
+//		exm_mark_title = (TextView)rootview.findViewById(R.id.exm_mark_title);
 		exm_comment = (TextView)rootview.findViewById(R.id.exm_comment);
 		distance_textview = (TextView)rootview.findViewById(R.id.distance_text);
 		oil_textview = (TextView)rootview.findViewById(R.id.oil_text);
 		time_textview = (TextView)rootview.findViewById(R.id.time_text);
+		car_number_textview = (TextView)rootview.findViewById(R.id.car_number);
 		button_functional_1 = (Button)rootview.findViewById(R.id.button_functional_1);
 		button_functional_4 = (Button)rootview.findViewById(R.id.button_functional_4);
 		distance_introview=(TextView)rootview.findViewById(R.id.distance_intro);
 		oil_introview=(TextView)rootview.findViewById(R.id.oil_intro);
 		speed_introview=(TextView)rootview.findViewById(R.id.speed_intro);
 
-		exm_mark_title.setText(R.string.exm_mark_title);
-		exm_mark_title.setTextSize(18);
-		exm_mark_title.setTextColor(Color.rgb(210, 228, 228));
+//		exm_mark_title.setText(R.string.exm_mark_title);
+//		exm_mark_title.setTextSize(18);
+//		exm_mark_title.setTextColor(Color.rgb(210, 228, 228));
 
 		exm_mark.setTextColor(Color.WHITE);
 		String mark_text = "0·Ö";
@@ -104,6 +109,8 @@ public class MainViewFragment extends Fragment{
 		//exm_mark.setTextSize(testsize);
 		exm_comment.setTextColor(Color.rgb(210, 228, 228));
 		exm_comment.setText(vehicleexm_comment);
+		
+		car_number_textview.setText(car_number);
 		DisplayMetrics dm2 = distance_textview.getResources().getDisplayMetrics();
 		int defaultSize2=6;
 		int testsize2 = (int) (defaultSize2* dm2.density);
@@ -167,10 +174,11 @@ public class MainViewFragment extends Fragment{
 				bundle.putString("terminalId", terminalId);
 				VehicleExmFragment vFragment = new VehicleExmFragment(); 
 				vFragment.setArguments(bundle);
+				OverallFragmentController.removeFragment("exam");
+				OverallFragmentController.addFragment("exam", vFragment);
 				FragmentManager fm=getFragmentManager();
 				FragmentTransaction transaction = fm.beginTransaction();
 				transaction.replace(R.id.fragment_container, vFragment); 
-				transaction.addToBackStack(null);
 				transaction.commit();
 			}
 		});
@@ -183,6 +191,8 @@ public class MainViewFragment extends Fragment{
 				bundle.putString("terminalId", terminalId);
 				MapFragment mFragment = new MapFragment(); 
 				mFragment.setArguments(bundle);
+				OverallFragmentController.removeFragment("map");
+				OverallFragmentController.addFragment("map", mFragment);
 				FragmentTransaction transaction = getFragmentManager().beginTransaction();
 				transaction.replace(R.id.fragment_container, mFragment); 
 				transaction.addToBackStack(null);
@@ -190,6 +200,7 @@ public class MainViewFragment extends Fragment{
 			}
 
 		});
+		OverallFragmentController.mainFragment_over_created = true;
 		return rootview;
 	}
 
