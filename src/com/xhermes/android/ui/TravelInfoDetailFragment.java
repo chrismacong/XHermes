@@ -1,6 +1,7 @@
 package com.xhermes.android.ui;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,14 +30,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.baidu.mapapi.model.LatLng;
-import com.baidu.mapapi.utils.CoordinateConverter;
-import com.baidu.mapapi.utils.CoordinateConverter.CoordType;
 import com.xhermes.android.R;
-import com.xhermes.android.model.PositionData;
 import com.xhermes.android.model.TravelInfo;
 import com.xhermes.android.network.HttpClient;
 import com.xhermes.android.network.URLMaker;
+import com.xhermes.android.util.OverallFragmentController;
 
 public class TravelInfoDetailFragment extends Fragment{
 	private final String travelinfo_position_url = URLMaker.makeURL("positioninfo/mobilegetposition.html");
@@ -70,9 +68,9 @@ public class TravelInfoDetailFragment extends Fragment{
 		startp_image=(ImageView) root.findViewById(R.id.detail_start_image_View);
 		travelinfo_detail_view=(ListView) root.findViewById(R.id.detail_travelinfo_listview);
 		
-		startt_textview.setText(mTravelInfo.getStarttime());
+		startt_textview.setText(getTimeInFormat(mTravelInfo.getStarttime()));
 		startp_textview.setText(mTravelInfo.getSposition());
-		endt_textview.setText(mTravelInfo.getEndtime());
+		endt_textview.setText(getTimeInFormat(mTravelInfo.getEndtime()));
 		endp_textview.setText(mTravelInfo.getEposition());
 		
 		map_image_view.setOnClickListener(new OnClickListener() {
@@ -114,10 +112,11 @@ public class TravelInfoDetailFragment extends Fragment{
 						b.putString("terminalId", terminalId);
 						b.putString("positionList",result);
 						timFragment.setArguments(b);
+						OverallFragmentController.removeFragment("travel_info_map_fragment");
+						OverallFragmentController.addFragment("travel_info_map_fragment", timFragment);
 						FragmentManager fm=((FragmentActivity) ctx).getSupportFragmentManager();
 						FragmentTransaction ft =fm.beginTransaction();
 						ft.replace(R.id.fragment_container, timFragment, "travel_info_map_fragment");
-						ft.addToBackStack(null);
 						ft.commit();
 					}
 				}.execute();		
@@ -128,6 +127,7 @@ public class TravelInfoDetailFragment extends Fragment{
 		ArrayList<String> titles = new ArrayList<String>();
 		ArrayList<String> contents = new ArrayList<String>();
 		//initialize titles and contents
+		titles.add(getString(R.string.distance));
 		titles.add(getString(R.string.average_speed));
 		titles.add(getString(R.string.max_speed));
 		titles.add(getString(R.string.total_oil_consuming));
@@ -142,25 +142,38 @@ public class TravelInfoDetailFragment extends Fragment{
 		titles.add(getString(R.string.engine_highest_temperature));
 		titles.add(getString(R.string.voltage));
 
-		contents.add(mTravelInfo.getAverSpeed() + "（km/h）");
-		contents.add(mTravelInfo.getMaxSpeed() + "（km/h）");
-		contents.add(mTravelInfo.getTotalFuelC() + "（0.01升）");
-		contents.add(mTravelInfo.getAverFuelC() + "（0.01百公里升）");
-		contents.add(mTravelInfo.getTiredTime() + "（分钟）");
-		contents.add(mTravelInfo.getTimeOut() + "（秒）");
-		contents.add(mTravelInfo.getBrakes() + "（次）");
-		contents.add(mTravelInfo.getEmBrakes() + "（次）");
-		contents.add(mTravelInfo.getSpeedUp() + "（次）");
-		contents.add(mTravelInfo.getEmSpeedUp() + "（次）");
-		contents.add(mTravelInfo.getRpm() + "（转/分钟）");
-		contents.add(mTravelInfo.getWaterTemp() + "（摄氏度）");
-		contents.add(mTravelInfo.getVoltage() + "（0.1V）");
+		DecimalFormat df = new DecimalFormat("#.##"); 
+		contents.add(mTravelInfo.getDistance() + ";km");
+		contents.add(mTravelInfo.getAverSpeed() + ";km/h");
+		contents.add(mTravelInfo.getMaxSpeed() + ";km/h");
+		contents.add(Double.parseDouble(df.format(Double.parseDouble(mTravelInfo.getTotalFuelC()) * 0.01)) + ";升");
+		contents.add(Double.parseDouble(df.format(Double.parseDouble(mTravelInfo.getAverFuelC()) * 0.01)) + ";百公里升");
+		contents.add(mTravelInfo.getTiredTime() + ";分钟");
+		contents.add(mTravelInfo.getTimeOut() + ";秒");
+		contents.add(mTravelInfo.getBrakes() + ";次");
+		contents.add(mTravelInfo.getEmBrakes() + ";次");
+		contents.add(mTravelInfo.getSpeedUp() + ";次");
+		contents.add(mTravelInfo.getEmSpeedUp() + ";次");
+		contents.add(mTravelInfo.getRpm() + ";转/分钟");
+		contents.add(mTravelInfo.getWaterTemp() + ";摄氏度");
+		contents.add(Double.parseDouble(df.format(Double.parseDouble(mTravelInfo.getVoltage()) * 0.1))+ ";V");
 
 		MyAdapter mAdapter = new MyAdapter(ctx, R.layout.travelinfo_detail_list_item, titles, contents);
 		travelinfo_detail_view.setAdapter(mAdapter);
 		return root;
+		
 	}
 
+
+	
+	public String getTimeInFormat(String time_Str){
+		return time_Str.substring(0,2) + "-" + 
+				time_Str.substring(2,4) + "-" + 
+				time_Str.substring(4,6) + " " + 
+				time_Str.substring(6,8) + ":" + 
+				time_Str.substring(8,10) + ":" + 
+				time_Str.substring(10,12);
+	}
 	
 	private class MyAdapter extends ArrayAdapter<String> {
 		private ArrayList<String> mTitles;
@@ -187,16 +200,17 @@ public class TravelInfoDetailFragment extends Fragment{
 		}
 		
 		public SpannableString setSpannable(String ctn){
+			int index = ctn.indexOf(";");
+			ctn = ctn.replaceAll(";", "");
+			int lastindex = ctn.length();
 			SpannableString sctn=new SpannableString(ctn);
 			ForegroundColorSpan fcst = new ForegroundColorSpan(Color.rgb(255, 255, 255)); 
 			ForegroundColorSpan fcsq = new ForegroundColorSpan(Color.rgb(200, 200, 200));
 			StyleSpan bss = new StyleSpan(android.graphics.Typeface.ITALIC);
 			RelativeSizeSpan tsize=new RelativeSizeSpan(0.6f);
-			int i=ctn.indexOf("（");
-			int j=ctn.indexOf("）")+1;
-			sctn.setSpan(fcst, 0, i, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-			sctn.setSpan(bss, i, j, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-			sctn.setSpan(tsize, i, j, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+			sctn.setSpan(fcst, 0, index, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+			sctn.setSpan(bss, index, lastindex, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+			sctn.setSpan(tsize, index, lastindex, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
 			return sctn;
 		}
 	}

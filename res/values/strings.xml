@@ -46,6 +46,7 @@
 
         <!-- Travel info details -->
     <string name="travel_info_detail">行程详情</string>
+    <string name="distance">行驶距离：</string>
     <string name="average_speed">平均速度：</string>
     <string name="max_speed">最大速度：</string>
     <string name="total_oil_consuming">总油耗：</string>

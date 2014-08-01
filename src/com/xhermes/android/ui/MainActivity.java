@@ -30,6 +30,7 @@ import com.actionbarsherlock.view.MenuItem;
 import com.slidingmenu.lib.SlidingMenu;
 import com.xhermes.android.R;
 import com.xhermes.android.network.DataReceiver;
+import com.xhermes.android.util.DateController;
 import com.xhermes.android.util.OverallFragmentController;
 
 public class MainActivity extends SherlockFragmentActivity {
@@ -127,6 +128,8 @@ public class MainActivity extends SherlockFragmentActivity {
 		bundle = intent.getBundleExtra("bundle");
 		terminalId = bundle.getString("terminalId");
 		DataReceiver.setEqid(terminalId);
+		/*初始化应用日期*/
+		DateController.init();
 
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);

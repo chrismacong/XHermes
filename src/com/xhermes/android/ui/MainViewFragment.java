@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xhermes.android.R;
@@ -33,7 +34,7 @@ public class MainViewFragment extends Fragment{
 	private TextView exm_mark;
 	private TextView exm_comment;
 	private Button button_functional_1;
-	private Button button_functional_4;
+	private Button button_functional_4,button_functional_2,button_functional_3;
 	private TextView distance_textview;
 	private TextView oil_textview;
 	private TextView time_textview;
@@ -81,10 +82,14 @@ public class MainViewFragment extends Fragment{
 		car_number_textview = (TextView)rootview.findViewById(R.id.car_number);
 		button_functional_1 = (Button)rootview.findViewById(R.id.button_functional_1);
 		button_functional_4 = (Button)rootview.findViewById(R.id.button_functional_4);
+		button_functional_2 = (Button)rootview.findViewById(R.id.button_functional_2);
+		button_functional_3 = (Button)rootview.findViewById(R.id.button_functional_3);
+		
 		distance_introview=(TextView)rootview.findViewById(R.id.distance_intro);
 		oil_introview=(TextView)rootview.findViewById(R.id.oil_intro);
 		speed_introview=(TextView)rootview.findViewById(R.id.speed_intro);
 
+		
 //		exm_mark_title.setText(R.string.exm_mark_title);
 //		exm_mark_title.setTextSize(18);
 //		exm_mark_title.setTextColor(Color.rgb(210, 228, 228));
@@ -116,6 +121,8 @@ public class MainViewFragment extends Fragment{
 		int testsize2 = (int) (defaultSize2* dm2.density);
 		int defaultSize3=30;
 		int testsize3 = (int) (defaultSize3* dm2.density);
+		
+		
 		String distance_text = today_distance + "¹«Àï";
 		Spannable distance_word = new SpannableString(distance_text);
 		int distance_start = 0;
@@ -164,7 +171,22 @@ public class MainViewFragment extends Fragment{
 		MyHandler handler = new MyHandler();
 		new Thread(new MyThreadFor(vehicleexm_score, handler)).start();
 
-
+//		int width=dm2.widthPixels;
+//		int w=(int) (width*0.8/2);
+//		RelativeLayout.LayoutParams layoutParams1 =new RelativeLayout.LayoutParams(w*13/12,w);
+//		RelativeLayout.LayoutParams layoutParams2 =new RelativeLayout.LayoutParams(w,w*13/12);
+//		RelativeLayout.LayoutParams layoutParams3 =new RelativeLayout.LayoutParams(w*13/12,w);
+//		RelativeLayout.LayoutParams layoutParams4 =new RelativeLayout.LayoutParams(w,w*13/12);
+//		
+//		layoutParams1.setMargins(w, 0, 0, 0);
+//		button_functional_1.setLayoutParams(layoutParams1);
+//		layoutParams2.setMargins(w, w, 0, 0);
+//		button_functional_2.setLayoutParams(layoutParams2);
+//		layoutParams3.setMargins(0, w*11/12, 0, 0);
+//		button_functional_3.setLayoutParams(layoutParams3);
+//		layoutParams4.setMargins(0, 0, 0, 0);
+//		button_functional_4.setLayoutParams(layoutParams4);
+		
 		button_functional_1.setOnClickListener(new OnClickListener(){
 
 			@Override

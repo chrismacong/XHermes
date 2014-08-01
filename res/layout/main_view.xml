@@ -5,39 +5,48 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal" >
-
-    <FrameLayout
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    >
+	    <FrameLayout
         android:id="@+id/circle_select"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
         android:paddingTop="@dimen/activity_vertical_margin" >
 
         <RelativeLayout
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <Button
                 android:id="@+id/button_functional_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignRight="@+id/button_functional_3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
                 android:background="@drawable/blue_selector" />
 
             <Button
                 android:id="@+id/button_functional_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/button_functional_2"
                 android:layout_alignParentTop="true"
-                android:layout_alignRight="@+id/button_functional_2"
+                android:layout_marginLeft="-10dp"
+                android:layout_toRightOf="@id/button_functional_4"
                 android:background="@drawable/green_selector" />
 
             <Button
                 android:id="@+id/button_functional_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/button_functional_2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="-10dp"
+                android:layout_below="@+id/button_functional_4"
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/red_selector" />
 
@@ -45,8 +54,9 @@
                 android:id="@+id/button_functional_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/button_functional_4"
-                android:layout_marginLeft="-10.5dp"
+                android:layout_marginLeft="-10dp"
+                android:layout_marginTop="-10dp"
+                android:layout_below="@+id/button_functional_1"
                 android:layout_toRightOf="@+id/button_functional_3"
                 android:background="@drawable/yellow_selector" />
         </RelativeLayout>
@@ -78,14 +88,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/circle_select"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:gravity="center_horizontal"
             android:orientation="vertical" >
 
@@ -102,7 +112,7 @@
                 android:id="@+id/exm_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:singleLine="false"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -129,7 +139,7 @@
             android:id="@+id/extra_linear"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:baselineAligned="false"
             android:gravity="bottom"
             android:orientation="horizontal" >
@@ -266,5 +276,7 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+	</LinearLayout>
+    
 
 </RelativeLayout>

@@ -11,14 +11,19 @@ import android.view.ViewGroup;
 
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BaiduMapOptions;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.Marker;
+import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.Polyline;
 import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.utils.CoordinateConverter;
 import com.baidu.mapapi.utils.CoordinateConverter.CoordType;
+import com.xhermes.android.R;
 import com.xhermes.android.model.PositionData;
 
 public class TravelInfoMapFragment extends Fragment{
@@ -32,6 +37,11 @@ public class TravelInfoMapFragment extends Fragment{
 	private ArrayList<Double> angleList;
 	private String positionList;
 	private LatLng desLatLng;
+	private Marker m_start;
+	private Marker m_end;
+	private OverlayOptions o_start, o_end;
+	BitmapDescriptor start_icon=BitmapDescriptorFactory.fromResource(R.drawable.start_point_icon_new);
+	BitmapDescriptor end_icon=BitmapDescriptorFactory.fromResource(R.drawable.end_point_icon_new);
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,7 +51,8 @@ public class TravelInfoMapFragment extends Fragment{
 		ctx=getActivity();
 		latlngList=new ArrayList<LatLng>();
 		angleList=new ArrayList<Double>();
-		
+		o_start = new MarkerOptions().icon(start_icon).zIndex(5).anchor(0.5f, 0.5f);
+		o_end = new MarkerOptions().icon(end_icon).zIndex(5).anchor(0.5f, 0.5f);
 		String[] list=positionList.split("@");
 		System.out.println(positionList);
 		if(positionList!=null&&!positionList.equals("")){
@@ -71,6 +82,13 @@ public class TravelInfoMapFragment extends Fragment{
 		if(latlngList.size()>1){
 			ooPolyline= new PolylineOptions().width(10).color(0xAAFF0000).points(latlngList);
 			mBaiduMap.addOverlay(ooPolyline);
+		}
+		if(latlngList.size()>=2){
+
+			((MarkerOptions) o_start).position(latlngList.get(latlngList.size()-1));
+			m_start=(Marker) mBaiduMap.addOverlay(o_start);
+			((MarkerOptions) o_end).position(latlngList.get(0));
+			m_end=(Marker) mBaiduMap.addOverlay(o_end);
 		}
 		return mMapView;
 	}

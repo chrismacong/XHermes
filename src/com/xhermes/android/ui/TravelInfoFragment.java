@@ -3,6 +3,10 @@ package com.xhermes.android.ui;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -10,6 +14,7 @@ import android.app.TimePickerDialog;
 import android.app.TimePickerDialog.OnTimeSetListener;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -36,9 +41,16 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.xhermes.android.R;
+import com.xhermes.android.R.string;
 import com.xhermes.android.dao.PositionDataDao;
 import com.xhermes.android.dao.TravelInfoDao;
 import com.xhermes.android.model.TravelInfo;
+import com.xhermes.android.network.URLMaker;
+import com.xhermes.android.ui.VehicleExmFragment.MyHandler;
+import com.xhermes.android.util.DateController;
+import com.xhermes.android.util.MyExmThread;
+import com.xhermes.android.util.OverallFragmentController;
+import com.xhermes.android.util.Utilities;
 
 public class TravelInfoFragment extends Fragment{
 
@@ -50,9 +62,10 @@ public class TravelInfoFragment extends Fragment{
 	private ListView travelinfo_listView;
 	private ArrayList<TravelInfo> travelInfoList;
 	private TravelInfoDao travelDao;
-	private String starttime="00:00";
-	private String endtime="23:59";
+	private String starttime;
+	private String endtime;
 	private String sdate,edate;
+	private final String get_travelinfo_url = URLMaker.makeURL("mobile/mobilegettravelinfo.html");
 	private TravelInfoAdapter travel_adapter;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -61,22 +74,23 @@ public class TravelInfoFragment extends Fragment{
 		terminalId = getArguments().getString("terminalId");
 		ctx=getActivity();
 
-		Calendar calendar = Calendar.getInstance();
-		year = calendar.get(Calendar.YEAR);
-		monthOfYear = calendar.get(Calendar.MONTH);
-		dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
-		hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
-		minute = calendar.get(Calendar.MINUTE);
+		year = DateController.getYear();
+		monthOfYear = DateController.getMonthOfYear();
+		dayOfMonth = DateController.getDayOfMonth();
+		starttime = this.getTime(DateController.getStart_hourOfDay(), DateController.getStart_minute());
+		endtime = this.getTime(DateController.getEnd_hourOfDay(), DateController.getEnd_minute());
 
 		tyear=year;
 		tmonth=monthOfYear;
 		tday=dayOfMonth;
-		
+
 		String date=String.valueOf(year).substring(2) + String.format("%02d", (monthOfYear + 1)) +  String.format("%02d",dayOfMonth);
-		sdate=date+"000000";
-		edate=date+"235900";
+		sdate=date+this.getTime(DateController.getStart_hourOfDay(), DateController.getStart_minute()) + "00";
+		edate=date+this.getTime(DateController.getEnd_hourOfDay(), DateController.getEnd_minute()) + "00";
 		travelDao=new TravelInfoDao(ctx);
-		travelInfoList=travelDao.queryByDate(terminalId, "starttime asc", "", sdate, edate);
+		travelInfoList=new ArrayList<TravelInfo>();
+		getTravelInfo(sdate,edate);
+		//travelInfoList=travelDao.queryByDate(terminalId, "starttime asc", "", sdate, edate);
 	}
 
 	@Override
@@ -100,11 +114,10 @@ public class TravelInfoFragment extends Fragment{
 	public void dataRefresh(){
 		sdate=getStartDateFromFormat();
 		edate=getEndDateFromFormat();
-//		System.out.println(sdate+"    "+edate);
-		ArrayList<TravelInfo> tmpList=travelDao.queryByDate(terminalId, "starttime asc", "", sdate, edate);
-		travelInfoList.clear();
-		for(TravelInfo tif:tmpList)
-			travelInfoList.add(tif);
+		//		System.out.println(sdate+"    "+edate);
+		//ArrayList<TravelInfo> tmpList=travelDao.queryByDate(terminalId, "starttime asc", "", sdate, edate);
+		
+		getTravelInfo(sdate, edate);
 		travel_adapter.notifyDataSetChanged();
 	}
 
@@ -133,14 +146,65 @@ public class TravelInfoFragment extends Fragment{
 	public String getTime(int arg1,int arg2){
 		return String.format("%02d", arg1)+":"+String.format("%02d", arg2);
 	}
+	
+	public String getTimeInFormat(String time_Str){
+		return time_Str.substring(0,2) + "-" + 
+				time_Str.substring(2,4) + "-" + 
+				time_Str.substring(4,6) + " " + 
+				time_Str.substring(6,8) + ":" + 
+				time_Str.substring(8,10) + ":" + 
+				time_Str.substring(10,12);
+	}
 
+	private void getTravelInfo(final String sdate,final String edate){
+		
+		new AsyncTask<Void, Void, String>() {
+			ArrayList<TravelInfo> tempList=new ArrayList<TravelInfo>();
+			@Override
+			protected void onPreExecute() {
+				
+			}
+
+			@Override
+			protected String doInBackground(Void... voids) {
+				String result = "";
+				List<NameValuePair> params = new ArrayList<NameValuePair>();
+				params.add(new BasicNameValuePair("terminalId", terminalId));
+				params.add(new BasicNameValuePair("from_time_point", sdate));
+				params.add(new BasicNameValuePair("to_time_point", edate));
+				try {
+					result = com.xhermes.android.network.HttpClient.getInstance().httpPost(get_travelinfo_url,params);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				return result;
+			}
+
+			@Override
+			protected void onPostExecute(String signInResult) {
+				signInResult = signInResult.trim();
+				System.out.println("execute:" + signInResult);
+				String[] stringList=signInResult.split("@");
+				String terminalId=stringList[0];
+				travelInfoList.clear();
+				if(stringList.length>1){
+					for(int i=1;i<stringList.length;i++){
+						TravelInfo t=new TravelInfo(stringList[i]);
+						travelInfoList.add(t);
+					}
+				}
+				travel_adapter.notifyDataSetChanged();
+			}
+		}.execute();
+	}
 	private void initView() {
 		date_btn.setText(getDate(year,monthOfYear,dayOfMonth));
 		start_btn.setText(starttime);
 		end_btn.setText(endtime);
-		
+
 		travel_adapter=new TravelInfoAdapter(travelInfoList, (Activity) ctx);
 		travelinfo_listView.setAdapter(travel_adapter);
+
 		travelinfo_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,long arg3) {
@@ -152,8 +216,10 @@ public class TravelInfoFragment extends Fragment{
 				FragmentManager fm=((FragmentActivity) ctx).getSupportFragmentManager();
 				FragmentTransaction ft =fm.beginTransaction();
 				ft.replace(R.id.fragment_container, tdf, "travel_info_detail_fragment");
-				ft.addToBackStack(null);
 				ft.commit();
+				OverallFragmentController.removeFragment("travel_info_detail_fragment");
+				OverallFragmentController.addFragment("travel_info_detail_fragment", tdf);
+
 			}
 		});
 
@@ -165,9 +231,11 @@ public class TravelInfoFragment extends Fragment{
 					@Override
 					public void onTimeSet(TimePicker v, int arg1, int arg2) {
 						start_btn.setText(getTime(arg1,arg2));
+						DateController.setStart_hourOfDay(arg1);
+						DateController.setStart_minute(arg2);
 						dataRefresh();
 					}
-				}, 0, 0, true);
+				}, DateController.getStart_hourOfDay(), DateController.getStart_minute(), true);
 				datePickerDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,  
 						WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
 				datePickerDialog.show();				
@@ -182,9 +250,11 @@ public class TravelInfoFragment extends Fragment{
 					@Override
 					public void onTimeSet(TimePicker v, int arg1, int arg2) {
 						end_btn.setText(getTime(arg1,arg2));
+						DateController.setEnd_hourOfDay(arg1);
+						DateController.setEnd_minute(arg2);
 						dataRefresh();
 					}
-				}, hourOfDay, minute, true);
+				}, DateController.getEnd_hourOfDay(), DateController.getEnd_minute(), true);
 				datePickerDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,  
 						WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
 				datePickerDialog.show();				
@@ -202,6 +272,9 @@ public class TravelInfoFragment extends Fragment{
 						tmonth=monthOfYear;
 						tday=dayOfMonth;
 						date_btn.setText(getDate(year,monthOfYear,dayOfMonth));
+						DateController.setYear(tyear);
+						DateController.setMonthOfYear(tmonth);
+						DateController.setDayOfMonth(tday);
 						dataRefresh();
 					}
 				}, year, monthOfYear, dayOfMonth);
@@ -214,6 +287,13 @@ public class TravelInfoFragment extends Fragment{
 		reset_btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				DateController.init();
+				starttime = getTime(DateController.getStart_hourOfDay(), DateController.getStart_minute());
+				endtime = getTime(DateController.getEnd_hourOfDay(), DateController.getEnd_minute());
+				tyear = DateController.getYear();
+				tmonth = DateController.getMonthOfYear();
+				tday = DateController.getDayOfMonth();
+				date_btn.setText(getDate(tyear,tmonth,tday));
 				start_btn.setText(starttime);
 				end_btn.setText(endtime);
 				dataRefresh();
@@ -223,11 +303,24 @@ public class TravelInfoFragment extends Fragment{
 		left_img.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				tmonth-=1;
-				if(tmonth<0){
-					tmonth=11;
-					tyear-=1;
-				}
+				Calendar calendar = Calendar.getInstance();
+				calendar.set(Calendar.YEAR, tyear);
+				calendar.set(Calendar.MONTH, tmonth);
+				calendar.set(Calendar.DAY_OF_MONTH, tday);
+				if(calendar.get(Calendar.DAY_OF_YEAR)==1)
+					calendar.set(Calendar.YEAR, calendar.get(Calendar.YEAR)-1);
+				calendar.roll(Calendar.DAY_OF_YEAR,-1);
+				tyear = calendar.get(Calendar.YEAR);
+				tmonth = calendar.get(Calendar.MONTH);
+				tday = calendar.get(Calendar.DAY_OF_MONTH);
+				DateController.setYear(tyear);
+				DateController.setMonthOfYear(tmonth);
+				DateController.setDayOfMonth(tday);
+//				tmonth-=1;
+//				if(tmonth<0){
+//					tmonth=11;
+//					tyear-=1;
+//				}
 				date_btn.setText(getDate(tyear,tmonth,tday));
 				dataRefresh();
 			}
@@ -236,11 +329,24 @@ public class TravelInfoFragment extends Fragment{
 		right_img.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				tmonth+=1;
-				if(tmonth>11){
-					tmonth=0;
-					tyear+=1;
-				}
+				Calendar calendar = Calendar.getInstance();
+				calendar.set(Calendar.YEAR, tyear);
+				calendar.set(Calendar.MONTH, tmonth);
+				calendar.set(Calendar.DAY_OF_MONTH, tday);
+				calendar.roll(Calendar.DAY_OF_YEAR,1);
+				if(calendar.get(Calendar.DAY_OF_YEAR)==1)
+					calendar.set(Calendar.YEAR, calendar.get(Calendar.YEAR)+1);
+				tyear = calendar.get(Calendar.YEAR);
+				tmonth = calendar.get(Calendar.MONTH);
+				tday = calendar.get(Calendar.DAY_OF_MONTH);
+				DateController.setYear(tyear);
+				DateController.setMonthOfYear(tmonth);
+				DateController.setDayOfMonth(tday);
+//				tmonth+=1;
+//				if(tmonth>11){
+//					tmonth=0;
+//					tyear+=1;
+//				}
 				date_btn.setText(getDate(tyear,tmonth,tday));
 				dataRefresh();
 			}
@@ -289,7 +395,7 @@ public class TravelInfoFragment extends Fragment{
 		private View touchLayout;
 		private Activity ctx;
 		DisplayMetrics metric ;
-		
+
 		public TravelInfoAdapter(ArrayList<TravelInfo> travelInfoList,Activity ctx){
 			this.ctx=ctx;
 			inflater=ctx.getLayoutInflater();
@@ -332,8 +438,8 @@ public class TravelInfoFragment extends Fragment{
 			int sp=startp.length();
 			int ep=endp.length();
 
-			travelinfo_startt_textview.setText(starttime);
-			travelinfo_endt_textview.setText(endtime);
+			travelinfo_startt_textview.setText(getTimeInFormat(starttime));
+			travelinfo_endt_textview.setText(getTimeInFormat(endtime));
 			travelinfo_startp_textview.setText(startp);
 			travelinfo_endp_textview.setText(endp);
 
