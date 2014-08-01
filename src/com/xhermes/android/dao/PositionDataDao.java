@@ -1,13 +1,10 @@
 package com.xhermes.android.dao;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 
 import com.xhermes.android.db.MyDataBaseHelper;
 import com.xhermes.android.model.PositionData;

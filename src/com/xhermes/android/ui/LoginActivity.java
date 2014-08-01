@@ -38,7 +38,6 @@ import com.xhermes.android.R;
 import com.xhermes.android.network.URLMaker;
 import com.xhermes.android.util.CustomDialog;
 import com.xhermes.android.util.Utilities;
-import com.xhermes.android.util.MyThread;
 
 public class LoginActivity extends Activity {
 

@@ -1,7 +1,5 @@
 package com.xhermes.android.util;
 
-import com.xhermes.android.R;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,6 +9,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.xhermes.android.R;
 
 public class CustomDialog extends Dialog {  
 	  

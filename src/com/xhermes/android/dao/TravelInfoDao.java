@@ -1,12 +1,10 @@
 package com.xhermes.android.dao;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
 import com.xhermes.android.db.MyDataBaseHelper;
 import com.xhermes.android.model.TravelInfo;

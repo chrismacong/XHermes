@@ -2,7 +2,6 @@ package com.xhermes.android.ui;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -41,16 +40,11 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.xhermes.android.R;
-import com.xhermes.android.R.string;
-import com.xhermes.android.dao.PositionDataDao;
 import com.xhermes.android.dao.TravelInfoDao;
 import com.xhermes.android.model.TravelInfo;
 import com.xhermes.android.network.URLMaker;
-import com.xhermes.android.ui.VehicleExmFragment.MyHandler;
 import com.xhermes.android.util.DateController;
-import com.xhermes.android.util.MyExmThread;
 import com.xhermes.android.util.OverallFragmentController;
-import com.xhermes.android.util.Utilities;
 
 public class TravelInfoFragment extends Fragment{
 

@@ -1,12 +1,12 @@
 package com.xhermes.android.util;
 
-import android.content.Context;  
-import android.graphics.Canvas;  
-import android.graphics.Color;  
-import android.graphics.Paint;  
-import android.graphics.RectF;  
-import android.util.AttributeSet;  
-import android.view.View;  
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.util.AttributeSet;
+import android.view.View;
   
 public class CircleProgressBarView extends View {  
     private int progress;  
