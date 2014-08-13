@@ -150,7 +150,7 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		if ((System.currentTimeMillis() - clickTime) > 2000) { 
 
-			Toast.makeText(getApplicationContext(), "再按一次后退键退出程序", Toast.LENGTH_SHORT).show(); 
+			Toast.makeText(getApplicationContext(), "再按一次后退键 退出程序", Toast.LENGTH_SHORT).show(); 
 
 			clickTime = System.currentTimeMillis(); 
 
@@ -217,16 +217,20 @@ public class MainActivity extends SherlockFragmentActivity {
 
 				case 0:
 				case 1:
-					Bundle arguments = new Bundle();
-					arguments.putString("terminalId", terminalId);
-					VehicleExmFragment vFragment = new VehicleExmFragment();
-					vFragment.setArguments(arguments);
-					OverallFragmentController.removeFragment("exam");
-					OverallFragmentController.addFragment("exam", vFragment);
+					Bundle arguments1 = new Bundle();
+					arguments1.putString("terminalId", terminalId);
+					VehicleDetailFragment vdFragment = new VehicleDetailFragment();
+					vdFragment.setArguments(arguments1);
+					OverallFragmentController.removeFragment("info");
+					OverallFragmentController.addFragment("info", vdFragment);
 					FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
-					transaction1.replace(R.id.fragment_container, vFragment,"exam"); 
+					transaction1.replace(R.id.fragment_container, vdFragment,"info"); 
 					transaction1.commit();
 					break;
+				case 2:
+					break;
+				case 3:
+
 				case 4:
 
 					Bundle arguments2 = new Bundle();

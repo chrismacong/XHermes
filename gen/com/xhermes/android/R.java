@@ -995,31 +995,37 @@ containing a value of this type.
         public static final int menu_icon=0x7f0200b0;
         public static final int message=0x7f0200b1;
         public static final int oil_icon=0x7f0200b2;
-        public static final int pass=0x7f0200b3;
-        public static final int progress_large=0x7f0200b4;
-        public static final int records=0x7f0200b5;
-        public static final int red_piece=0x7f0200b6;
-        public static final int red_piece_selec=0x7f0200b7;
-        public static final int red_selector=0x7f0200b8;
-        public static final int right=0x7f0200b9;
-        public static final int road_icon=0x7f0200ba;
-        public static final int rotate=0x7f0200bb;
-        public static final int score_present=0x7f0200bc;
-        public static final int search=0x7f0200bd;
-        public static final int select_main_bar=0x7f0200be;
-        public static final int shadow=0x7f0200bf;
-        public static final int sos_icon=0x7f0200c0;
-        public static final int sos_m_icon=0x7f0200c1;
-        public static final int speed_icon=0x7f0200c2;
-        public static final int start_point_icon_new=0x7f0200c3;
-        public static final int startpoint=0x7f0200c4;
-        public static final int test=0x7f0200c5;
-        public static final int time_ico=0x7f0200c6;
-        public static final int travelinfo=0x7f0200c7;
-        public static final int undone=0x7f0200c8;
-        public static final int yellow_piece=0x7f0200c9;
-        public static final int yellow_piece_selec=0x7f0200ca;
-        public static final int yellow_selector=0x7f0200cb;
+        public static final int p1=0x7f0200b3;
+        public static final int p2=0x7f0200b4;
+        public static final int p3=0x7f0200b5;
+        public static final int p4=0x7f0200b6;
+        public static final int p5=0x7f0200b7;
+        public static final int p6=0x7f0200b8;
+        public static final int pass=0x7f0200b9;
+        public static final int progress_large=0x7f0200ba;
+        public static final int records=0x7f0200bb;
+        public static final int red_piece=0x7f0200bc;
+        public static final int red_piece_selec=0x7f0200bd;
+        public static final int red_selector=0x7f0200be;
+        public static final int right=0x7f0200bf;
+        public static final int road_icon=0x7f0200c0;
+        public static final int rotate=0x7f0200c1;
+        public static final int score_present=0x7f0200c2;
+        public static final int search=0x7f0200c3;
+        public static final int select_main_bar=0x7f0200c4;
+        public static final int shadow=0x7f0200c5;
+        public static final int sos_icon=0x7f0200c6;
+        public static final int sos_m_icon=0x7f0200c7;
+        public static final int speed_icon=0x7f0200c8;
+        public static final int start_point_icon_new=0x7f0200c9;
+        public static final int startpoint=0x7f0200ca;
+        public static final int test=0x7f0200cb;
+        public static final int time_ico=0x7f0200cc;
+        public static final int travelinfo=0x7f0200cd;
+        public static final int undone=0x7f0200ce;
+        public static final int yellow_piece=0x7f0200cf;
+        public static final int yellow_piece_selec=0x7f0200d0;
+        public static final int yellow_selector=0x7f0200d1;
     }
     public static final class id {
         public static final int abs__action_bar=0x7f040020;
@@ -1061,7 +1067,7 @@ containing a value of this type.
         public static final int abs__textButton=0x7f040013;
         public static final int abs__title=0x7f04001b;
         public static final int abs__up=0x7f04000b;
-        public static final int action_settings=0x7f040087;
+        public static final int action_settings=0x7f040089;
         public static final int autoLoginCheckBox=0x7f040038;
         public static final int b1_view=0x7f040032;
         public static final int bcarView=0x7f04005f;
@@ -1106,7 +1112,7 @@ containing a value of this type.
         public static final int endtime_btn=0x7f040075;
         public static final int exm_comment=0x7f040052;
         public static final int exm_mark=0x7f040050;
-        public static final int exm_mark_title=0x7f040086;
+        public static final int exm_mark_title=0x7f040088;
         public static final int exmlist=0x7f040084;
         public static final int exmlist_front_image=0x7f040042;
         public static final int exmlist_result_image=0x7f040044;
@@ -1115,13 +1121,14 @@ containing a value of this type.
         public static final int forget_psw=0x7f040039;
         public static final int fragment_container=0x7f04003d;
         public static final int homeAsUp=0x7f040006;
+        public static final int image=0x7f040085;
         public static final int left_img=0x7f040077;
         public static final int leftlistView=0x7f040045;
         public static final int listMode=0x7f040002;
         public static final int listTextView=0x7f040047;
         public static final int listimageView=0x7f040046;
         public static final int login_checkbox_table=0x7f040036;
-        public static final int mail=0x7f040088;
+        public static final int mail=0x7f04008a;
         public static final int map_relative_layout=0x7f04005d;
         public static final int mark_text=0x7f040082;
         public static final int message=0x7f04003f;
@@ -1142,12 +1149,13 @@ containing a value of this type.
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
         public static final int sign_in_button=0x7f04003c;
-        public static final int sos=0x7f040089;
+        public static final int sos=0x7f04008b;
         public static final int speed_intro=0x7f04005c;
         public static final int start_exm_btn=0x7f040083;
         public static final int starttime_btn=0x7f040074;
         public static final int tabMode=0x7f040003;
-        public static final int tablelayout_in_main=0x7f040085;
+        public static final int tablelayout_in_main=0x7f040087;
+        public static final int text1=0x7f040086;
         public static final int time_imageview=0x7f04005a;
         public static final int time_text=0x7f04005b;
         public static final int title=0x7f04003e;
@@ -1202,6 +1210,8 @@ containing a value of this type.
         public static final int travelinfo_list_item_view=0x7f030021;
         public static final int travelinfo_view=0x7f030022;
         public static final int vehicleexm_view=0x7f030023;
+        public static final int vehicleinfo=0x7f030024;
+        public static final int vehicleinfo_detail=0x7f030025;
     }
     public static final class menu {
         public static final int default_style=0x7f0b0000;
@@ -2485,7 +2495,7 @@ containing a value of this type.
          */
         public static final int[] SherlockSpinner = {
             0x010100af, 0x01010175, 0x01010176, 0x0101017b,
-            0x01010262, 0x010102ac, 0x010102ad, 0x010103ef
+            0x01010262, 0x010102ac, 0x010102ad, 0x01010411
         };
         /**
           <p>
