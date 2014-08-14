@@ -10,11 +10,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class MyDataBaseHelper extends SQLiteOpenHelper{
-	public static final int VERSION = 2;
+	public static final int VERSION = 4;
 	public static final String TABLE_NAME = "TravelInfo";  //±íÃû
 	public static final String TABLE_NAME2 = "PositionData";
 	private static final String TABLE_NAME3 = "OBDData";
-	private static final String TABLE_NAME4 = "Notice";
+	private static final String TABLE_NAME4 = "OBDParameters";
 	public static final String dbPath = android.os.Environment
 			.getExternalStorageDirectory().getAbsolutePath()+"/XHermes";
 	public static final String DB_NAME = dbPath + "/" + "XHermes.db";
@@ -60,15 +60,18 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 			"[Ospeed] VARCHAR(50),"+
 			"[Ovoltage] VARCHAR(50),"+
 			"[OwaterTemp] VARCHAR(50),"+
-			"[Orpm] VARCHAR(50)"+
+			"[Orpm] VARCHAR(50),"+
+			"[Opressure] VARCHAR(50),"+
+			"[time] VARCHAR(50) UNIQUE"+
 			" );";
 
 	String SQL4="CREATE TABLE " + TABLE_NAME4 + 
 			"([id] INTEGER PRIMARY KEY AUTOINCREMENT," +
-			"[nid] VARCHAR(50)," +
-			"[ntype] VARCHAR(50),"+
-			"[ncontent] VARCHAR(50),"+
-			"[nlevel] VARCHAR(2)"+
+			"[eqid] VARCHAR(50)," +
+			"[current_miles] VARCHAR(50)," +
+			"[maintenance_gap] VARCHAR(50),"+
+			"[maintenance_next] VARCHAR(50),"+
+			"[time] VARCHAR(50) UNIQUE"+
 			" );";
 	
 	private File dbf;
@@ -98,6 +101,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 		db.execSQL(SQL1);
 		db.execSQL(SQL2);
 		db.execSQL(SQL3);
+		db.execSQL(SQL4);
 		Log.d("db","create table success");
 	}
 
@@ -113,6 +117,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 			db.execSQL("drop table if exists "+TABLE_NAME);  
 			db.execSQL("drop table if exists "+TABLE_NAME2);
 			db.execSQL("drop table if exists "+TABLE_NAME3);
+			db.execSQL("drop table if exists "+TABLE_NAME4);
 			onCreate(db);
 		}
 	}
