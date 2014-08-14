@@ -130,6 +130,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		DataReceiver.setEqid(terminalId);
 		/*初始化应用日期*/
 		DateController.init();
+		DataReceiver.setAct(this);
 
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);

@@ -58,9 +58,9 @@
 <style name="myProgressBarStyleLarge" >
 　　<item name="android:indeterminateDrawable">@drawable/dialog_style_xml_icon</item>
 　　<item name="android:minWidth">76dip</item>
-　　<item name="android:maxWidth">76dip</item>
+　　<item name="android:maxWidth">100dip</item>
 　　<item name="android:minHeight">76dip</item>
-　　<item name="android:maxHeight">76dip</item>
+　　<item name="android:maxHeight">100dip</item>
 </style>
   
 </resources>  

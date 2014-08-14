@@ -1292,6 +1292,8 @@ containing a value of this type.
         public static final int menu=0x7f09001e;
         public static final int message=0x7f090021;
         public static final int network_failed=0x7f090016;
+        public static final int newalert=0x7f090045;
+        public static final int newnotification=0x7f090044;
         public static final int oil_extra_title=0x7f09002b;
         public static final int ok=0x7f09001b;
         public static final int password=0x7f090011;
@@ -2495,7 +2497,7 @@ containing a value of this type.
          */
         public static final int[] SherlockSpinner = {
             0x010100af, 0x01010175, 0x01010176, 0x0101017b,
-            0x01010262, 0x010102ac, 0x010102ad, 0x01010411
+            0x01010262, 0x010102ac, 0x010102ad, 0x010103ef
         };
         /**
           <p>

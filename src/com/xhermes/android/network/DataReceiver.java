@@ -1,20 +1,27 @@
 package com.xhermes.android.network;
 
+import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 import cn.jpush.android.api.JPushInterface;
 
+import com.xhermes.android.R;
 import com.xhermes.android.dao.OBDDataDao;
 import com.xhermes.android.dao.PositionDataDao;
 import com.xhermes.android.dao.TravelInfoDao;
 import com.xhermes.android.model.OBDData;
 import com.xhermes.android.model.PositionData;
 import com.xhermes.android.model.TravelInfo;
+import com.xhermes.android.ui.MainActivity;
 
 /**
  * Receive data from the server and pass them to UI
@@ -23,6 +30,9 @@ public class DataReceiver extends BroadcastReceiver {
 	//    private static final String TAG = "DataReceiver";
 	private static String eqid;
 	private static Handler mapHandler;
+	private static Activity act;
+	private static int nid=0;
+	private NotificationManager nm;
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Bundle bundle = intent.getExtras();
@@ -35,6 +45,7 @@ public class DataReceiver extends BroadcastReceiver {
 			// 自定义消息不会展示在通知栏，完全要开发者写代码去处理
 			String title=bundle.getString(JPushInterface.EXTRA_TITLE);
 			String message=bundle.getString(JPushInterface.EXTRA_MESSAGE);
+			
 			if(title.contains("0004")){	//地理位置
 				String date = title.substring(title.indexOf("(")+1,title.indexOf(")"));
 				message += "," + date;
@@ -56,7 +67,14 @@ public class DataReceiver extends BroadcastReceiver {
 				OBDDataDao dataDao=new OBDDataDao(context);
 				dataDao.insert(data);
 			}else if(title.contains("Alert")){	//alert
-				Toast.makeText(context, message, Toast.LENGTH_LONG);
+				//Toast.makeText(context, message, Toast.LENGTH_LONG);
+				if(message.indexOf("%%%")>-1)
+					message = message.substring(0,message.lastIndexOf("%%%"));
+				String alerts[] = message.split("%%%");
+				String alertStr ="您的爱车出现了如下需要注意的问题：";
+				for(int i=0;i<alerts.length;i++)
+					alertStr += alerts[i];
+				send(context.getResources().getString(R.string.newnotification),context.getResources().getString(R.string.newalert),alertStr);
 			}
 		} else if (JPushInterface.ACTION_NOTIFICATION_RECEIVED.equals(intent.getAction())) {
 			System.out.println("收到了通知");
@@ -70,6 +88,32 @@ public class DataReceiver extends BroadcastReceiver {
 			Log.d("abc", "Unhandled intent - " + intent.getAction());
 		}
 	}
+	
+	public void send(String tickerText,String title,String content){
+		if(act==null)
+			return;
+		
+		nid++;
+		nm=(NotificationManager) act.getSystemService(Activity.NOTIFICATION_SERVICE);
+		Intent intent=new Intent(act,MainActivity.class);
+		PendingIntent pi=PendingIntent.getActivity(act, 0, intent, 0);
+		
+		Notification n=new NotificationCompat.Builder(act)
+		.setAutoCancel(true)
+		.setContentIntent(pi)
+		.setContentTitle(title)
+		.setContentText(content)
+		//.setContentInfo(Integer.toString(nid))
+		.setDefaults(Notification.DEFAULT_ALL)
+		.setSmallIcon(R.drawable.message)
+		.setTicker(tickerText)
+		.setWhen(System.currentTimeMillis())
+		.getNotification();
+		
+		nm.notify(nid, n);
+		
+	}
+	
 	public static String getEqid() {
 		return eqid;
 	}
@@ -81,5 +125,13 @@ public class DataReceiver extends BroadcastReceiver {
 	}
 	public static void setMapHandler(Handler mapHandler) {
 		DataReceiver.mapHandler = mapHandler;
+	}
+
+	public static Activity getAct() {
+		return act;
+	}
+
+	public static void setAct(Activity act) {
+		DataReceiver.act = act;
 	}
 }

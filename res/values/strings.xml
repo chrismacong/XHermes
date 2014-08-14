@@ -60,4 +60,6 @@
     <string name="engine_highest_rotation_speed">发动机最高转速：</string>
     <string name="engine_highest_temperature">发动机最高水温：</string>
     <string name="voltage">电压值：</string>
+    <string name="newnotification">【XHermes】新消息</string>
+    <string name="newalert">【XHermes】新的警告消息</string>
 </resources>

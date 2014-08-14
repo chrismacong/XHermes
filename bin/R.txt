@@ -581,6 +581,8 @@ int string max_speed 0x7f090038
 int string menu 0x7f09001e
 int string message 0x7f090021
 int string network_failed 0x7f090016
+int string newalert 0x7f090045
+int string newnotification 0x7f090044
 int string oil_extra_title 0x7f09002b
 int string ok 0x7f09001b
 int string password 0x7f090011
@@ -777,7 +779,7 @@ int styleable SherlockSearchView_android_inputType 1
 int styleable SherlockSearchView_android_maxWidth 0
 int styleable SherlockSearchView_iconifiedByDefault 3
 int styleable SherlockSearchView_queryHint 4
-int[] styleable SherlockSpinner { 0x010100af, 0x01010175, 0x01010176, 0x0101017b, 0x01010262, 0x010102ac, 0x010102ad, 0x01010411 }
+int[] styleable SherlockSpinner { 0x010100af, 0x01010175, 0x01010176, 0x0101017b, 0x01010262, 0x010102ac, 0x010102ad, 0x010103ef }
 int styleable SherlockSpinner_android_dropDownHorizontalOffset 5
 int styleable SherlockSpinner_android_dropDownSelector 1
 int styleable SherlockSpinner_android_dropDownVerticalOffset 6
