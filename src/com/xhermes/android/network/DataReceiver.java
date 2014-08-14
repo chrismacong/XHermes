@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 import cn.jpush.android.api.JPushInterface;
 
@@ -73,7 +74,7 @@ public class DataReceiver extends BroadcastReceiver {
 				String alerts[] = message.split("%%%");
 				String alertStr ="您的爱车出现了如下需要注意的问题：";
 				for(int i=0;i<alerts.length;i++)
-					alertStr += alerts[i];
+					alertStr += "\n"+i+"."+alerts[i];
 				send(context.getResources().getString(R.string.newnotification),context.getResources().getString(R.string.newalert),alertStr);
 			}
 		} else if (JPushInterface.ACTION_NOTIFICATION_RECEIVED.equals(intent.getAction())) {
@@ -98,20 +99,23 @@ public class DataReceiver extends BroadcastReceiver {
 		Intent intent=new Intent(act,MainActivity.class);
 		PendingIntent pi=PendingIntent.getActivity(act, 0, intent, 0);
 		
+		RemoteViews contentView = new RemoteViews(act.getPackageName(), R.layout.notification_view);
+		contentView.setImageViewResource(R.id.nimage, R.drawable.ic_launcher);
+		contentView.setTextViewText(R.id.ntitle, title);
+		contentView.setTextViewText(R.id.ntext, content);
+		
 		Notification n=new NotificationCompat.Builder(act)
 		.setAutoCancel(true)
 		.setContentIntent(pi)
-		.setContentTitle(title)
-		.setContentText(content)
-		//.setContentInfo(Integer.toString(nid))
 		.setDefaults(Notification.DEFAULT_ALL)
 		.setSmallIcon(R.drawable.message)
 		.setTicker(tickerText)
 		.setWhen(System.currentTimeMillis())
+		.setContent(contentView)
+		//.setContentInfo(Integer.toString(nid))
 		.getNotification();
 		
 		nm.notify(nid, n);
-		
 	}
 	
 	public static String getEqid() {

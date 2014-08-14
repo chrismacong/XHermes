@@ -14,6 +14,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 	public static final String TABLE_NAME = "TravelInfo";  //±íÃû
 	public static final String TABLE_NAME2 = "PositionData";
 	private static final String TABLE_NAME3 = "OBDData";
+	private static final String TABLE_NAME4 = "Notice";
 	public static final String dbPath = android.os.Environment
 			.getExternalStorageDirectory().getAbsolutePath()+"/XHermes";
 	public static final String DB_NAME = dbPath + "/" + "XHermes.db";
@@ -61,6 +62,15 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 			"[OwaterTemp] VARCHAR(50),"+
 			"[Orpm] VARCHAR(50)"+
 			" );";
+
+	String SQL4="CREATE TABLE " + TABLE_NAME4 + 
+			"([id] INTEGER PRIMARY KEY AUTOINCREMENT," +
+			"[nid] VARCHAR(50)," +
+			"[ntype] VARCHAR(50),"+
+			"[ncontent] VARCHAR(50),"+
+			"[nlevel] VARCHAR(2)"+
+			" );";
+	
 	private File dbf;
 	
 	/**  
