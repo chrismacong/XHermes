@@ -44,8 +44,10 @@ public class PositionDataDao extends Dao{
 		value.put("lon",p.getLon());
 		value.put("lat", p.getLat());
 		value.put("angle", p.getAngle());
+		value.put("eqid", p.getEqid());
+		
 		long rowid=db.insert(TBL_NAME, null, value);
-		isOutOfRange(TBL_NAME);
+		isOutOfRange(TBL_NAME,p.getEqid());
 		
 		db.close();
 		if(rowid!=-1)
@@ -64,7 +66,7 @@ public class PositionDataDao extends Dao{
 		value.put("eqid", str[3]);
 		long rowid=db.insert(TBL_NAME, null, value);
 		//查看是否超出最大记录数
-		isOutOfRange(TBL_NAME);
+		isOutOfRange(TBL_NAME,str[3]);
 		
 		db.close();
 		if(rowid!=-1)

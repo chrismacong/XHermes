@@ -11,7 +11,10 @@ public class OBDData {
 	private String OwaterTemp;
 	//发动机转速
 	private String Orpm;
-
+	//压力
+	private String Opressure;
+	
+	private String time;
 	public OBDData(){
 
 	}
@@ -22,6 +25,8 @@ public class OBDData {
 		Ovoltage=data[1];
 		OwaterTemp=data[2];
 		Orpm=data[3];
+		Opressure=data[4];
+		time=data[5];
 	}
 
 	public String getOspeed() {
@@ -61,6 +66,22 @@ public class OBDData {
 
 	public void setEqid(String eqid) {
 		this.eqid = eqid;
+	}
+
+	public String getOpressure() {
+		return Opressure;
+	}
+
+	public void setOpressure(String opressure) {
+		Opressure = opressure;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 }
