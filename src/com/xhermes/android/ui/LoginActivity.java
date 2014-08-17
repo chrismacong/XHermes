@@ -119,7 +119,8 @@ public class LoginActivity extends Activity {
 						Utilities.showMessage(LoginActivity.this, R.string.password_unpass);
 					}
 					else{
-						pd= ProgressDialog.show(LoginActivity.this, null, "正在尝试登陆…");
+						pd=new CustomProgressDialog(LoginActivity.this, R.style.dialog, "正在登陆…");
+						pd.show();
 						new AsyncTask<Void, Void, String>() {
 							@Override
 							protected void onPreExecute() {
