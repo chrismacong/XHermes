@@ -9,6 +9,7 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.app.TimePickerDialog.OnTimeSetListener;
 import android.content.Context;
@@ -54,6 +55,7 @@ public class TravelInfoFragment extends Fragment{
 	private int year, monthOfYear, dayOfMonth, hourOfDay, minute,tyear,tmonth,tday;
 	private ImageView left_img,right_img;
 	private ListView travelinfo_listView;
+	private ProgressDialog pd;
 	private ArrayList<TravelInfo> travelInfoList;
 	private TravelInfoDao travelDao;
 	private String starttime;
@@ -101,7 +103,6 @@ public class TravelInfoFragment extends Fragment{
 
 		travelinfo_listView=(ListView) rootview.findViewById(R.id.travelinfo_list_View);
 		initView();
-
 		return rootview;
 	}
 
@@ -156,7 +157,8 @@ public class TravelInfoFragment extends Fragment{
 			ArrayList<TravelInfo> tempList=new ArrayList<TravelInfo>();
 			@Override
 			protected void onPreExecute() {
-				
+				pd= new CustomProgressDialog(ctx,R.style.dialog,"");
+				pd.show();
 			}
 
 			@Override
@@ -188,6 +190,7 @@ public class TravelInfoFragment extends Fragment{
 					}
 				}
 				travel_adapter.notifyDataSetChanged();
+				pd.dismiss();
 			}
 		}.execute();
 	}
