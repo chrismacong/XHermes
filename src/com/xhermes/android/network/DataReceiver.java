@@ -74,7 +74,7 @@ public class DataReceiver extends BroadcastReceiver {
 				boolean b=infoDao.insert(info);
 			}else if(title.contains("0008")){	//OBDÊý¾Ý
 				String date = title.substring(title.indexOf("(")+1,title.indexOf(")"));
-				message += "," + date;
+				message += ";" + date;
 				OBDData data=new OBDData(message);
 				data.setEqid(eqid);
 				OBDDataDao dataDao=new OBDDataDao(context);
