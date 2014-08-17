@@ -1,12 +1,13 @@
 <resources>
 
     <color name="black_overlay">#66000000</color>
-	<color name="apptheme_color">#616B88</color>
-	<color name="nickname_color">#FF6231</color>
-	<color name="white">#FFFFFF</color>
-	<color name="black">#000000</color>
-	<color name="main_extra_color">#D2E4E4</color>
-	<color name="en_text">#B3AEAD</color>
-	<color name="exm_blue">#04AEDA</color>
-	
+    <color name="apptheme_color">#616B88</color>
+    <color name="nickname_color">#FF6231</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="main_extra_color">#D2E4E4</color>
+    <color name="en_text">#B3AEAD</color>
+    <color name="exm_blue">#04AEDA</color>
+    <color name="main_color">#6DD30D</color>
+
 </resources>

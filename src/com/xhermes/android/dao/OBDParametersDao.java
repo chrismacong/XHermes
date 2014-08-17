@@ -24,10 +24,10 @@ public class OBDParametersDao extends Dao{
 			OBDParameters tempData =new OBDParameters();
 			tempData.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex("id"))));
 			tempData.setEqid(cursor.getString(cursor.getColumnIndex("eqid")));
-			tempData.setEqid(cursor.getString(cursor.getColumnIndex("current_miles")));
-			tempData.setEqid(cursor.getString(cursor.getColumnIndex("maintenance_gap")));
-			tempData.setEqid(cursor.getString(cursor.getColumnIndex("maintenance_next")));
-			tempData.setEqid(cursor.getString(cursor.getColumnIndex("time")));
+			tempData.setCurrent_miles(cursor.getString(cursor.getColumnIndex("current_miles")));
+			tempData.setMaintenance_gap(cursor.getString(cursor.getColumnIndex("maintenance_gap")));
+			tempData.setMaintenance_next(cursor.getString(cursor.getColumnIndex("maintenance_next")));
+			tempData.setTime(cursor.getString(cursor.getColumnIndex("time")));
 			list.add(tempData);
 		}
 		if(cursor!=null)

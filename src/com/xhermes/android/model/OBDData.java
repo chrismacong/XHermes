@@ -13,19 +13,22 @@ public class OBDData {
 	private String Orpm;
 	//Ñ¹Á¦
 	private String Opressure;
-	
+
 	private String time;
 	public OBDData(){
 
 	}
 
 	public OBDData(String str){
-		String[] data=str.split(";");
+		String t=str.replaceAll("null", "0");
+		String[] data=t.split(";");
 		Ospeed=data[0];
-		Ovoltage=data[1];
-		OwaterTemp=data[2];
-		Orpm=data[3];
+		java.text.DecimalFormat   df = new java.text.DecimalFormat("#.00");  
+		Ovoltage=df.format(Double.parseDouble(data[1]) * 0.1) + "";
+		Orpm=data[2];
+		OwaterTemp=data[3];
 		Opressure=data[4];
+
 		time=data[5];
 	}
 

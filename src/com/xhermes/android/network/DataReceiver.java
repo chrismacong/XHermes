@@ -32,6 +32,14 @@ public class DataReceiver extends BroadcastReceiver {
 	//    private static final String TAG = "DataReceiver";
 	private static String eqid;
 	private static Handler mapHandler;
+	private static Handler obdHandler;
+	public static Handler getObdHandler() {
+		return obdHandler;
+	}
+
+	public static void setObdHandler(Handler obdHandler) {
+		DataReceiver.obdHandler = obdHandler;
+	}
 	private static Activity act;
 	private static int nid=0;
 	private NotificationManager nm;
@@ -55,7 +63,9 @@ public class DataReceiver extends BroadcastReceiver {
 				OBDParameters data=new OBDParameters(message);
 				data.setEqid(eqid);
 				OBDParametersDao dao=new OBDParametersDao(context);
-				dao.insert(data);
+				boolean b = dao.insert(data);
+				if(obdHandler!=null&&b)
+					obdHandler.sendEmptyMessage(0);
 			}
 			if(title.contains("0004")){	//µØÀíÎ»ÖÃ
 				String date = title.substring(title.indexOf("(")+1,title.indexOf(")"));
@@ -78,7 +88,9 @@ public class DataReceiver extends BroadcastReceiver {
 				OBDData data=new OBDData(message);
 				data.setEqid(eqid);
 				OBDDataDao dataDao=new OBDDataDao(context);
-				dataDao.insert(data);
+				boolean b = dataDao.insert(data);
+				if(obdHandler!=null&&b)
+					obdHandler.sendEmptyMessage(1);
 			}else if(title.contains("Alert")){	//alert
 				//Toast.makeText(context, message, Toast.LENGTH_LONG);
 				if(message.indexOf("%%%")>-1)

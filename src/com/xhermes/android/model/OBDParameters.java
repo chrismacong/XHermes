@@ -9,7 +9,8 @@ public class OBDParameters {
 	private String time;
 
 	public OBDParameters(String msg){
-		String tmp[]=msg.split(";");
+		String t = msg.replaceAll("null", "0");
+		String tmp[]=t.split(";");
 		current_miles=tmp[0];
 		maintenance_gap=tmp[1];
 		maintenance_next=tmp[2];
