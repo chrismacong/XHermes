@@ -8,8 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/white" >
+        android:background="@color/white"
+        android:orientation="horizontal" >
 
         <LinearLayout
             android:layout_width="0dip"
@@ -35,7 +35,7 @@
 
             <com.xhermes.android.ui.MyProgress
                 android:id="@+id/myprogress"
-                style="?android:attr/progressBarStyleHorizontal"
+                style="@style/tallerBarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="12dip"
                 android:max="100" />
@@ -87,7 +87,6 @@
                 android:layout_weight="5"
                 android:orientation="horizontal" >
 
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" >
@@ -104,6 +103,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/undone" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" >
@@ -122,46 +122,46 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-		<RelativeLayout 
-		    android:layout_width="0dip"
-		    android:layout_weight="0.2"
-            android:layout_height="wrap_content">
-		    <ProgressBar
-            android:id="@+id/circle_bar"
-            style="@style/myProgressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:indeterminateDuration="1200"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
 
-        <TextView
-            android:id="@+id/mark_text"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:textSize="15sp"
-            android:textStyle="italic"
-            android:textColor="@color/exm_blue"
-            android:layout_centerVertical="true"/>
-        
-        <Button 
-            android:id="@+id/start_exm_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/exm_start_btn"/>
+            android:layout_weight="0.2" >
 
-		</RelativeLayout>
-        
+            <ProgressBar
+                android:id="@+id/circle_bar"
+                style="@style/myProgressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:gravity="center"
+                android:indeterminateDuration="1200" />
+
+            <TextView
+                android:id="@+id/mark_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/exm_blue"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/start_exm_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@drawable/exm_start_btn"
+                android:gravity="center" />
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -175,9 +175,9 @@
             android:id="@+id/exmlist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp" >
+            android:layout_marginRight="5dp"
+            android:scrollbars="none" >
         </ListView>
     </LinearLayout>
 

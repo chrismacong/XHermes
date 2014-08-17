@@ -27,6 +27,8 @@ public class OBDDataDao extends Dao{
 			tempData.setOspeed(cursor.getString(cursor.getColumnIndex("Ospeed")));
 			tempData.setOvoltage(cursor.getString(cursor.getColumnIndex("Ovoltage")));
 			tempData.setOwaterTemp(cursor.getString(cursor.getColumnIndex("OwaterTemp")));
+			tempData.setOpressure(cursor.getString(cursor.getColumnIndex("Opressure")));
+			tempData.setTime(cursor.getString(cursor.getColumnIndex("time")));
 			list.add(tempData);
 		}
 		if(cursor!=null)
@@ -47,9 +49,12 @@ public class OBDDataDao extends Dao{
 		value.put("Ovoltage",data.getOvoltage());
 		value.put("OwaterTemp", data.getOwaterTemp());
 		value.put("Orpm",data.getOrpm());
+		value.put("Opressure", data.getOpressure());
+		value.put("eqid", data.getEqid());
+		value.put("time", data.getTime());
 		
 		long rowid=db.insert(TBL_NAME, null, value);
-		isOutOfRange(TBL_NAME);
+		isOutOfRange(TBL_NAME,data.getEqid());
 		
 		db.close();
 		if(rowid!=-1)
