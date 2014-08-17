@@ -62,4 +62,29 @@
     <string name="voltage">电压值：</string>
     <string name="newnotification">【XHermes】新消息</string>
     <string name="newalert">【XHermes】新的警告消息</string>
+    <string name="no_value">--/--</string>
+    
+    <string name="app_name">OBD</string>
+    <string name="speed_dial_desc">速度仪表盘</string>
+    <string name="speed_pointer_desc">速度仪表盘指针</string>
+    <string name="first_view">仪表盘界面</string>
+    <string name="second_view">图表界面</string>
+    <string name="third_view">登陆界面</string>
+    <string name="average_fuel_consumption">保养间隔</string>
+    <string name="odo">当前里程</string>
+    <string name="total_fuel_consumption">下次保养</string>
+    <string name="average_speed">平均速度</string>
+    <string name="highest_water_temperature_of_engine">发动机最高水温</string>
+    <string name="voltage_dial_desc">电压仪表盘</string>
+    <string name="voltage_dial_pointer_desc">电压仪表盘指针</string>
+    <string name="rotate_speed_dial_desc">发动机转速仪表盘</string>
+    <string name="rotate_speed_dial_pointer_desc">发动机转速仪表盘指针</string>
+    <string name="temperature_dial_desc">温度仪表盘</string>
+    <string name="temperature_dial_pointer_desc">温度仪表盘指针</string>
+    <string name="pressure_dial_desc">气压仪表盘</string>
+    <string name="pressure_dial_pointer_desc">气压仪表盘指针</string>
+    <string name="voltage">电瓶电压</string>
+    <string name="rotate_speed">发动机转速</string>
+    <string name="temperature">冷却液温度</string>
+    <string name="pressure">压力数据</string>
 </resources>

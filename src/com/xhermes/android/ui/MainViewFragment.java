@@ -249,6 +249,23 @@ public class MainViewFragment extends Fragment{
 				transaction.commit();
 			}
 		});
+		button_functional_3.setOnClickListener(new OnClickListener(){
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Bundle bundle = new Bundle();  
+				bundle.putString("terminalId", terminalId);
+				VehicleInfoFragment viFragment = new VehicleInfoFragment(); 
+				viFragment.setArguments(bundle);
+				OverallFragmentController.removeFragment("info");
+				OverallFragmentController.addFragment("info", viFragment);
+				FragmentManager fm=getFragmentManager();
+				FragmentTransaction transaction = fm.beginTransaction();
+				transaction.replace(R.id.fragment_container, viFragment); 
+				transaction.commit();
+			}
+		});
 		button_functional_4.setOnClickListener(new OnClickListener(){
 
 			@Override
