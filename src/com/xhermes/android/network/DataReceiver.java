@@ -98,7 +98,7 @@ public class DataReceiver extends BroadcastReceiver {
 				String alerts[] = message.split("%%%");
 				String alertStr ="您的爱车出现了如下需要注意的问题：";
 				for(int i=0;i<alerts.length;i++)
-					alertStr += "\n"+i+"."+alerts[i];
+					alertStr += "\n"+"○ "+alerts[i];
 				send(context.getResources().getString(R.string.newnotification),context.getResources().getString(R.string.newalert),alertStr);
 
 			}

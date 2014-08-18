@@ -20,7 +20,8 @@ public class PositionData {
 		angle=str[2];
 		//SimpleDateFormat sDateFormat =new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");       
 		//time = sDateFormat.format(new java.util.Date()); 
-		time=str[3];
+		if(str.length>3)
+			time=str[3];
 	}
 
 	public int getid() {

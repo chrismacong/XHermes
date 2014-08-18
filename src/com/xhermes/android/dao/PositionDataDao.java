@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 
 import com.xhermes.android.db.MyDataBaseHelper;
 import com.xhermes.android.model.PositionData;
 
 public class PositionDataDao extends Dao{
 	String TBL_NAME="PositionData";
-	
+
 	public PositionDataDao(Context ctx){
 		helper=new MyDataBaseHelper(ctx);
 	}
@@ -44,41 +45,44 @@ public class PositionDataDao extends Dao{
 		value.put("lon",p.getLon());
 		value.put("lat", p.getLat());
 		value.put("angle", p.getAngle());
-		value.put("eqid", p.getEqid());
-		
-		long rowid=db.insert(TBL_NAME, null, value);
-		isOutOfRange(TBL_NAME,p.getEqid());
-		
+		long rowid = -1;
+		try{
+			rowid=db.insertOrThrow(TBL_NAME, null, value);
+			isOutOfRange(TBL_NAME,p.getEqid());
+		}catch(Exception e){
+			if(e.getClass().equals(SQLiteConstraintException.class))
+				System.out.println("same position data");
+		}
 		db.close();
 		if(rowid!=-1)
 			return true;
 		else
 			return false;
 	}
-	
+
 	public boolean insert(String[] str){
 		db=helper.getReadableDatabase();
 		ContentValues value=new ContentValues();
-		value.put("time", str[4]);
 		value.put("lat", str[0]);
 		value.put("lon", str[1]);
 		value.put("angle", str[2]);
 		value.put("eqid", str[3]);
+		value.put("time", str[4]);
 		long rowid=db.insert(TBL_NAME, null, value);
 		//查看是否超出最大记录数
 		isOutOfRange(TBL_NAME,str[3]);
-		
+
 		db.close();
 		if(rowid!=-1)
 			return true;
 		else
 			return false;
 	}
-	
+
 	public boolean deleteById(int id){
 		db=helper.getReadableDatabase();
 		int result=db.delete(TBL_NAME, "id=?", new String[]{id+""});
-		
+
 		db.close();
 		if(result==-1)
 			return false;
