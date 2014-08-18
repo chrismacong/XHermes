@@ -98,7 +98,7 @@
         <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
         <item name="android:windowBackground">@android:color/transparent</item> <!-- 背景透明   去掉背景色边框也就去掉了 -->
         <item name="android:backgroundDimEnabled">true</item> <!-- 模糊 -->
-        <item name="android:backgroundDimAmount">0.7</item>
+        <item name="android:backgroundDimAmount">0.5</item>
         <!-- <item name="android:windowContentOverlay">@null</item> -->
     </style>
 
