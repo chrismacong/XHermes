@@ -349,7 +349,7 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 		}
 		Log.d("laton",""+lat+";"+lon);
 		String angle=d.getAngle().replace("бу", "");
-		agl= Double.parseDouble(angle);
+		agl= -Double.parseDouble(angle);
 		angList.add(agl);
 	}
 
