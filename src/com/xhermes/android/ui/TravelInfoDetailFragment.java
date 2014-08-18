@@ -127,21 +127,23 @@ public class TravelInfoDetailFragment extends Fragment{
 		ArrayList<String> titles = new ArrayList<String>();
 		ArrayList<String> contents = new ArrayList<String>();
 		//initialize titles and contents
-		titles.add(getString(R.string.distance));
-		titles.add(getString(R.string.average_speed));
-		titles.add(getString(R.string.max_speed));
-		titles.add(getString(R.string.total_oil_consuming));
-		titles.add(getString(R.string.average_oil));
-		titles.add(getString(R.string.fatigue_driving_time));
-		titles.add(getString(R.string.timeout_length));
-		titles.add(getString(R.string.brake_times));
-		titles.add(getString(R.string.urgent_brake_time));
-		titles.add(getString(R.string.accelerate_times));
-		titles.add(getString(R.string.urgent_accelerate_times));
-		titles.add(getString(R.string.engine_highest_rotation_speed));
-		titles.add(getString(R.string.engine_highest_temperature));
-		titles.add(getString(R.string.voltage));
-
+		titles.add(getString(R.string.tr_distance));
+		titles.add(getString(R.string.tr_average_speed));
+		titles.add(getString(R.string.tr_max_speed));
+		titles.add(getString(R.string.tr_total_oil_consuming));
+		titles.add(getString(R.string.tr_average_oil));
+		titles.add(getString(R.string.tr_fatigue_driving_time));
+		titles.add(getString(R.string.tr_timeout_length));
+		titles.add(getString(R.string.tr_brake_times));
+		titles.add(getString(R.string.tr_urgent_brake_time));
+		titles.add(getString(R.string.tr_accelerate_times));
+		titles.add(getString(R.string.tr_urgent_accelerate_times));
+		titles.add(getString(R.string.tr_engine_highest_rotation_speed));
+		titles.add(getString(R.string.tr_engine_highest_temperature));
+		titles.add(getString(R.string.tr_voltage));
+		
+		System.out.println(getResources().getString(R.string.average_speed)+"   "+getString(R.string.voltage));
+		
 		DecimalFormat df = new DecimalFormat("#.##"); 
 		contents.add(mTravelInfo.getDistance() + ";km");
 		contents.add(mTravelInfo.getAverSpeed() + ";km/h");
@@ -193,6 +195,7 @@ public class TravelInfoDetailFragment extends Fragment{
 			convertView = mInflater.inflate(mResourceId, null);
 			TextView titleView = (TextView)convertView.findViewById(R.id.detail_travel_info_list_item_title);
 			titleView.setText(mTitles.get(position));
+			System.out.println(mTitles.get(position));
 			TextView contentView = (TextView) convertView.findViewById(R.id.detail_travel_info_list_item_content);
 			String content=mContents.get(position);
 			contentView.setText(setSpannable(content));

@@ -85,6 +85,8 @@ public class TravelInfoFragment extends Fragment{
 		edate=date+this.getTime(DateController.getEnd_hourOfDay(), DateController.getEnd_minute()) + "00";
 		travelDao=new TravelInfoDao(ctx);
 		travelInfoList=new ArrayList<TravelInfo>();
+		
+		pd= new CustomProgressDialog(ctx,R.style.dialog,"");
 		getTravelInfo(sdate,edate);
 		//travelInfoList=travelDao.queryByDate(terminalId, "starttime asc", "", sdate, edate);
 	}
@@ -153,12 +155,13 @@ public class TravelInfoFragment extends Fragment{
 
 	private void getTravelInfo(final String sdate,final String edate){
 		
+		pd.show();
+		
 		new AsyncTask<Void, Void, String>() {
 			ArrayList<TravelInfo> tempList=new ArrayList<TravelInfo>();
 			@Override
 			protected void onPreExecute() {
-				pd= new CustomProgressDialog(ctx,R.style.dialog,"");
-				pd.show();
+				
 			}
 
 			@Override
@@ -191,6 +194,7 @@ public class TravelInfoFragment extends Fragment{
 				}
 				travel_adapter.notifyDataSetChanged();
 				pd.dismiss();
+				System.out.println("dismiss");
 			}
 		}.execute();
 	}
