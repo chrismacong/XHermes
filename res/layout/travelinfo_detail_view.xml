@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="#fbfbea">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -49,7 +50,7 @@
                             android:id="@+id/detail_startt_TextView"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#ffffffff" />
+                            android:textColor="#000000" />
 
                         <View
                             android:layout_width="180sp"
@@ -60,7 +61,7 @@
                             android:id="@+id/detail_startp_TextView"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#ffffffff"
+                            android:textColor="#000000"
                             android:textStyle="italic" />
                     </LinearLayout>
                 </RelativeLayout>
@@ -94,7 +95,7 @@
                             android:id="@+id/detail_endt_TextView"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#ffffffff" />
+                            android:textColor="#000000" />
 
                         <View
                             android:layout_width="180sp"
@@ -105,7 +106,7 @@
                             android:id="@+id/detail_endp_TextView"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#ffffffff"
+                            android:textColor="#000000"
                             android:textStyle="italic" />
                     </LinearLayout>
                 </RelativeLayout>
@@ -116,6 +117,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center|right"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:scaleType="centerInside"
@@ -130,7 +132,7 @@
         android:cacheColorHint="#00000000"
         android:clickable="false"
         android:divider="@null"
-        android:listSelector="@android:color/transparent" >
+        android:listSelector="#fbfbea" >
     </ListView>
 
 </LinearLayout>
