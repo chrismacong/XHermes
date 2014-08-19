@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/systemset_scrollView"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#fbfbea" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/isNoticeReceive_textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/isNoticeReceive"
+                android:textSize="16sp" />
+
+            <com.xhermes.android.ui.Switch
+                android:id="@+id/isNoticeReceive_switchBtn"
+                style="@style/Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:clickable="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/isShock_textView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/isShock"
+                android:textSize="16sp" />
+
+            <com.xhermes.android.ui.Switch
+                android:id="@+id/isShock_switchBtn"
+                style="@style/Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:clickable="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/isBeep_textView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/isBeep"
+                android:textSize="16sp" />
+
+            <com.xhermes.android.ui.Switch
+                android:id="@+id/isBeep_switchBtn"
+                style="@style/Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:clickable="true" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/pwdChange_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/pwdChange"
+            android:textSize="16sp" />
+        
+        <Button
+            android:id="@+id/logout_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:background="#d1161e"
+            android:text="@string/logout"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</ScrollView>

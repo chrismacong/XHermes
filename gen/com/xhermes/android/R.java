@@ -511,6 +511,47 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int subtitleTextStyle=0x7f010001;
+        /**  Minimum width for the switch component 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int switchMinWidth=0x7f01006a;
+        /**  Minimum space between the switch and caption text 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int switchPadding=0x7f01006b;
+        /**  Default style for the Switch widget. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int switchStyle=0x7f010063;
+        /**  TextAppearance style for text displayed on the switch thumb. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int switchTextAppearance=0x7f010069;
+        /**  Present the text in ALL CAPS. This may use a small-caps form when available. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int textAllCaps=0x7f010073;
         /**  Text color, typeface, size, and style for the text inside of a popup menu. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -541,6 +582,34 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int textAppearanceSmallPopupMenu=0x7f01001d;
+        /**  Text color. 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int textColor=0x7f01006c;
+        /**  Color of the text selection highlight. 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int textColorHighlight=0x7f010070;
+        /**  Color of the hint text. 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int textColorHint=0x7f010071;
+        /**  Color of the links. 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int textColorLink=0x7f010072;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -575,6 +644,64 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int textColorSearchUrl=0x7f01002e;
+        /**  Text to use when the switch is in the unchecked/"off" state. 
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int textOff=0x7f010067;
+        /**  Text to use when the switch is in the checked/"on" state. 
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int textOn=0x7f010066;
+        /**  Size of the text. Recommended dimension type for text is "sp" for scaled-pixels (example: 15sp). 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int textSize=0x7f01006d;
+        /**  Style (bold, italic, bolditalic) for the text. 
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>bold</code></td><td>1</td><td></td></tr>
+<tr><td><code>italic</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int textStyle=0x7f01006e;
+        /**  Drawable to use as the "thumb" that switches back and forth. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int thumb=0x7f010064;
+        /**  Amount of padding on either side of text within the switch thumb. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int thumbTextPadding=0x7f010068;
         /**  Specifies title text used for navigationMode="normal" 
          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
@@ -588,6 +715,25 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int titleTextStyle=0x7f010000;
+        /**  Drawable to use as the "track" that the switch thumb slides within. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int track=0x7f010065;
+        /**  Typeface (normal, sans, serif, monospace) for the text. 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>sans</code></td><td>1</td><td></td></tr>
+<tr><td><code>serif</code></td><td>2</td><td></td></tr>
+<tr><td><code>monospace</code></td><td>3</td><td></td></tr>
+</table>
+         */
+        public static final int typeface=0x7f01006f;
         /**  Default vertical divider between menu items. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1034,184 +1180,212 @@ containing a value of this type.
         public static final int speed_pointer=0x7f0200d6;
         public static final int start_point_icon_new=0x7f0200d7;
         public static final int startpoint=0x7f0200d8;
-        public static final int temperature_dial=0x7f0200d9;
-        public static final int temperature_dial_pointer=0x7f0200da;
-        public static final int test=0x7f0200db;
-        public static final int text_info_background=0x7f0200dc;
-        public static final int time_ico=0x7f0200dd;
-        public static final int travelinfo=0x7f0200de;
-        public static final int undone=0x7f0200df;
-        public static final int voltage_dial=0x7f0200e0;
-        public static final int voltage_dial_pointer=0x7f0200e1;
-        public static final int yellow_piece=0x7f0200e2;
-        public static final int yellow_piece_selec=0x7f0200e3;
-        public static final int yellow_selector=0x7f0200e4;
+        public static final int switch_bg_disabled_holo_dark=0x7f0200d9;
+        public static final int switch_bg_focused_holo_dark=0x7f0200da;
+        public static final int switch_bg_holo_dark=0x7f0200db;
+        public static final int switch_inner_holo_dark=0x7f0200dc;
+        public static final int switch_inner_holo_light=0x7f0200dd;
+        public static final int switch_thumb_activated_holo_dark=0x7f0200de;
+        public static final int switch_thumb_activated_holo_light=0x7f0200df;
+        public static final int switch_thumb_disabled_holo_dark=0x7f0200e0;
+        public static final int switch_thumb_disabled_holo_light=0x7f0200e1;
+        public static final int switch_thumb_holo_dark=0x7f0200e2;
+        public static final int switch_thumb_holo_light=0x7f0200e3;
+        public static final int switch_thumb_pressed_holo_dark=0x7f0200e4;
+        public static final int switch_thumb_pressed_holo_light=0x7f0200e5;
+        public static final int switch_track_holo_dark=0x7f0200e6;
+        public static final int temperature_dial=0x7f0200e7;
+        public static final int temperature_dial_pointer=0x7f0200e8;
+        public static final int test=0x7f0200e9;
+        public static final int text_info_background=0x7f0200ea;
+        public static final int time_ico=0x7f0200eb;
+        public static final int travelinfo=0x7f0200ec;
+        public static final int undone=0x7f0200ed;
+        public static final int voltage_dial=0x7f0200ee;
+        public static final int voltage_dial_pointer=0x7f0200ef;
+        public static final int yellow_piece=0x7f0200f0;
+        public static final int yellow_piece_selec=0x7f0200f1;
+        public static final int yellow_selector=0x7f0200f2;
     }
     public static final class id {
-        public static final int abs__action_bar=0x7f040020;
-        public static final int abs__action_bar_container=0x7f04001f;
-        public static final int abs__action_bar_subtitle=0x7f040011;
-        public static final int abs__action_bar_title=0x7f040010;
-        public static final int abs__action_context_bar=0x7f040021;
+        public static final int abs__action_bar=0x7f040025;
+        public static final int abs__action_bar_container=0x7f040024;
+        public static final int abs__action_bar_subtitle=0x7f040016;
+        public static final int abs__action_bar_title=0x7f040015;
+        public static final int abs__action_context_bar=0x7f040026;
         public static final int abs__action_menu_divider=0x7f04000c;
         public static final int abs__action_menu_presenter=0x7f04000d;
-        public static final int abs__action_mode_bar=0x7f040025;
-        public static final int abs__action_mode_bar_stub=0x7f040024;
-        public static final int abs__action_mode_close_button=0x7f040014;
-        public static final int abs__activity_chooser_view_content=0x7f040015;
-        public static final int abs__checkbox=0x7f04001c;
-        public static final int abs__content=0x7f040022;
-        public static final int abs__default_activity_button=0x7f040018;
-        public static final int abs__expand_activities_button=0x7f040016;
+        public static final int abs__action_mode_bar=0x7f04002a;
+        public static final int abs__action_mode_bar_stub=0x7f040029;
+        public static final int abs__action_mode_close_button=0x7f040019;
+        public static final int abs__activity_chooser_view_content=0x7f04001a;
+        public static final int abs__checkbox=0x7f040021;
+        public static final int abs__content=0x7f040027;
+        public static final int abs__default_activity_button=0x7f04001d;
+        public static final int abs__expand_activities_button=0x7f04001b;
         public static final int abs__home=0x7f04000a;
-        public static final int abs__icon=0x7f04001a;
-        public static final int abs__image=0x7f040017;
-        public static final int abs__imageButton=0x7f040012;
-        public static final int abs__list_item=0x7f040019;
+        public static final int abs__icon=0x7f04001f;
+        public static final int abs__image=0x7f04001c;
+        public static final int abs__imageButton=0x7f040017;
+        public static final int abs__list_item=0x7f04001e;
         public static final int abs__progress_circular=0x7f04000e;
         public static final int abs__progress_horizontal=0x7f04000f;
-        public static final int abs__radio=0x7f04001d;
-        public static final int abs__search_badge=0x7f040028;
-        public static final int abs__search_bar=0x7f040027;
-        public static final int abs__search_button=0x7f040029;
-        public static final int abs__search_close_btn=0x7f04002e;
-        public static final int abs__search_edit_frame=0x7f04002a;
-        public static final int abs__search_go_btn=0x7f040030;
-        public static final int abs__search_mag_icon=0x7f04002b;
-        public static final int abs__search_plate=0x7f04002c;
-        public static final int abs__search_src_text=0x7f04002d;
-        public static final int abs__search_voice_btn=0x7f040031;
-        public static final int abs__shortcut=0x7f04001e;
-        public static final int abs__split_action_bar=0x7f040023;
-        public static final int abs__submit_area=0x7f04002f;
-        public static final int abs__textButton=0x7f040013;
-        public static final int abs__title=0x7f04001b;
+        public static final int abs__radio=0x7f040022;
+        public static final int abs__search_badge=0x7f04002d;
+        public static final int abs__search_bar=0x7f04002c;
+        public static final int abs__search_button=0x7f04002e;
+        public static final int abs__search_close_btn=0x7f040033;
+        public static final int abs__search_edit_frame=0x7f04002f;
+        public static final int abs__search_go_btn=0x7f040035;
+        public static final int abs__search_mag_icon=0x7f040030;
+        public static final int abs__search_plate=0x7f040031;
+        public static final int abs__search_src_text=0x7f040032;
+        public static final int abs__search_voice_btn=0x7f040036;
+        public static final int abs__shortcut=0x7f040023;
+        public static final int abs__split_action_bar=0x7f040028;
+        public static final int abs__submit_area=0x7f040034;
+        public static final int abs__textButton=0x7f040018;
+        public static final int abs__title=0x7f040020;
         public static final int abs__up=0x7f04000b;
-        public static final int action_settings=0x7f0400a2;
-        public static final int autoLoginCheckBox=0x7f040038;
-        public static final int average_fuel_consumption=0x7f04009d;
-        public static final int average_fuel_consumption_cell=0x7f04009e;
-        public static final int b1_view=0x7f040032;
-        public static final int bcarView=0x7f040067;
-        public static final int black_line=0x7f040098;
-        public static final int bmapView=0x7f040066;
-        public static final int bottom=0x7f04009b;
-        public static final int button_divider=0x7f04003b;
-        public static final int button_functional_1=0x7f040050;
-        public static final int button_functional_2=0x7f040052;
-        public static final int button_functional_3=0x7f040051;
-        public static final int button_functional_4=0x7f04004f;
-        public static final int buttons_group=0x7f040034;
-        public static final int car_number=0x7f040056;
-        public static final int check_text=0x7f040082;
-        public static final int check_text_english=0x7f040083;
-        public static final int circle_bar=0x7f040089;
-        public static final int circle_select=0x7f04004e;
-        public static final int content=0x7f040054;
-        public static final int customer_button=0x7f04003a;
-        public static final int date_btn=0x7f040080;
-        public static final int detail_down_layout=0x7f04006f;
-        public static final int detail_end_image_View=0x7f040070;
-        public static final int detail_end_layout=0x7f040071;
-        public static final int detail_endp_TextView=0x7f040073;
-        public static final int detail_endt_TextView=0x7f040072;
-        public static final int detail_map_image=0x7f040074;
-        public static final int detail_start_image_View=0x7f04006b;
-        public static final int detail_start_layout=0x7f04006c;
-        public static final int detail_startp_TextView=0x7f04006e;
-        public static final int detail_startt_TextView=0x7f04006d;
-        public static final int detail_travel_info_list_item_content=0x7f040069;
-        public static final int detail_travel_info_list_item_title=0x7f040068;
-        public static final int detail_travelinfo_listview=0x7f040075;
-        public static final int detail_up_layout=0x7f04006a;
-        public static final int dialog_textview=0x7f040040;
-        public static final int dialog_view=0x7f04003e;
-        public static final int dials=0x7f04008f;
+        public static final int action_settings=0x7f0400b0;
+        public static final int autoLoginCheckBox=0x7f04003d;
+        public static final int average_fuel_consumption=0x7f0400ab;
+        public static final int average_fuel_consumption_cell=0x7f0400ac;
+        public static final int b1_view=0x7f040037;
+        public static final int bcarView=0x7f04006c;
+        public static final int black_line=0x7f0400a6;
+        public static final int bmapView=0x7f04006b;
+        public static final int bold=0x7f040010;
+        public static final int bottom=0x7f0400a9;
+        public static final int button_divider=0x7f040040;
+        public static final int button_functional_1=0x7f040055;
+        public static final int button_functional_2=0x7f040057;
+        public static final int button_functional_3=0x7f040056;
+        public static final int button_functional_4=0x7f040054;
+        public static final int buttons_group=0x7f040039;
+        public static final int car_number=0x7f04005b;
+        public static final int check_text=0x7f040090;
+        public static final int check_text_english=0x7f040091;
+        public static final int circle_bar=0x7f040097;
+        public static final int circle_select=0x7f040053;
+        public static final int content=0x7f040059;
+        public static final int customer_button=0x7f04003f;
+        public static final int date_btn=0x7f04008e;
+        public static final int detail_down_layout=0x7f04007d;
+        public static final int detail_end_image_View=0x7f04007e;
+        public static final int detail_end_layout=0x7f04007f;
+        public static final int detail_endp_TextView=0x7f040081;
+        public static final int detail_endt_TextView=0x7f040080;
+        public static final int detail_map_image=0x7f040082;
+        public static final int detail_start_image_View=0x7f040079;
+        public static final int detail_start_layout=0x7f04007a;
+        public static final int detail_startp_TextView=0x7f04007c;
+        public static final int detail_startt_TextView=0x7f04007b;
+        public static final int detail_travel_info_list_item_content=0x7f040077;
+        public static final int detail_travel_info_list_item_title=0x7f040076;
+        public static final int detail_travelinfo_listview=0x7f040083;
+        public static final int detail_up_layout=0x7f040078;
+        public static final int dialog_textview=0x7f040045;
+        public static final int dialog_view=0x7f040043;
+        public static final int dials=0x7f04009d;
         public static final int disableHome=0x7f040009;
-        public static final int distance_imageview=0x7f040059;
-        public static final int distance_intro=0x7f04005b;
-        public static final int distance_text=0x7f04005a;
-        public static final int doing_image_1=0x7f040085;
-        public static final int doing_image_2=0x7f040086;
-        public static final int doing_image_3=0x7f040087;
-        public static final int doing_image_4=0x7f040088;
-        public static final int edit_query=0x7f040026;
-        public static final int endtime_btn=0x7f04007d;
-        public static final int exm_comment=0x7f040057;
-        public static final int exm_mark=0x7f040055;
-        public static final int exm_mark_title=0x7f0400a1;
-        public static final int exmlist=0x7f04008c;
-        public static final int exmlist_front_image=0x7f040047;
-        public static final int exmlist_result_image=0x7f040049;
-        public static final int exmlist_text=0x7f040048;
-        public static final int extra_linear=0x7f040058;
-        public static final int forget_psw=0x7f040039;
-        public static final int fragment_container=0x7f04003d;
+        public static final int distance_imageview=0x7f04005e;
+        public static final int distance_intro=0x7f040060;
+        public static final int distance_text=0x7f04005f;
+        public static final int doing_image_1=0x7f040093;
+        public static final int doing_image_2=0x7f040094;
+        public static final int doing_image_3=0x7f040095;
+        public static final int doing_image_4=0x7f040096;
+        public static final int edit_query=0x7f04002b;
+        public static final int endtime_btn=0x7f04008b;
+        public static final int exm_comment=0x7f04005c;
+        public static final int exm_mark=0x7f04005a;
+        public static final int exm_mark_title=0x7f0400af;
+        public static final int exmlist=0x7f04009a;
+        public static final int exmlist_front_image=0x7f04004c;
+        public static final int exmlist_result_image=0x7f04004e;
+        public static final int exmlist_text=0x7f04004d;
+        public static final int extra_linear=0x7f04005d;
+        public static final int forget_psw=0x7f04003e;
+        public static final int fragment_container=0x7f040042;
         public static final int homeAsUp=0x7f040006;
-        public static final int image=0x7f04008d;
-        public static final int left_img=0x7f04007f;
-        public static final int leftlistView=0x7f04004a;
+        public static final int image=0x7f04009b;
+        public static final int isBeep_switchBtn=0x7f040073;
+        public static final int isBeep_textView=0x7f040072;
+        public static final int isNoticeReceive_switchBtn=0x7f04006f;
+        public static final int isNoticeReceive_textView=0x7f04006e;
+        public static final int isShock_switchBtn=0x7f040071;
+        public static final int isShock_textView=0x7f040070;
+        public static final int italic=0x7f040011;
+        public static final int left_img=0x7f04008d;
+        public static final int leftlistView=0x7f04004f;
         public static final int listMode=0x7f040002;
-        public static final int listTextView=0x7f04004c;
-        public static final int listimageView=0x7f04004b;
-        public static final int login_checkbox_table=0x7f040036;
-        public static final int mail=0x7f0400a3;
-        public static final int map_relative_layout=0x7f040065;
-        public static final int mark_text=0x7f04008a;
-        public static final int message=0x7f040042;
-        public static final int myprogress=0x7f040084;
-        public static final int negativeButton=0x7f040044;
-        public static final int nimage=0x7f040062;
+        public static final int listTextView=0x7f040051;
+        public static final int listimageView=0x7f040050;
+        public static final int login_checkbox_table=0x7f04003b;
+        public static final int logout_btn=0x7f040075;
+        public static final int mail=0x7f0400b1;
+        public static final int map_relative_layout=0x7f04006a;
+        public static final int mark_text=0x7f040098;
+        public static final int message=0x7f040047;
+        public static final int monospace=0x7f040014;
+        public static final int myprogress=0x7f040092;
+        public static final int negativeButton=0x7f040049;
+        public static final int nimage=0x7f040067;
         public static final int normal=0x7f040001;
-        public static final int ntext=0x7f040064;
-        public static final int ntitle=0x7f040063;
-        public static final int oil_imageview=0x7f04005c;
-        public static final int oil_intro=0x7f04005e;
-        public static final int oil_text=0x7f04005d;
-        public static final int password=0x7f040033;
-        public static final int pointer=0x7f040053;
-        public static final int positiveButton=0x7f040043;
-        public static final int pressure=0x7f040097;
-        public static final int pressure_dial_pointer=0x7f040093;
-        public static final int progressBar1=0x7f04003f;
-        public static final int reset_btn=0x7f04007e;
-        public static final int right_img=0x7f040081;
-        public static final int rotate_speed=0x7f040095;
-        public static final int rotate_speed_dial_pointer=0x7f040091;
-        public static final int saveUserCheckBox=0x7f040037;
-        public static final int scrollview_main=0x7f04004d;
+        public static final int ntext=0x7f040069;
+        public static final int ntitle=0x7f040068;
+        public static final int oil_imageview=0x7f040061;
+        public static final int oil_intro=0x7f040063;
+        public static final int oil_text=0x7f040062;
+        public static final int password=0x7f040038;
+        public static final int pointer=0x7f040058;
+        public static final int positiveButton=0x7f040048;
+        public static final int pressure=0x7f0400a5;
+        public static final int pressure_dial_pointer=0x7f0400a1;
+        public static final int progressBar1=0x7f040044;
+        public static final int pwdChange_btn=0x7f040074;
+        public static final int reset_btn=0x7f04008c;
+        public static final int right_img=0x7f04008f;
+        public static final int rotate_speed=0x7f0400a3;
+        public static final int rotate_speed_dial_pointer=0x7f04009f;
+        public static final int sans=0x7f040012;
+        public static final int saveUserCheckBox=0x7f04003c;
+        public static final int scrollview_main=0x7f040052;
+        public static final int serif=0x7f040013;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
-        public static final int sign_in_button=0x7f04003c;
-        public static final int sos=0x7f0400a4;
-        public static final int speed_dial_pointer=0x7f040099;
-        public static final int speed_intro=0x7f040061;
-        public static final int start_exm_btn=0x7f04008b;
-        public static final int starttime_btn=0x7f04007c;
+        public static final int sign_in_button=0x7f040041;
+        public static final int sos=0x7f0400b2;
+        public static final int speed_dial_pointer=0x7f0400a7;
+        public static final int speed_intro=0x7f040066;
+        public static final int start_exm_btn=0x7f040099;
+        public static final int starttime_btn=0x7f04008a;
+        public static final int systemset_scrollView=0x7f04006d;
         public static final int tabMode=0x7f040003;
-        public static final int tablelayout_in_main=0x7f0400a0;
-        public static final int temperature=0x7f040096;
-        public static final int temperature_dial_pointer=0x7f040092;
-        public static final int testTextView=0x7f040045;
-        public static final int testTextView_report=0x7f040046;
-        public static final int text1=0x7f04008e;
-        public static final int text_info=0x7f04009a;
-        public static final int time_imageview=0x7f04005f;
-        public static final int time_text=0x7f040060;
-        public static final int title=0x7f040041;
-        public static final int total_distance=0x7f04009c;
-        public static final int total_fuel_consumption=0x7f04009f;
-        public static final int travelinfo_endp_textview=0x7f04007a;
-        public static final int travelinfo_endt_textview=0x7f040079;
-        public static final int travelinfo_image_view=0x7f040078;
-        public static final int travelinfo_list_View=0x7f04007b;
-        public static final int travelinfo_startp_textview=0x7f040077;
-        public static final int travelinfo_startt_textview=0x7f040076;
+        public static final int tablelayout_in_main=0x7f0400ae;
+        public static final int temperature=0x7f0400a4;
+        public static final int temperature_dial_pointer=0x7f0400a0;
+        public static final int testTextView=0x7f04004a;
+        public static final int testTextView_report=0x7f04004b;
+        public static final int text1=0x7f04009c;
+        public static final int text_info=0x7f0400a8;
+        public static final int time_imageview=0x7f040064;
+        public static final int time_text=0x7f040065;
+        public static final int title=0x7f040046;
+        public static final int total_distance=0x7f0400aa;
+        public static final int total_fuel_consumption=0x7f0400ad;
+        public static final int travelinfo_endp_textview=0x7f040088;
+        public static final int travelinfo_endt_textview=0x7f040087;
+        public static final int travelinfo_image_view=0x7f040086;
+        public static final int travelinfo_list_View=0x7f040089;
+        public static final int travelinfo_startp_textview=0x7f040085;
+        public static final int travelinfo_startt_textview=0x7f040084;
         public static final int useLogo=0x7f040004;
-        public static final int username=0x7f040035;
-        public static final int voltage=0x7f040094;
-        public static final int voltage_dial_pointer=0x7f040090;
+        public static final int username=0x7f04003a;
+        public static final int voltage=0x7f0400a2;
+        public static final int voltage_dial_pointer=0x7f04009e;
         public static final int wrap_content=0x7f040000;
     }
     public static final class integer {
@@ -1254,14 +1428,15 @@ containing a value of this type.
         public static final int posiiton_view=0x7f030020;
         public static final int sherlock_spinner_dropdown_item=0x7f030021;
         public static final int sherlock_spinner_item=0x7f030022;
-        public static final int travelinfo_detail_list_item=0x7f030023;
-        public static final int travelinfo_detail_view=0x7f030024;
-        public static final int travelinfo_list_item_view=0x7f030025;
-        public static final int travelinfo_view=0x7f030026;
-        public static final int vehicleexm_view=0x7f030027;
-        public static final int vehicleinfo=0x7f030028;
-        public static final int vehicleinfo_detail=0x7f030029;
-        public static final int vehicleinfo_view=0x7f03002a;
+        public static final int systemset_view=0x7f030023;
+        public static final int travelinfo_detail_list_item=0x7f030024;
+        public static final int travelinfo_detail_view=0x7f030025;
+        public static final int travelinfo_list_item_view=0x7f030026;
+        public static final int travelinfo_view=0x7f030027;
+        public static final int vehicleexm_view=0x7f030028;
+        public static final int vehicleinfo=0x7f030029;
+        public static final int vehicleinfo_detail=0x7f03002a;
+        public static final int vehicleinfo_view=0x7f03002b;
     }
     public static final class menu {
         public static final int default_style=0x7f0b0000;
@@ -1333,6 +1508,12 @@ containing a value of this type.
         public static final int help=0x7f090026;
         public static final int highest_water_temperature_of_engine=0x7f090051;
         public static final int home=0x7f09001f;
+        public static final int isBeep=0x7f090060;
+        /**  system set 
+         */
+        public static final int isNoticeReceive=0x7f09005e;
+        public static final int isShock=0x7f09005f;
+        public static final int logout=0x7f090062;
         public static final int mail=0x7f090028;
         public static final int menu=0x7f09001e;
         public static final int message=0x7f090021;
@@ -1348,6 +1529,7 @@ containing a value of this type.
         public static final int pressure=0x7f09005d;
         public static final int pressure_dial_desc=0x7f090058;
         public static final int pressure_dial_pointer_desc=0x7f090059;
+        public static final int pwdChange=0x7f090061;
         public static final int records=0x7f090022;
         public static final int report=0x7f090024;
         public static final int rotate_speed=0x7f09005b;
@@ -1360,6 +1542,8 @@ containing a value of this type.
         public static final int sos=0x7f090029;
         public static final int speed_dial_desc=0x7f090048;
         public static final int speed_pointer_desc=0x7f090049;
+        public static final int switch_off=0x7f090064;
+        public static final int switch_on=0x7f090063;
         public static final int temperature=0x7f09005c;
         public static final int temperature_dial_desc=0x7f090056;
         public static final int temperature_dial_pointer_desc=0x7f090057;
@@ -1393,13 +1577,13 @@ containing a value of this type.
         public static final int voltage_dial_pointer_desc=0x7f090053;
     }
     public static final class style {
-        public static final int AppBaseTheme=0x7f0a0059;
-        public static final int AppTheme=0x7f0a005a;
-        public static final int Dialog=0x7f0a0061;
-        public static final int MyActionBar=0x7f0a0062;
-        public static final int MyActionBar_TitleTextStyle=0x7f0a0063;
-        public static final int NotificationText=0x7f0a0065;
-        public static final int NotificationTitle=0x7f0a0066;
+        public static final int AppBaseTheme=0x7f0a005a;
+        public static final int AppTheme=0x7f0a005b;
+        public static final int Dialog=0x7f0a0062;
+        public static final int MyActionBar=0x7f0a0063;
+        public static final int MyActionBar_TitleTextStyle=0x7f0a0064;
+        public static final int NotificationText=0x7f0a0066;
+        public static final int NotificationTitle=0x7f0a0067;
         public static final int Sherlock___TextAppearance_Small=0x7f0a0046;
         public static final int Sherlock___Theme=0x7f0a0051;
         public static final int Sherlock___Theme_DarkActionBar=0x7f0a0053;
@@ -1411,6 +1595,7 @@ containing a value of this type.
         public static final int Sherlock___Widget_Holo_ListView=0x7f0a0026;
         public static final int Sherlock___Widget_Holo_Spinner=0x7f0a0023;
         public static final int Sherlock___Widget_SearchAutoCompleteTextView=0x7f0a0033;
+        public static final int Switch=0x7f0a0059;
         public static final int TextAppearance_Sherlock=0x7f0a004a;
         public static final int TextAppearance_Sherlock_Light_SearchResult=0x7f0a004e;
         public static final int TextAppearance_Sherlock_Light_SearchResult_Subtitle=0x7f0a0050;
@@ -1491,15 +1676,15 @@ containing a value of this type.
         public static final int Widget_Sherlock_TextView_SpinnerItem=0x7f0a0032;
         /**  <item name="android:windowContentOverlay">@null</item> 
          */
-        public static final int dialog=0x7f0a0068;
-        public static final int myProgressBarStyleLarge=0x7f0a0064;
-        public static final int sdw_79351b=0x7f0a005e;
-        public static final int sdw_white=0x7f0a005d;
-        public static final int tallerBarStyle=0x7f0a0067;
-        public static final int text_15_666666_sdw=0x7f0a0060;
-        public static final int text_15_ffffff_sdw=0x7f0a005f;
-        public static final int text_16_666666=0x7f0a005c;
-        public static final int text_18_ffffff=0x7f0a005b;
+        public static final int dialog=0x7f0a0069;
+        public static final int myProgressBarStyleLarge=0x7f0a0065;
+        public static final int sdw_79351b=0x7f0a005f;
+        public static final int sdw_white=0x7f0a005e;
+        public static final int tallerBarStyle=0x7f0a0068;
+        public static final int text_15_666666_sdw=0x7f0a0061;
+        public static final int text_15_ffffff_sdw=0x7f0a0060;
+        public static final int text_16_666666=0x7f0a005d;
+        public static final int text_18_ffffff=0x7f0a005c;
     }
     public static final class styleable {
         /** Attributes that can be used with a PowerImageView.
@@ -3697,5 +3882,339 @@ containing a value of this type.
           @attr name android:focusable
         */
         public static final int SherlockView_android_focusable = 0;
+        /** Attributes that can be used with a Switch.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Switch_switchMinWidth com.xhermes.android:switchMinWidth}</code></td><td> Minimum width for the switch component </td></tr>
+           <tr><td><code>{@link #Switch_switchPadding com.xhermes.android:switchPadding}</code></td><td> Minimum space between the switch and caption text </td></tr>
+           <tr><td><code>{@link #Switch_switchTextAppearance com.xhermes.android:switchTextAppearance}</code></td><td> TextAppearance style for text displayed on the switch thumb.</td></tr>
+           <tr><td><code>{@link #Switch_textOff com.xhermes.android:textOff}</code></td><td> Text to use when the switch is in the unchecked/"off" state.</td></tr>
+           <tr><td><code>{@link #Switch_textOn com.xhermes.android:textOn}</code></td><td> Text to use when the switch is in the checked/"on" state.</td></tr>
+           <tr><td><code>{@link #Switch_thumb com.xhermes.android:thumb}</code></td><td> Drawable to use as the "thumb" that switches back and forth.</td></tr>
+           <tr><td><code>{@link #Switch_thumbTextPadding com.xhermes.android:thumbTextPadding}</code></td><td> Amount of padding on either side of text within the switch thumb.</td></tr>
+           <tr><td><code>{@link #Switch_track com.xhermes.android:track}</code></td><td> Drawable to use as the "track" that the switch thumb slides within.</td></tr>
+           </table>
+           @see #Switch_switchMinWidth
+           @see #Switch_switchPadding
+           @see #Switch_switchTextAppearance
+           @see #Switch_textOff
+           @see #Switch_textOn
+           @see #Switch_thumb
+           @see #Switch_thumbTextPadding
+           @see #Switch_track
+         */
+        public static final int[] Switch = {
+            0x7f010064, 0x7f010065, 0x7f010066, 0x7f010067,
+            0x7f010068, 0x7f010069, 0x7f01006a, 0x7f01006b
+        };
+        /**
+          <p>
+          @attr description
+           Minimum width for the switch component 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:switchMinWidth
+        */
+        public static final int Switch_switchMinWidth = 6;
+        /**
+          <p>
+          @attr description
+           Minimum space between the switch and caption text 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:switchPadding
+        */
+        public static final int Switch_switchPadding = 7;
+        /**
+          <p>
+          @attr description
+           TextAppearance style for text displayed on the switch thumb. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:switchTextAppearance
+        */
+        public static final int Switch_switchTextAppearance = 5;
+        /**
+          <p>
+          @attr description
+           Text to use when the switch is in the unchecked/"off" state. 
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textOff
+        */
+        public static final int Switch_textOff = 3;
+        /**
+          <p>
+          @attr description
+           Text to use when the switch is in the checked/"on" state. 
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textOn
+        */
+        public static final int Switch_textOn = 2;
+        /**
+          <p>
+          @attr description
+           Drawable to use as the "thumb" that switches back and forth. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:thumb
+        */
+        public static final int Switch_thumb = 0;
+        /**
+          <p>
+          @attr description
+           Amount of padding on either side of text within the switch thumb. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:thumbTextPadding
+        */
+        public static final int Switch_thumbTextPadding = 4;
+        /**
+          <p>
+          @attr description
+           Drawable to use as the "track" that the switch thumb slides within. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:track
+        */
+        public static final int Switch_track = 1;
+        /** Attributes that can be used with a Switch_Style.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Switch_Style_switchStyle com.xhermes.android:switchStyle}</code></td><td> Default style for the Switch widget.</td></tr>
+           </table>
+           @see #Switch_Style_switchStyle
+         */
+        public static final int[] Switch_Style = {
+            0x7f010063
+        };
+        /**
+          <p>
+          @attr description
+           Default style for the Switch widget. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:switchStyle
+        */
+        public static final int Switch_Style_switchStyle = 0;
+        /** Attributes that can be used with a TextAppearance.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TextAppearance_textAllCaps com.xhermes.android:textAllCaps}</code></td><td> Present the text in ALL CAPS.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textColor com.xhermes.android:textColor}</code></td><td> Text color.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textColorHighlight com.xhermes.android:textColorHighlight}</code></td><td> Color of the text selection highlight.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textColorHint com.xhermes.android:textColorHint}</code></td><td> Color of the hint text.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textColorLink com.xhermes.android:textColorLink}</code></td><td> Color of the links.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textSize com.xhermes.android:textSize}</code></td><td> Size of the text.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textStyle com.xhermes.android:textStyle}</code></td><td> Style (bold, italic, bolditalic) for the text.</td></tr>
+           <tr><td><code>{@link #TextAppearance_typeface com.xhermes.android:typeface}</code></td><td> Typeface (normal, sans, serif, monospace) for the text.</td></tr>
+           </table>
+           @see #TextAppearance_textAllCaps
+           @see #TextAppearance_textColor
+           @see #TextAppearance_textColorHighlight
+           @see #TextAppearance_textColorHint
+           @see #TextAppearance_textColorLink
+           @see #TextAppearance_textSize
+           @see #TextAppearance_textStyle
+           @see #TextAppearance_typeface
+         */
+        public static final int[] TextAppearance = {
+            0x7f01006c, 0x7f01006d, 0x7f01006e, 0x7f01006f,
+            0x7f010070, 0x7f010071, 0x7f010072, 0x7f010073
+        };
+        /**
+          <p>
+          @attr description
+           Present the text in ALL CAPS. This may use a small-caps form when available. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textAllCaps
+        */
+        public static final int TextAppearance_textAllCaps = 7;
+        /**
+          <p>
+          @attr description
+           Text color. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textColor
+        */
+        public static final int TextAppearance_textColor = 0;
+        /**
+          <p>
+          @attr description
+           Color of the text selection highlight. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textColorHighlight
+        */
+        public static final int TextAppearance_textColorHighlight = 4;
+        /**
+          <p>
+          @attr description
+           Color of the hint text. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textColorHint
+        */
+        public static final int TextAppearance_textColorHint = 5;
+        /**
+          <p>
+          @attr description
+           Color of the links. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textColorLink
+        */
+        public static final int TextAppearance_textColorLink = 6;
+        /**
+          <p>
+          @attr description
+           Size of the text. Recommended dimension type for text is "sp" for scaled-pixels (example: 15sp). 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textSize
+        */
+        public static final int TextAppearance_textSize = 1;
+        /**
+          <p>
+          @attr description
+           Style (bold, italic, bolditalic) for the text. 
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>bold</code></td><td>1</td><td></td></tr>
+<tr><td><code>italic</code></td><td>2</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textStyle
+        */
+        public static final int TextAppearance_textStyle = 2;
+        /**
+          <p>
+          @attr description
+           Typeface (normal, sans, serif, monospace) for the text. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>sans</code></td><td>1</td><td></td></tr>
+<tr><td><code>serif</code></td><td>2</td><td></td></tr>
+<tr><td><code>monospace</code></td><td>3</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:typeface
+        */
+        public static final int TextAppearance_typeface = 3;
     };
 }

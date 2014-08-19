@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
+import android.util.Log;
 
 import com.xhermes.android.db.MyDataBaseHelper;
 import com.xhermes.android.model.PositionData;
@@ -51,7 +52,7 @@ public class PositionDataDao extends Dao{
 			isOutOfRange(TBL_NAME,p.getEqid());
 		}catch(Exception e){
 			if(e.getClass().equals(SQLiteConstraintException.class))
-				System.out.println("same position data");
+				Log.d("PositionDataDao","insert same data");
 		}
 		db.close();
 		if(rowid!=-1)

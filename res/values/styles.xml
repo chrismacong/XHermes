@@ -57,26 +57,11 @@
     </style>
 
     <style name="myProgressBarStyleLarge">
-
-
-
-　　                        <item name="android:indeterminateDrawable">@drawable/dialog_style_xml_icon</item>
-
-
-
-　　                        <item name="android:minWidth">76dip</item>
-
-
-
-　　                        <item name="android:maxWidth">100dip</item>
-
-
-
-　　                        <item name="android:minHeight">76dip</item>
-
-
-
-　　                        <item name="android:maxHeight">100dip</item>
+        <item name="android:indeterminateDrawable">@drawable/dialog_style_xml_icon</item>
+        <item name="android:minWidth">76dip</item>
+        <item name="android:maxWidth">100dip</item>
+        <item name="android:minHeight">76dip</item>
+        <item name="android:maxHeight">100dip</item>
     </style>
 
     <style name="NotificationText" parent="android:TextAppearance.StatusBar.EventContent" />
@@ -93,7 +78,7 @@
 
     <style name="dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
-     	<item name="android:windowIsFloating">true</item> <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item> <!-- 是否浮现在activity之上 -->
         <item name="android:windowIsTranslucent">false</item> <!-- 半透明 -->
         <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
         <item name="android:windowBackground">@android:color/transparent</item> <!-- 背景透明   去掉背景色边框也就去掉了 -->
