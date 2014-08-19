@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
+import android.util.Log;
 
 import com.xhermes.android.db.MyDataBaseHelper;
 import com.xhermes.android.model.TravelInfo;
@@ -130,8 +132,14 @@ public class TravelInfoDao  extends Dao{
 		value.put("travelID",info.getTravelID());
 		value.put("sposition", info.getSposition());
 		value.put("eposition", info.getEposition());
-		long rowid=db.insert(TBL_NAME, null, value);
-		
+		long rowid = -1;
+		try{
+			rowid=db.insertOrThrow(TBL_NAME, null, value);
+			//isOutOfRange(TBL_NAME,info.getEqid());
+		}catch(Exception e){
+			if(e.getClass().equals(SQLiteConstraintException.class))
+				Log.d("PositionDataDao","insert same data");
+		}
 		db.close();
 		
 		if(rowid!=-1)

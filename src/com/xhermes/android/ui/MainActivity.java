@@ -291,6 +291,13 @@ public class MainActivity extends SherlockFragmentActivity {
 					transaction5.commit();
 					break;
 				case 6:
+					SystemSetFragment ssf=new SystemSetFragment();
+					ssf.setArguments(bundle);
+					OverallFragmentController.removeFragment("systemset");
+					OverallFragmentController.addFragment("systemset", ssf);
+					FragmentTransaction transaction6 = getSupportFragmentManager().beginTransaction();
+					transaction6.replace(R.id.fragment_container, ssf,"systemset"); 
+					transaction6.commit();
 					break;
 				}
 				menu.toggle();
