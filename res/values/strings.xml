@@ -20,17 +20,18 @@
     <string name="title_alert">提示信息</string>
     
     <string name="menu">菜单</string>
-    <string name="search">Search</string>
+    <string name="home">主页</string>
     <string name="carinfo">车辆信息</string>
     <string name="message">消息提醒</string>
     <string name="records">维修记录</string>
     <string name="travelinfo">行车记录</string>
-    <string name="habit">习惯分析</string>
-    
+    <string name="report">月度报表</string>
+    <string name="setting">设置</string>
     <string name="help">帮助</string>
     <string name="about">关于</string>
     <string name="mail">消息</string>
     <string name="sos">紧急救援</string>
+    
     <string name="exm_mark_title">爱车健康评分</string>
     <string name="distance_extra_title">当日行驶里程</string>
     <string name="oil_extra_title">当日平均耗油</string>
@@ -44,20 +45,48 @@
     <string name="exm_item_3">车身系统</string>
     <string name="exm_item_4">网络通信</string>
 
-        <!-- Travel info details -->
+    <!-- Travel info details -->
     <string name="travel_info_detail">行程详情</string>
-    <string name="distance">行驶距离：</string>
-    <string name="average_speed">平均速度：</string>
-    <string name="max_speed">最大速度：</string>
-    <string name="total_oil_consuming">总油耗：</string>
-    <string name="average_oil">平均油耗：</string>
-    <string name="fatigue_driving_time">疲劳驾驶时长：</string>
-    <string name="timeout_length">超时时长：</string>
-    <string name="brake_times">急刹车次数：</string>
-    <string name="urgent_brake_time">紧急刹车次数：</string>
-    <string name="accelerate_times">急加速次数：</string>
-    <string name="urgent_accelerate_times">紧急加速次数：</string>
-    <string name="engine_highest_rotation_speed">发动机最高转速：</string>
-    <string name="engine_highest_temperature">发动机最高水温：</string>
-    <string name="voltage">电压值：</string>
+    <string name="tr_distance">行驶距离：</string>
+    <string name="tr_average_speed">平均速度：</string>
+    <string name="tr_max_speed">最大速度：</string>
+    <string name="tr_total_oil_consuming">总油耗：</string>
+    <string name="tr_average_oil">平均油耗：</string>
+    <string name="tr_fatigue_driving_time">疲劳驾驶时长：</string>
+    <string name="tr_timeout_length">超时时长：</string>
+    <string name="tr_brake_times">急刹车次数：</string>
+    <string name="tr_urgent_brake_time">紧急刹车次数：</string>
+    <string name="tr_accelerate_times">急加速次数：</string>
+    <string name="tr_urgent_accelerate_times">紧急加速次数：</string>
+    <string name="tr_engine_highest_rotation_speed">发动机最高转速：</string>
+    <string name="tr_engine_highest_temperature">发动机最高水温：</string>
+    <string name="tr_voltage">电瓶电压：</string>
+    
+    <string name="newnotification">【XHermes】新消息</string>
+    <string name="newalert">【XHermes】新的警告消息</string>
+    <string name="no_value">--/--</string>
+    
+    <string name="speed_dial_desc">速度仪表盘</string>
+    <string name="speed_pointer_desc">速度仪表盘指针</string>
+    <string name="first_view">仪表盘界面</string>
+    <string name="second_view">图表界面</string>
+    <string name="third_view">登陆界面</string>
+    <string name="average_fuel_consumption">保养间隔</string>
+    <string name="odo">当前里程</string>
+    <string name="total_fuel_consumption">下次保养</string>
+    <string name="average_speed">平均速度</string>
+    <string name="highest_water_temperature_of_engine">发动机最高水温</string>
+    <string name="voltage_dial_desc">电压仪表盘</string>
+    <string name="voltage_dial_pointer_desc">电压仪表盘指针</string>
+    <string name="rotate_speed_dial_desc">发动机转速仪表盘</string>
+    <string name="rotate_speed_dial_pointer_desc">发动机转速仪表盘指针</string>
+    <string name="temperature_dial_desc">温度仪表盘</string>
+    <string name="temperature_dial_pointer_desc">温度仪表盘指针</string>
+    <string name="pressure_dial_desc">气压仪表盘</string>
+    <string name="pressure_dial_pointer_desc">气压仪表盘指针</string>
+    <string name="voltage">电瓶电压</string>
+    <string name="rotate_speed">发动机转速</string>
+    <string name="temperature">冷却液温度</string>
+    <string name="pressure">压力数据</string>
+
 </resources>

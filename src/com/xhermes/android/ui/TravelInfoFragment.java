@@ -9,6 +9,7 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.app.TimePickerDialog.OnTimeSetListener;
 import android.content.Context;
@@ -54,6 +55,7 @@ public class TravelInfoFragment extends Fragment{
 	private int year, monthOfYear, dayOfMonth, hourOfDay, minute,tyear,tmonth,tday;
 	private ImageView left_img,right_img;
 	private ListView travelinfo_listView;
+	private ProgressDialog pd;
 	private ArrayList<TravelInfo> travelInfoList;
 	private TravelInfoDao travelDao;
 	private String starttime;
@@ -83,6 +85,8 @@ public class TravelInfoFragment extends Fragment{
 		edate=date+this.getTime(DateController.getEnd_hourOfDay(), DateController.getEnd_minute()) + "00";
 		travelDao=new TravelInfoDao(ctx);
 		travelInfoList=new ArrayList<TravelInfo>();
+		
+		pd= new CustomProgressDialog(ctx,R.style.dialog,"");
 		getTravelInfo(sdate,edate);
 		//travelInfoList=travelDao.queryByDate(terminalId, "starttime asc", "", sdate, edate);
 	}
@@ -101,7 +105,6 @@ public class TravelInfoFragment extends Fragment{
 
 		travelinfo_listView=(ListView) rootview.findViewById(R.id.travelinfo_list_View);
 		initView();
-
 		return rootview;
 	}
 
@@ -152,6 +155,8 @@ public class TravelInfoFragment extends Fragment{
 
 	private void getTravelInfo(final String sdate,final String edate){
 		
+		pd.show();
+		
 		new AsyncTask<Void, Void, String>() {
 			ArrayList<TravelInfo> tempList=new ArrayList<TravelInfo>();
 			@Override
@@ -188,6 +193,8 @@ public class TravelInfoFragment extends Fragment{
 					}
 				}
 				travel_adapter.notifyDataSetChanged();
+				pd.dismiss();
+				System.out.println("dismiss");
 			}
 		}.execute();
 	}

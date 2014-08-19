@@ -130,6 +130,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		DataReceiver.setEqid(terminalId);
 		/*初始化应用日期*/
 		DateController.init();
+		DataReceiver.setAct(this);
 
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
@@ -188,20 +189,23 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		ListView list=(ListView) lv.findViewById(R.id.leftlistView);
 		leftViewIcons=new int[]{
-				R.drawable.search,
+				R.drawable.home,
 				R.drawable.carinfo,
 				R.drawable.message,
 				R.drawable.records,
 				R.drawable.travelinfo,
-				R.drawable.habit
+				R.drawable.report,
+				R.drawable.setting
+				
 		};
 		iconNames=new String[]{
-				getString(R.string.search),
+				getString(R.string.home),
 				getString(R.string.carinfo),
 				getString(R.string.message),
 				getString(R.string.records),
 				getString(R.string.travelinfo),
-				getString(R.string.habit)
+				getString(R.string.report),
+				getString(R.string.setting)
 
 		};
 		MyAdapter adapter =new MyAdapter(leftViewIcons,iconNames,MainActivity.this);
@@ -216,6 +220,37 @@ public class MainActivity extends SherlockFragmentActivity {
 				switch(arg2){
 
 				case 0:
+					int len=OverallFragmentController.list.size();
+					HashMap map=OverallFragmentController.popFragment();
+					if(map.get("tag").equals("main")){
+						if(OverallFragmentController.onMain){
+							break;
+						}
+						else{
+							Fragment f = (Fragment) map.get("fragment");
+							FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+							transaction.replace(R.id.fragment_container, f,"main");
+							transaction.commit();
+							break;
+						}
+					}
+					else {
+						for (int i=0;i<len;i++){
+						map=OverallFragmentController.popFragment();
+						Fragment mvFragment=(Fragment) map.get("fragment");
+						if(map.get("tag").equals("main")){
+							System.out.println("is main");
+							FragmentTransaction transaction8 = getSupportFragmentManager().beginTransaction();
+							transaction8.replace(R.id.fragment_container, mvFragment,"main");
+							transaction8.commit();
+							OverallFragmentController.removeAll();
+							OverallFragmentController.addFragment("main", mvFragment);
+							break;
+						}
+					}
+					}
+					break;
+					
 				case 1:
 					Bundle arguments1 = new Bundle();
 					arguments1.putString("terminalId", terminalId);
@@ -230,7 +265,7 @@ public class MainActivity extends SherlockFragmentActivity {
 				case 2:
 					break;
 				case 3:
-
+					break;
 				case 4:
 
 					Bundle arguments2 = new Bundle();
@@ -242,6 +277,10 @@ public class MainActivity extends SherlockFragmentActivity {
 					FragmentTransaction transaction4 = getSupportFragmentManager().beginTransaction();
 					transaction4.replace(R.id.fragment_container, tFragment,"travelinfo"); 
 					transaction4.commit();
+					break;
+				case 5:
+					break;
+				case 6:
 					break;
 				}
 				menu.toggle();

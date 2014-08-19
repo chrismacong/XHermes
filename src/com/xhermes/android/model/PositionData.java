@@ -18,8 +18,10 @@ public class PositionData {
 		lat=str[0];
 		lon=str[1];
 		angle=str[2];
-		SimpleDateFormat sDateFormat =new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");       
-		time = sDateFormat.format(new java.util.Date()); 
+		//SimpleDateFormat sDateFormat =new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");       
+		//time = sDateFormat.format(new java.util.Date()); 
+		if(str.length>3)
+			time=str[3];
 	}
 
 	public int getid() {

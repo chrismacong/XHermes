@@ -3,6 +3,7 @@ package com.xhermes.android.ui;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -40,6 +41,9 @@ public class TravelInfoMapFragment extends Fragment{
 	private Marker m_start;
 	private Marker m_end;
 	private OverlayOptions o_start, o_end;
+	
+	private ProgressDialog pd;
+	
 	BitmapDescriptor start_icon=BitmapDescriptorFactory.fromResource(R.drawable.start_point_icon_new);
 	BitmapDescriptor end_icon=BitmapDescriptorFactory.fromResource(R.drawable.end_point_icon_new);
 	
@@ -79,6 +83,7 @@ public class TravelInfoMapFragment extends Fragment{
 		mMapView = new MapView(ctx,new BaiduMapOptions().mapStatus(
 				new MapStatus.Builder().target(desLatLng).zoom(15).build()));
 		mBaiduMap=mMapView.getMap();
+		mMapView.removeViewAt(1);
 		if(latlngList.size()>1){
 			ooPolyline= new PolylineOptions().width(10).color(0xAAFF0000).points(latlngList);
 			mBaiduMap.addOverlay(ooPolyline);

@@ -11,17 +11,25 @@ public class OBDData {
 	private String OwaterTemp;
 	//发动机转速
 	private String Orpm;
+	//压力
+	private String Opressure;
 
+	private String time;
 	public OBDData(){
 
 	}
 
 	public OBDData(String str){
-		String[] data=str.split(";");
+		String t=str.replaceAll("null", "0");
+		String[] data=t.split(";");
 		Ospeed=data[0];
-		Ovoltage=data[1];
-		OwaterTemp=data[2];
-		Orpm=data[3];
+		java.text.DecimalFormat   df = new java.text.DecimalFormat("#.00");  
+		Ovoltage=df.format(Double.parseDouble(data[1]) * 0.1) + "";
+		Orpm=data[2];
+		OwaterTemp=data[3];
+		Opressure=data[4];
+
+		time=data[5];
 	}
 
 	public String getOspeed() {
@@ -61,6 +69,22 @@ public class OBDData {
 
 	public void setEqid(String eqid) {
 		this.eqid = eqid;
+	}
+
+	public String getOpressure() {
+		return Opressure;
+	}
+
+	public void setOpressure(String opressure) {
+		Opressure = opressure;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 }
