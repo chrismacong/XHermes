@@ -18,17 +18,20 @@
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
     <string name="title_alert">提示信息</string>
+    
     <string name="menu">菜单</string>
-    <string name="search">Search</string>
+    <string name="home">主页</string>
     <string name="carinfo">车辆信息</string>
     <string name="message">消息提醒</string>
     <string name="records">维修记录</string>
     <string name="travelinfo">行车记录</string>
-    <string name="habit">习惯分析</string>
+    <string name="report">月度报表</string>
+    <string name="setting">设置</string>
     <string name="help">帮助</string>
     <string name="about">关于</string>
     <string name="mail">消息</string>
     <string name="sos">紧急救援</string>
+    
     <string name="exm_mark_title">爱车健康评分</string>
     <string name="distance_extra_title">当日行驶里程</string>
     <string name="oil_extra_title">当日平均耗油</string>
@@ -86,4 +89,10 @@
     <string name="temperature">冷却液温度</string>
     <string name="pressure">压力数据</string>
 
+    <!-- system set -->
+    <string name="isNoticeReceive">新消息提醒</string>
+    <string name="isShock">是否开启震动</string>
+    <string name="isBeep">是否开启消息提示音</string>
+    <string name="pwdChange">修改密码</string>
+    <string name="logout">注销登录</string>
 </resources>

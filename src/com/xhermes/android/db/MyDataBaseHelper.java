@@ -15,6 +15,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 	public static final String TABLE_NAME2 = "PositionData";
 	private static final String TABLE_NAME3 = "OBDData";
 	private static final String TABLE_NAME4 = "OBDParameters";
+	private static final String TABLE_NAME5 = "Notice";
 	public static final String dbPath = android.os.Environment
 			.getExternalStorageDirectory().getAbsolutePath()+"/XHermes";
 	public static final String DB_NAME = dbPath + "/" + "XHermes.db";
@@ -74,6 +75,15 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 			"[time] VARCHAR(50) UNIQUE"+
 			" );";
 	
+	String SQL5="CREATE TABLE " + TABLE_NAME4 + 
+			"([id] INTEGER PRIMARY KEY AUTOINCREMENT," +
+			"[eqid] VARCHAR(50)," +
+			"[title] VARCHAR(50)," +
+			"[content] VARCHAR(500),"+
+			"[sender] VARCHAR(100),"+
+			"[time] VARCHAR(50) UNIQUE,"+
+			"[isReader] INTEGER(1)"+
+			" );";
 	private File dbf;
 	
 	/**  
@@ -102,6 +112,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 		db.execSQL(SQL2);
 		db.execSQL(SQL3);
 		db.execSQL(SQL4);
+		db.execSQL(SQL5);
 		Log.d("db","create table success");
 	}
 
@@ -118,6 +129,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 			db.execSQL("drop table if exists "+TABLE_NAME2);
 			db.execSQL("drop table if exists "+TABLE_NAME3);
 			db.execSQL("drop table if exists "+TABLE_NAME4);
+			db.execSQL("drop table if exists "+TABLE_NAME5);
 			onCreate(db);
 		}
 	}

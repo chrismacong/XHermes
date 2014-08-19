@@ -207,7 +207,7 @@ public class TravelInfoDetailFragment extends Fragment{
 			ctn = ctn.replaceAll(";", "");
 			int lastindex = ctn.length();
 			SpannableString sctn=new SpannableString(ctn);
-			ForegroundColorSpan fcst = new ForegroundColorSpan(Color.rgb(255, 255, 255)); 
+			ForegroundColorSpan fcst = new ForegroundColorSpan(Color.parseColor("#6699cc")); 
 			ForegroundColorSpan fcsq = new ForegroundColorSpan(Color.rgb(200, 200, 200));
 			StyleSpan bss = new StyleSpan(android.graphics.Typeface.ITALIC);
 			RelativeSizeSpan tsize=new RelativeSizeSpan(0.6f);
