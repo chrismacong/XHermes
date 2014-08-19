@@ -279,6 +279,16 @@ public class MainActivity extends SherlockFragmentActivity {
 					transaction4.commit();
 					break;
 				case 5:
+
+					Bundle arguments5 = new Bundle();
+					arguments5.putString("terminalId", terminalId);
+					DrivingMonthlyReportFragment dFragment = new DrivingMonthlyReportFragment();
+					dFragment.setArguments(arguments5);
+					OverallFragmentController.removeFragment("report");
+					OverallFragmentController.addFragment("report", dFragment);
+					FragmentTransaction transaction5 = getSupportFragmentManager().beginTransaction();
+					transaction5.replace(R.id.fragment_container, dFragment,"travelinfo"); 
+					transaction5.commit();
 					break;
 				case 6:
 					break;
