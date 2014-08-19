@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:orientation="horizontal" 
+    android:cacheColorHint="#fbfbea">
 
     <TextView
         android:id="@+id/detail_travel_info_list_item_title"
@@ -10,7 +11,7 @@
         android:layout_height="40dp"
         android:layout_weight="1"
         android:gravity="right|center_vertical"
-        android:textColor="#ffffffff"
+        android:textColor="#6699cc"
         android:textSize="16sp" />
 
     <TextView
@@ -19,7 +20,7 @@
         android:layout_height="40dp"
         android:layout_weight="1"
         android:gravity="left|center_vertical"
-        android:textColor="#ffffffff"
+        android:textColor="#6699cc"
         android:textSize="16sp" />
 
 </LinearLayout>
