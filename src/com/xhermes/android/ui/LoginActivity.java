@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,10 +24,13 @@ import android.graphics.Paint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -37,6 +41,7 @@ import cn.jpush.android.api.TagAliasCallback;
 import com.xhermes.android.R;
 import com.xhermes.android.network.URLMaker;
 import com.xhermes.android.util.CustomDialog;
+import com.xhermes.android.util.SystemSetControl;
 import com.xhermes.android.util.Utilities;
 
 public class LoginActivity extends Activity {
@@ -54,26 +59,31 @@ public class LoginActivity extends Activity {
 	private SharedPreferences preference;
 	private CheckBox saveUser,autoLog;
 	
+	private SystemSetControl syscontrol;
+	
 	private void saveUser(String username,String pwd){
 		Editor editor=preference.edit();
 		if(saveUser.isChecked()){
-			editor.putBoolean("isSaved", true);
-			editor.putString("username", username);
-			editor.putString("pwd", pwd);
-		}
+			syscontrol.setSaved(true);
+			syscontrol.saveUser(username, pwd);
+		}else
+			syscontrol.setSaved(false);
+		
 		if(autoLog.isChecked())
-			editor.putBoolean("isAutoLog", true);
-		editor.commit();
+			syscontrol.setAutoLog(true);
+		else
+			syscontrol.setAutoLog(false);
 	}
 
 	private void loadUser(){
-		if(preference.getBoolean("isSaved", false)){
+		if(syscontrol.isSaved()){
 			saveUser.setChecked(true);
-			username_edittext.setText(preference.getString("username", ""));
-			password_edittext.setText(preference.getString("pwd",""));
+			username_edittext.setText(syscontrol.getUsername());
+			password_edittext.setText(syscontrol.getPwd());
 		}else
 			saveUser.setChecked(false);
-		if(preference.getBoolean("isAutoLog", false)){
+		
+		if(syscontrol.isAutoLog()){
 			autoLog.setChecked(true);
 			sign_in_as_user.performClick();
 		}
@@ -86,7 +96,9 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_login);
-		System.out.println("Load run once!");
+		
+		syscontrol=new SystemSetControl(this);
+		
 		username_edittext = (EditText)findViewById(R.id.username);
 		password_edittext = (EditText)findViewById(R.id.password);
 		forget_pwd_textview = (TextView)findViewById(R.id.forget_psw);
@@ -96,11 +108,27 @@ public class LoginActivity extends Activity {
 
 		saveUser=(CheckBox) findViewById(R.id.saveUserCheckBox);
 		autoLog=(CheckBox) findViewById(R.id.autoLoginCheckBox);
-		preference=getSharedPreferences("userinfo",MODE_WORLD_READABLE);
+		preference=getSharedPreferences("userinfo",MODE_PRIVATE);
 		
-		username_edittext.setText(TEST_USER_NAME);
-		password_edittext.setText("123456");
-
+//		username_edittext.setText(TEST_USER_NAME);
+//		password_edittext.setText("123456");
+		password_edittext.setOnEditorActionListener(new TextView.OnEditorActionListener() {  
+			@Override  
+			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {  
+				/*≈–∂œ «∑Ò «°∞GO°±º¸*/  
+				if(actionId == EditorInfo.IME_ACTION_GO){  
+					/*“˛≤ÿ»Ìº¸≈Ã*/  
+					InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);  
+					if (imm.isActive()) {  
+						imm.hideSoftInputFromWindow(  
+								v.getApplicationWindowToken(), 0);  
+					}  
+					sign_in_as_user.performClick();
+					return true;  
+				}  
+				return false;  
+			}  
+		});
 		sign_in_as_user.setOnClickListener(new OnClickListener(){
 			public void onClick(View arg0) {
 				final String username_uncheck = username_edittext.getText().toString();
@@ -301,7 +329,7 @@ public class LoginActivity extends Activity {
 
 		});
 		//‘ÿ»Î”√ªß
-		//loadUser();
+		loadUser();
 	}
 
 	@Override

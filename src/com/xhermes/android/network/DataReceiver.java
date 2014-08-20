@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat.Builder;
 import android.util.Log;
 import android.widget.RemoteViews;
 import cn.jpush.android.api.JPushInterface;
@@ -24,6 +25,7 @@ import com.xhermes.android.model.OBDParameters;
 import com.xhermes.android.model.PositionData;
 import com.xhermes.android.model.TravelInfo;
 import com.xhermes.android.ui.MainActivity;
+import com.xhermes.android.util.SystemSetControl;
 
 /**
  * Receive data from the server and pass them to UI
@@ -33,6 +35,7 @@ public class DataReceiver extends BroadcastReceiver {
 	private static String eqid;
 	private static Handler mapHandler;
 	private static Handler obdHandler;
+	private SystemSetControl syscontrol;
 	public static Handler getObdHandler() {
 		return obdHandler;
 	}
@@ -96,9 +99,9 @@ public class DataReceiver extends BroadcastReceiver {
 				if(message.indexOf("%%%")>-1)
 					message = message.substring(0,message.lastIndexOf("%%%"));
 				String alerts[] = message.split("%%%");
-				String alertStr ="您的爱车出现了如下需要注意的问题：";
-				for(int i=0;i<alerts.length;i++)
-					alertStr += "\n"+"○ "+alerts[i];
+				String alertStr ="您有新的未读提醒";
+//				for(int i=0;i<alerts.length;i++)
+//					alertStr += "\n"+"○ "+alerts[i];
 				send(context.getResources().getString(R.string.newnotification),context.getResources().getString(R.string.newalert),alertStr);
 
 			}
@@ -116,31 +119,41 @@ public class DataReceiver extends BroadcastReceiver {
 	}
 
 	public void send(String tickerText,String title,String content){
-		if(act==null)
+		syscontrol=new SystemSetControl(act);
+		System.out.println(syscontrol.isNoticeReceive());
+		
+		if(act==null||!syscontrol.isNoticeReceive())
 			return;
-
+		
 		nid++;
 		nm=(NotificationManager) act.getSystemService(Activity.NOTIFICATION_SERVICE);
 		Intent intent=new Intent(act,MainActivity.class);
-		PendingIntent pi=PendingIntent.getActivity(act, 0, intent, 0);
+		PendingIntent pi=PendingIntent.getActivity(act, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-		RemoteViews contentView = new RemoteViews(act.getPackageName(), R.layout.notification_view);
-		contentView.setImageViewResource(R.id.nimage, R.drawable.ic_launcher);
-		contentView.setTextViewText(R.id.ntitle, title);
-		contentView.setTextViewText(R.id.ntext, content);
-
-		Notification n=new NotificationCompat.Builder(act)
-		.setAutoCancel(true)
-		.setContentIntent(pi)
-		.setDefaults(Notification.DEFAULT_ALL)
+//		RemoteViews contentView = new RemoteViews(act.getPackageName(), R.layout.notification_view);
+//		contentView.setImageViewResource(R.id.nimage, R.drawable.ic_launcher);
+//		contentView.setTextViewText(R.id.ntitle, title);
+//		contentView.setTextViewText(R.id.ntext, content);
+		
+		Builder nBuilder=new Builder(act);
+		nBuilder.setAutoCancel(true)
 		.setSmallIcon(R.drawable.message)
+		.setContentIntent(pi)
 		.setTicker(tickerText)
-		.setWhen(System.currentTimeMillis())
-		.setContent(contentView)
-		//.setContentInfo(Integer.toString(nid))
-		.getNotification();
-
-		nm.notify(nid, n);
+		.setContentTitle(title)
+		.setContentText(content)
+		.setContentInfo(nid+"")
+		.setWhen(System.currentTimeMillis());
+		
+		int defSet = 0;
+		if(syscontrol.isBeep())
+			defSet|=Notification.DEFAULT_SOUND;
+		if(syscontrol.isShock())
+			defSet|=Notification.DEFAULT_VIBRATE;
+		
+		nBuilder.setDefaults(defSet);
+		Notification n=nBuilder.getNotification();
+		nm.notify(0, n);
 	}
 
 	public static String getEqid() {

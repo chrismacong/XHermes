@@ -1,6 +1,5 @@
 package com.xhermes.android.model;
 
-import java.text.SimpleDateFormat;
 
 public class PositionData {
 	private int id;

@@ -7,18 +7,20 @@ import android.content.SharedPreferences.Editor;
 public class SystemSetControl {
 	private SharedPreferences preference;
 	private Editor editor;
-	
+
+	private boolean isSaved;
+	private boolean isAutoLog;
 	private boolean isBeep;
 	private boolean isShock;
 	private boolean isNoticeReceive;
-	
+
 	public SystemSetControl(Context ctx){
 		preference=ctx.getSharedPreferences("Settings",ctx.MODE_PRIVATE);
 		editor=preference.edit();
 	}
-	
+
 	public boolean isShock() {
-		isShock=preference.getBoolean("isShcok", true);
+		isShock=preference.getBoolean("isShock", true);
 		return isShock;
 	}
 
@@ -48,5 +50,42 @@ public class SystemSetControl {
 		editor.putBoolean("isBeep", isBeep);
 		editor.commit();
 		this.isBeep = isBeep;
+	}
+
+	public boolean isAutoLog() {
+		isAutoLog=preference.getBoolean("isAutoLog", false);
+		return isAutoLog;
+	}
+
+	public void setAutoLog(boolean isAutoLog) {
+		editor.putBoolean("isAutoLog", isAutoLog);
+		editor.commit();
+		this.isAutoLog = isAutoLog;
+	}
+
+	public boolean isSaved() {
+		isSaved=preference.getBoolean("isSaved", false);
+		return isSaved;
+	}
+
+	public void setSaved(boolean isSaved) {
+		editor.putBoolean("isSaved", isSaved);
+		editor.commit();
+		this.isSaved = isSaved;
+	}
+
+	public void saveUser(String username,String pwd){
+		editor.putBoolean("isSaved", true);
+		editor.putString("username", username);
+		editor.putString("pwd", pwd);
+		editor.commit();
+	}
+
+	public String getUsername(){
+		return preference.getString("username", "");
+	}
+	
+	public String getPwd(){
+		return preference.getString("pwd", "");
 	}
 }
