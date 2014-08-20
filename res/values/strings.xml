@@ -96,4 +96,14 @@
     <string name="pwdChange">修改密码</string>
     <string name="logout">注销登录</string>
     <string name="exit">退出XHermes</string>
+    
+        
+    <!-- tag names -->
+    <string name="tag_name_distance">里程</string>
+    <string name="tag_name_fuel">油耗</string>
+    <string name="tag_name_brake">刹车</string>
+    <string name="tag_name_speedup">加速</string>
+    <string name="tag_name_drivingtime">驾驶时间</string>
+    <string name="tag_name_avgfuel">百公里油耗</string>
+    <string name="tag_name_avgspeed">平均速度</string>
 </resources>

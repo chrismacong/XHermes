@@ -46,7 +46,7 @@ public class MessageFragment extends Fragment{
 		message_data=new ArrayList<Map<String,Object>>();
 		for(int i=0;i<6;i++){
 			message_title.add("这是第"+i+"封邮件");
-			message_content.add("这是鱼鱼第"+i+"次跟猫猫分手了");
+			message_content.add("这是第"+i+"封测试邮件");
 			message_image.add(R.drawable.message);
 			message_time.add("8月20日");
 		}
