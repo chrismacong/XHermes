@@ -1247,16 +1247,16 @@ containing a value of this type.
         public static final int abs__textButton=0x7f040018;
         public static final int abs__title=0x7f040020;
         public static final int abs__up=0x7f04000b;
-        public static final int action_settings=0x7f0400b0;
+        public static final int action_settings=0x7f0400b1;
         public static final int autoLoginCheckBox=0x7f04003d;
-        public static final int average_fuel_consumption=0x7f0400ab;
-        public static final int average_fuel_consumption_cell=0x7f0400ac;
+        public static final int average_fuel_consumption=0x7f0400ac;
+        public static final int average_fuel_consumption_cell=0x7f0400ad;
         public static final int b1_view=0x7f040037;
         public static final int bcarView=0x7f04006c;
-        public static final int black_line=0x7f0400a6;
+        public static final int black_line=0x7f0400a7;
         public static final int bmapView=0x7f04006b;
         public static final int bold=0x7f040010;
-        public static final int bottom=0x7f0400a9;
+        public static final int bottom=0x7f0400aa;
         public static final int button_divider=0x7f040040;
         public static final int button_functional_1=0x7f040055;
         public static final int button_functional_2=0x7f040057;
@@ -1264,44 +1264,45 @@ containing a value of this type.
         public static final int button_functional_4=0x7f040054;
         public static final int buttons_group=0x7f040039;
         public static final int car_number=0x7f04005b;
-        public static final int check_text=0x7f040090;
-        public static final int check_text_english=0x7f040091;
-        public static final int circle_bar=0x7f040097;
+        public static final int check_text=0x7f040091;
+        public static final int check_text_english=0x7f040092;
+        public static final int circle_bar=0x7f040098;
         public static final int circle_select=0x7f040053;
         public static final int content=0x7f040059;
         public static final int customer_button=0x7f04003f;
-        public static final int date_btn=0x7f04008e;
-        public static final int detail_down_layout=0x7f04007d;
-        public static final int detail_end_image_View=0x7f04007e;
-        public static final int detail_end_layout=0x7f04007f;
-        public static final int detail_endp_TextView=0x7f040081;
-        public static final int detail_endt_TextView=0x7f040080;
-        public static final int detail_map_image=0x7f040082;
-        public static final int detail_start_image_View=0x7f040079;
-        public static final int detail_start_layout=0x7f04007a;
-        public static final int detail_startp_TextView=0x7f04007c;
-        public static final int detail_startt_TextView=0x7f04007b;
-        public static final int detail_travel_info_list_item_content=0x7f040077;
-        public static final int detail_travel_info_list_item_title=0x7f040076;
-        public static final int detail_travelinfo_listview=0x7f040083;
-        public static final int detail_up_layout=0x7f040078;
+        public static final int date_btn=0x7f04008f;
+        public static final int detail_down_layout=0x7f04007e;
+        public static final int detail_end_image_View=0x7f04007f;
+        public static final int detail_end_layout=0x7f040080;
+        public static final int detail_endp_TextView=0x7f040082;
+        public static final int detail_endt_TextView=0x7f040081;
+        public static final int detail_map_image=0x7f040083;
+        public static final int detail_start_image_View=0x7f04007a;
+        public static final int detail_start_layout=0x7f04007b;
+        public static final int detail_startp_TextView=0x7f04007d;
+        public static final int detail_startt_TextView=0x7f04007c;
+        public static final int detail_travel_info_list_item_content=0x7f040078;
+        public static final int detail_travel_info_list_item_title=0x7f040077;
+        public static final int detail_travelinfo_listview=0x7f040084;
+        public static final int detail_up_layout=0x7f040079;
         public static final int dialog_textview=0x7f040045;
         public static final int dialog_view=0x7f040043;
-        public static final int dials=0x7f04009d;
+        public static final int dials=0x7f04009e;
         public static final int disableHome=0x7f040009;
         public static final int distance_imageview=0x7f04005e;
         public static final int distance_intro=0x7f040060;
         public static final int distance_text=0x7f04005f;
-        public static final int doing_image_1=0x7f040093;
-        public static final int doing_image_2=0x7f040094;
-        public static final int doing_image_3=0x7f040095;
-        public static final int doing_image_4=0x7f040096;
+        public static final int doing_image_1=0x7f040094;
+        public static final int doing_image_2=0x7f040095;
+        public static final int doing_image_3=0x7f040096;
+        public static final int doing_image_4=0x7f040097;
         public static final int edit_query=0x7f04002b;
-        public static final int endtime_btn=0x7f04008b;
+        public static final int endtime_btn=0x7f04008c;
+        public static final int exit_btn=0x7f040076;
         public static final int exm_comment=0x7f04005c;
         public static final int exm_mark=0x7f04005a;
-        public static final int exm_mark_title=0x7f0400af;
-        public static final int exmlist=0x7f04009a;
+        public static final int exm_mark_title=0x7f0400b0;
+        public static final int exmlist=0x7f04009b;
         public static final int exmlist_front_image=0x7f04004c;
         public static final int exmlist_result_image=0x7f04004e;
         public static final int exmlist_text=0x7f04004d;
@@ -1309,7 +1310,7 @@ containing a value of this type.
         public static final int forget_psw=0x7f04003e;
         public static final int fragment_container=0x7f040042;
         public static final int homeAsUp=0x7f040006;
-        public static final int image=0x7f04009b;
+        public static final int image=0x7f04009c;
         public static final int isBeep_switchBtn=0x7f040073;
         public static final int isBeep_textView=0x7f040072;
         public static final int isNoticeReceive_switchBtn=0x7f04006f;
@@ -1317,19 +1318,19 @@ containing a value of this type.
         public static final int isShock_switchBtn=0x7f040071;
         public static final int isShock_textView=0x7f040070;
         public static final int italic=0x7f040011;
-        public static final int left_img=0x7f04008d;
+        public static final int left_img=0x7f04008e;
         public static final int leftlistView=0x7f04004f;
         public static final int listMode=0x7f040002;
         public static final int listTextView=0x7f040051;
         public static final int listimageView=0x7f040050;
         public static final int login_checkbox_table=0x7f04003b;
         public static final int logout_btn=0x7f040075;
-        public static final int mail=0x7f0400b1;
+        public static final int mail=0x7f0400b2;
         public static final int map_relative_layout=0x7f04006a;
-        public static final int mark_text=0x7f040098;
+        public static final int mark_text=0x7f040099;
         public static final int message=0x7f040047;
         public static final int monospace=0x7f040014;
-        public static final int myprogress=0x7f040092;
+        public static final int myprogress=0x7f040093;
         public static final int negativeButton=0x7f040049;
         public static final int nimage=0x7f040067;
         public static final int normal=0x7f040001;
@@ -1341,14 +1342,14 @@ containing a value of this type.
         public static final int password=0x7f040038;
         public static final int pointer=0x7f040058;
         public static final int positiveButton=0x7f040048;
-        public static final int pressure=0x7f0400a5;
-        public static final int pressure_dial_pointer=0x7f0400a1;
+        public static final int pressure=0x7f0400a6;
+        public static final int pressure_dial_pointer=0x7f0400a2;
         public static final int progressBar1=0x7f040044;
         public static final int pwdChange_btn=0x7f040074;
-        public static final int reset_btn=0x7f04008c;
-        public static final int right_img=0x7f04008f;
-        public static final int rotate_speed=0x7f0400a3;
-        public static final int rotate_speed_dial_pointer=0x7f04009f;
+        public static final int reset_btn=0x7f04008d;
+        public static final int right_img=0x7f040090;
+        public static final int rotate_speed=0x7f0400a4;
+        public static final int rotate_speed_dial_pointer=0x7f0400a0;
         public static final int sans=0x7f040012;
         public static final int saveUserCheckBox=0x7f04003c;
         public static final int scrollview_main=0x7f040052;
@@ -1357,35 +1358,35 @@ containing a value of this type.
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
         public static final int sign_in_button=0x7f040041;
-        public static final int sos=0x7f0400b2;
-        public static final int speed_dial_pointer=0x7f0400a7;
+        public static final int sos=0x7f0400b3;
+        public static final int speed_dial_pointer=0x7f0400a8;
         public static final int speed_intro=0x7f040066;
-        public static final int start_exm_btn=0x7f040099;
-        public static final int starttime_btn=0x7f04008a;
+        public static final int start_exm_btn=0x7f04009a;
+        public static final int starttime_btn=0x7f04008b;
         public static final int systemset_scrollView=0x7f04006d;
         public static final int tabMode=0x7f040003;
-        public static final int tablelayout_in_main=0x7f0400ae;
-        public static final int temperature=0x7f0400a4;
-        public static final int temperature_dial_pointer=0x7f0400a0;
+        public static final int tablelayout_in_main=0x7f0400af;
+        public static final int temperature=0x7f0400a5;
+        public static final int temperature_dial_pointer=0x7f0400a1;
         public static final int testTextView=0x7f04004a;
         public static final int testTextView_report=0x7f04004b;
-        public static final int text1=0x7f04009c;
-        public static final int text_info=0x7f0400a8;
+        public static final int text1=0x7f04009d;
+        public static final int text_info=0x7f0400a9;
         public static final int time_imageview=0x7f040064;
         public static final int time_text=0x7f040065;
         public static final int title=0x7f040046;
-        public static final int total_distance=0x7f0400aa;
-        public static final int total_fuel_consumption=0x7f0400ad;
-        public static final int travelinfo_endp_textview=0x7f040088;
-        public static final int travelinfo_endt_textview=0x7f040087;
-        public static final int travelinfo_image_view=0x7f040086;
-        public static final int travelinfo_list_View=0x7f040089;
-        public static final int travelinfo_startp_textview=0x7f040085;
-        public static final int travelinfo_startt_textview=0x7f040084;
+        public static final int total_distance=0x7f0400ab;
+        public static final int total_fuel_consumption=0x7f0400ae;
+        public static final int travelinfo_endp_textview=0x7f040089;
+        public static final int travelinfo_endt_textview=0x7f040088;
+        public static final int travelinfo_image_view=0x7f040087;
+        public static final int travelinfo_list_View=0x7f04008a;
+        public static final int travelinfo_startp_textview=0x7f040086;
+        public static final int travelinfo_startt_textview=0x7f040085;
         public static final int useLogo=0x7f040004;
         public static final int username=0x7f04003a;
-        public static final int voltage=0x7f0400a2;
-        public static final int voltage_dial_pointer=0x7f04009e;
+        public static final int voltage=0x7f0400a3;
+        public static final int voltage_dial_pointer=0x7f04009f;
         public static final int wrap_content=0x7f040000;
     }
     public static final class integer {
@@ -1498,6 +1499,7 @@ containing a value of this type.
         public static final int click_state_english=0x7f09002f;
         public static final int customer=0x7f090018;
         public static final int distance_extra_title=0x7f09002b;
+        public static final int exit=0x7f090063;
         public static final int exm_item_1=0x7f090032;
         public static final int exm_item_2=0x7f090033;
         public static final int exm_item_3=0x7f090034;
@@ -1542,8 +1544,8 @@ containing a value of this type.
         public static final int sos=0x7f090029;
         public static final int speed_dial_desc=0x7f090048;
         public static final int speed_pointer_desc=0x7f090049;
-        public static final int switch_off=0x7f090064;
-        public static final int switch_on=0x7f090063;
+        public static final int switch_off=0x7f090065;
+        public static final int switch_on=0x7f090064;
         public static final int temperature=0x7f09005c;
         public static final int temperature_dial_desc=0x7f090056;
         public static final int temperature_dial_pointer_desc=0x7f090057;
@@ -1577,8 +1579,32 @@ containing a value of this type.
         public static final int voltage_dial_pointer_desc=0x7f090053;
     }
     public static final class style {
-        public static final int AppBaseTheme=0x7f0a005a;
-        public static final int AppTheme=0x7f0a005b;
+        /** 
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
+
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    
+ API 11 theme customizations can go here. 
+
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    
+ API 14 theme customizations can go here. 
+         */
+        public static final int AppBaseTheme=0x7f0a0059;
+        /**  Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+         */
+        public static final int AppTheme=0x7f0a005a;
         public static final int Dialog=0x7f0a0062;
         public static final int MyActionBar=0x7f0a0063;
         public static final int MyActionBar_TitleTextStyle=0x7f0a0064;
@@ -1595,7 +1621,7 @@ containing a value of this type.
         public static final int Sherlock___Widget_Holo_ListView=0x7f0a0026;
         public static final int Sherlock___Widget_Holo_Spinner=0x7f0a0023;
         public static final int Sherlock___Widget_SearchAutoCompleteTextView=0x7f0a0033;
-        public static final int Switch=0x7f0a0059;
+        public static final int Switch=0x7f0a005b;
         public static final int TextAppearance_Sherlock=0x7f0a004a;
         public static final int TextAppearance_Sherlock_Light_SearchResult=0x7f0a004e;
         public static final int TextAppearance_Sherlock_Light_SearchResult_Subtitle=0x7f0a0050;
