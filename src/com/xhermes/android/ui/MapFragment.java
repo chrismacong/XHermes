@@ -63,8 +63,8 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 	private double agl;
 	private Handler handler;
 	private Context act;
-	private int i=0;
-	private int point=0;
+	//	private int i=0;
+	//	private int point=0;
 	private ImageView carView;
 	private boolean flag,isOver=false,isAdd=false,isFirst=true;
 	private UiSettings mUiSettings;
@@ -211,12 +211,18 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 	}
 
 	public void UpdateData(){
-		point=i;
-		dataList=pDao.query(tid,"time asc", i+",210");
-		i+=dataList.size();
+		//point=i;
+		ArrayList<PositionData> tmpList =new ArrayList<PositionData>();
+		tmpList=pDao.query(tid,"time desc", "20");
+		dataList.clear();
+		if(tmpList.size()>0){
+			for(int i=tmpList.size()-1;i>=0;i--)
+				dataList.add(tmpList.get(i));
+		}
+		//i+=dataList.size();
 		if(dataList.size()>0)
 			latestDate = "\n" + dataList.get(dataList.size()-1).getTime();
-		Log.d("updateData"," point:"+point+" i:"+i);
+		//Log.d("updateData"," point:"+point+" i:"+i);
 		for(PositionData d:dataList){
 			ConvertMapCoord(d);
 		}
@@ -341,12 +347,12 @@ public class MapFragment extends Fragment implements OnGetGeoCoderResultListener
 		converter.coord(p);  
 		desLatLng = converter.convert();  
 		latlng.add(desLatLng);
-		if(latlng.size()>20){
-			int size=latlng.size();
-			for(int ri=0;i<size-20;i++){
-				latlng.remove(0);
-			}
-		}
+		//		if(latlng.size()>20){
+		//			int size=latlng.size();
+		//			for(int ri=0;i<size-20;i++){
+		//				latlng.remove(0);
+		//			}
+		//		}
 		Log.d("laton",""+lat+";"+lon);
 		String angle=d.getAngle().replace("бу", "");
 		agl= -Double.parseDouble(angle);

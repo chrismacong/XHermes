@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class MyDataBaseHelper extends SQLiteOpenHelper{
-	public static final int VERSION = 4;
+	public static final int VERSION = 5;
 	public static final String TABLE_NAME = "TravelInfo";  //±íÃû
 	public static final String TABLE_NAME2 = "PositionData";
 	private static final String TABLE_NAME3 = "OBDData";
@@ -75,7 +75,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 			"[time] VARCHAR(50) UNIQUE"+
 			" );";
 	
-	String SQL5="CREATE TABLE " + TABLE_NAME4 + 
+	String SQL5="CREATE TABLE " + TABLE_NAME5 + 
 			"([id] INTEGER PRIMARY KEY AUTOINCREMENT," +
 			"[eqid] VARCHAR(50)," +
 			"[title] VARCHAR(50)," +

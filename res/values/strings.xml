@@ -95,4 +95,5 @@
     <string name="isBeep">是否开启消息提示音</string>
     <string name="pwdChange">修改密码</string>
     <string name="logout">注销登录</string>
+    <string name="exit">退出XHermes</string>
 </resources>
