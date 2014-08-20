@@ -148,18 +148,12 @@ public class MainActivity extends SherlockFragmentActivity {
 	}
 
 	private void exit() { 
-
 		if ((System.currentTimeMillis() - clickTime) > 2000) { 
-
 			Toast.makeText(getApplicationContext(), "再按一次后退键 退出程序", Toast.LENGTH_SHORT).show(); 
-
 			clickTime = System.currentTimeMillis(); 
-
 		} 
 		else { 
-
 			Log.e(TAG, "exit application"); 
-
 			this.finish(); 
 		} 
 	} 
@@ -196,7 +190,7 @@ public class MainActivity extends SherlockFragmentActivity {
 				R.drawable.travelinfo,
 				R.drawable.report,
 				R.drawable.setting
-				
+
 		};
 		iconNames=new String[]{
 				getString(R.string.home),
@@ -236,21 +230,21 @@ public class MainActivity extends SherlockFragmentActivity {
 					}
 					else {
 						for (int i=0;i<len;i++){
-						map=OverallFragmentController.popFragment();
-						Fragment mvFragment=(Fragment) map.get("fragment");
-						if(map.get("tag").equals("main")){
-							System.out.println("is main");
-							FragmentTransaction transaction8 = getSupportFragmentManager().beginTransaction();
-							transaction8.replace(R.id.fragment_container, mvFragment,"main");
-							transaction8.commit();
-							OverallFragmentController.removeAll();
-							OverallFragmentController.addFragment("main", mvFragment);
-							break;
+							map=OverallFragmentController.popFragment();
+							Fragment mvFragment=(Fragment) map.get("fragment");
+							if(map.get("tag").equals("main")){
+								System.out.println("is main");
+								FragmentTransaction transaction8 = getSupportFragmentManager().beginTransaction();
+								transaction8.replace(R.id.fragment_container, mvFragment,"main");
+								transaction8.commit();
+								OverallFragmentController.removeAll();
+								OverallFragmentController.addFragment("main", mvFragment);
+								break;
+							}
 						}
 					}
-					}
 					break;
-					
+
 				case 1:
 					Bundle arguments1 = new Bundle();
 					arguments1.putString("terminalId", terminalId);
@@ -279,8 +273,25 @@ public class MainActivity extends SherlockFragmentActivity {
 					transaction4.commit();
 					break;
 				case 5:
+
+					Bundle arguments5 = new Bundle();
+					arguments5.putString("terminalId", terminalId);
+					DrivingMonthlyReportFragment dFragment = new DrivingMonthlyReportFragment();
+					dFragment.setArguments(arguments5);
+					OverallFragmentController.removeFragment("report");
+					OverallFragmentController.addFragment("report", dFragment);
+					FragmentTransaction transaction5 = getSupportFragmentManager().beginTransaction();
+					transaction5.replace(R.id.fragment_container, dFragment,"travelinfo"); 
+					transaction5.commit();
 					break;
 				case 6:
+					SystemSetFragment ssf=new SystemSetFragment();
+					ssf.setArguments(bundle);
+					OverallFragmentController.removeFragment("systemset");
+					OverallFragmentController.addFragment("systemset", ssf);
+					FragmentTransaction transaction6 = getSupportFragmentManager().beginTransaction();
+					transaction6.replace(R.id.fragment_container, ssf,"systemset"); 
+					transaction6.commit();
 					break;
 				}
 				menu.toggle();

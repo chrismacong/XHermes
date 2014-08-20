@@ -89,4 +89,11 @@
     <string name="temperature">冷却液温度</string>
     <string name="pressure">压力数据</string>
 
+    <!-- system set -->
+    <string name="isNoticeReceive">新消息提醒</string>
+    <string name="isShock">是否开启震动</string>
+    <string name="isBeep">是否开启消息提示音</string>
+    <string name="pwdChange">修改密码</string>
+    <string name="logout">注销登录</string>
+    <string name="exit">退出XHermes</string>
 </resources>

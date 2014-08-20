@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
+import android.util.Log;
 
 import com.xhermes.android.db.MyDataBaseHelper;
 import com.xhermes.android.model.OBDData;
@@ -53,9 +55,14 @@ public class OBDDataDao extends Dao{
 		value.put("eqid", data.getEqid());
 		value.put("time", data.getTime());
 		
-		long rowid=db.insert(TBL_NAME, null, value);
-		isOutOfRange(TBL_NAME,data.getEqid());
-		
+		long rowid = -1;
+		try{
+			rowid=db.insertOrThrow(TBL_NAME, null, value);
+			isOutOfRange(TBL_NAME,data.getEqid());
+		}catch(Exception e){
+			if(e.getClass().equals(SQLiteConstraintException.class))
+				Log.d("OBDDataDao","insert same data");
+		}
 		db.close();
 		if(rowid!=-1)
 			return true;
