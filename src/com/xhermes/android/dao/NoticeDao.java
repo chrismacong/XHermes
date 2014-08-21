@@ -37,6 +37,12 @@ public class NoticeDao extends Dao{
 		return list;
 	}
 
+	public int queryReadOrNot(String eqid,String arg){
+		db=helper.getReadableDatabase();
+		Cursor cursor=db.query(TBL_NAME, null, "isRead=?",new String[]{arg}, null, null, null);
+		return cursor.getCount();
+	}
+	
 	public boolean insert(Notice data){
 		db=helper.getReadableDatabase();
 		ContentValues value=new ContentValues();

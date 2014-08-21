@@ -82,7 +82,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
 			"[content] VARCHAR(500),"+
 			"[sender] VARCHAR(100),"+
 			"[time] VARCHAR(50) UNIQUE,"+
-			"[isReader] INTEGER(1)"+
+			"[isRead] INTEGER(1)"+
 			" );";
 	private File dbf;
 	

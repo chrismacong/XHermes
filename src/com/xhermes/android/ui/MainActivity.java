@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -34,6 +35,40 @@ import com.xhermes.android.util.DateController;
 import com.xhermes.android.util.OverallFragmentController;
 
 public class MainActivity extends SherlockFragmentActivity {
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		System.out.println("onDestroy");
+		super.onDestroy();
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		System.out.println("onResume");
+		if("messageFragment".equals(bundle.getString("fragment"))){
+			MessageFragment messFrag =new MessageFragment();
+			messFrag.setArguments(bundle);
+			FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
+			transaction2.replace(R.id.fragment_container, messFrag);
+			//transaction.addToBackStack(null);
+			transaction2.commit();
+			OverallFragmentController.addFragment("messageFragment", messFrag);
+			bundle.remove("fragment");
+			NotificationManager nm=(NotificationManager) getSystemService(Activity.NOTIFICATION_SERVICE);
+			nm.cancel(DataReceiver.nid);
+		}
+
+	}
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		System.out.println("onStart");
+		super.onStart();
+	}
+
+
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
@@ -58,7 +93,6 @@ public class MainActivity extends SherlockFragmentActivity {
 			}
 		}
 	}
-
 
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
@@ -120,6 +154,7 @@ public class MainActivity extends SherlockFragmentActivity {
 	private long clickTime = 0; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		System.out.println("onCreate");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		menu = new SlidingMenu(this);
@@ -137,14 +172,17 @@ public class MainActivity extends SherlockFragmentActivity {
 		actionBar.setIcon(R.drawable.menu_icon);
 		actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.backcolor));
 		actionBar.setTitle("");
+
 		MainViewFragment mFragment = new MainViewFragment();
 		mFragment.setArguments(bundle);
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-		transaction.add(R.id.fragment_container, mFragment);
+		transaction.replace(R.id.fragment_container, mFragment);
 		//transaction.addToBackStack(null);
 		transaction.commit();
+		System.out.println("OverallFragmentController list size:"+OverallFragmentController.list.size());
 		OverallFragmentController.removeAll();
 		OverallFragmentController.addFragment("main", mFragment);
+
 	}
 
 	private void exit() { 
@@ -154,7 +192,8 @@ public class MainActivity extends SherlockFragmentActivity {
 		} 
 		else { 
 			Log.e(TAG, "exit application"); 
-			this.finish(); 
+			//this.finish(); 
+			System.exit(0);
 		} 
 	} 
 
@@ -257,15 +296,24 @@ public class MainActivity extends SherlockFragmentActivity {
 					transaction1.commit();
 					break;
 				case 2:
+					Bundle arguments2 = new Bundle();
+					arguments2.putString("terminalId", terminalId);
+					MessageFragment mFragment = new MessageFragment();
+					mFragment.setArguments(arguments2);
+					OverallFragmentController.removeFragment("message");
+					OverallFragmentController.addFragment("message", mFragment);
+					FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
+					transaction2.replace(R.id.fragment_container, mFragment,"message"); 
+					transaction2.commit();
 					break;
 				case 3:
 					break;
 				case 4:
 
-					Bundle arguments2 = new Bundle();
-					arguments2.putString("terminalId", terminalId);
+					Bundle arguments4 = new Bundle();
+					arguments4.putString("terminalId", terminalId);
 					TravelInfoFragment tFragment = new TravelInfoFragment();
-					tFragment.setArguments(arguments2);
+					tFragment.setArguments(arguments4);
 					OverallFragmentController.removeFragment("travelinfo");
 					OverallFragmentController.addFragment("travelinfo", tFragment);
 					FragmentTransaction transaction4 = getSupportFragmentManager().beginTransaction();
@@ -273,7 +321,6 @@ public class MainActivity extends SherlockFragmentActivity {
 					transaction4.commit();
 					break;
 				case 5:
-
 					Bundle arguments5 = new Bundle();
 					arguments5.putString("terminalId", terminalId);
 					DrivingMonthlyReportFragment dFragment = new DrivingMonthlyReportFragment();

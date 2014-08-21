@@ -17,6 +17,15 @@ public class Notice {
 
 	}
 
+	public Notice(String title, String content, String date, String sender,String eqid) {
+		this.title=title;
+		this.content=content;
+		this.time=date;
+		this.eqid=eqid;
+		this.sender=sender;
+		this.isRead=0;
+	}
+
 	public int getId() {
 		return id;
 	}
