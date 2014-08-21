@@ -53,7 +53,7 @@ public class DrivingMonthlyReportFragment extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View rootview = inflater.inflate(R.layout.drivinghabit_view, container, false);
+		View rootview = inflater.inflate(R.layout.drivingmonthlyreport_view, container, false);
 		left_btn = (ImageButton) rootview.findViewById(R.id.button_chart_left);
 		right_btn = (ImageButton) rootview.findViewById(R.id.button_chart_right);
 		Calendar c = Calendar.getInstance();
