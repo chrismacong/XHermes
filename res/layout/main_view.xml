@@ -29,7 +29,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginLeft="5dp"
                     android:background="@drawable/blue_selector" />
 
                 <Button
@@ -47,7 +46,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_below="@+id/button_functional_4"
-                    android:layout_marginLeft="5dp"
                     android:layout_marginTop="-10dp"
                     android:background="@drawable/red_selector" />
 
@@ -69,12 +67,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/score_present" />
 
-            <ImageView
-                android:id="@+id/content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/rotate" />
+
             
             <TextView
                 android:id="@+id/exm_mark"
