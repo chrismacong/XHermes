@@ -150,6 +150,8 @@ public class LoginActivity extends Activity {
 						pd=new CustomProgressDialog(LoginActivity.this, R.style.dialog, "正在登陆…");
 						pd.show();
 						new AsyncTask<Void, Void, String>() {
+							String username = username_uncheck;
+							String password = password_uncheck;
 							@Override
 							protected void onPreExecute() {
 
@@ -158,8 +160,7 @@ public class LoginActivity extends Activity {
 							@Override
 							protected String doInBackground(Void... voids) {
 								String result = "";
-								String username = username_uncheck;
-								String password = password_uncheck;
+								
 								//保存
 								saveUser(username,password);
 								List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -199,6 +200,7 @@ public class LoginActivity extends Activity {
 												Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 												Bundle bundle = new Bundle();//　　Bundle的底层是一个HashMap<String, Object
 												bundle.putString("terminalId", terminalId);
+												bundle.putString("email", username);
 												bundle.putString("car_number",signs[2]);
 												bundle.putString("vehicleexm_score",signs[3]);
 												bundle.putString("vehicleexm_comment", signs[4]);
