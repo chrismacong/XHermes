@@ -122,10 +122,10 @@ public final class R {
 		public static final int abs__bright_foreground_disabled_holo_light = 0x7f060005;
 		public static final int abs__bright_foreground_holo_dark = 0x7f060002;
 		public static final int abs__bright_foreground_holo_light = 0x7f060003;
-		public static final int abs__primary_text_disable_only_holo_dark = 0x7f06000f;
-		public static final int abs__primary_text_disable_only_holo_light = 0x7f060010;
-		public static final int abs__primary_text_holo_dark = 0x7f060011;
-		public static final int abs__primary_text_holo_light = 0x7f060012;
+		public static final int abs__primary_text_disable_only_holo_dark = 0x7f060010;
+		public static final int abs__primary_text_disable_only_holo_light = 0x7f060011;
+		public static final int abs__primary_text_holo_dark = 0x7f060012;
+		public static final int abs__primary_text_holo_light = 0x7f060013;
 	}
 	public static final class dimen {
 		public static final int abs__action_bar_default_height = 0x7f070001;
@@ -335,8 +335,8 @@ public final class R {
 		public static final int abs__search_dropdown_item_icons_2line = 0x7f030012;
 		public static final int abs__search_view = 0x7f030013;
 		public static final int abs__simple_dropdown_hint = 0x7f030014;
-		public static final int sherlock_spinner_dropdown_item = 0x7f030021;
-		public static final int sherlock_spinner_item = 0x7f030022;
+		public static final int sherlock_spinner_dropdown_item = 0x7f030025;
+		public static final int sherlock_spinner_item = 0x7f030026;
 	}
 	public static final class string {
 		public static final int abs__action_bar_home_description = 0x7f090000;
@@ -517,7 +517,7 @@ public final class R {
 		public static final int SherlockSearchView_android_maxWidth = 0;
 		public static final int SherlockSearchView_iconifiedByDefault = 3;
 		public static final int SherlockSearchView_queryHint = 4;
-		public static final int[] SherlockSpinner = { 0x010100af, 0x01010175, 0x01010176, 0x0101017b, 0x01010262, 0x010102ac, 0x010102ad, 0x0101041f };
+		public static final int[] SherlockSpinner = { 0x010100af, 0x01010175, 0x01010176, 0x0101017b, 0x01010262, 0x010102ac, 0x010102ad, 0x0101043d };
 		public static final int SherlockSpinner_android_dropDownHorizontalOffset = 5;
 		public static final int SherlockSpinner_android_dropDownSelector = 1;
 		public static final int SherlockSpinner_android_dropDownVerticalOffset = 6;
