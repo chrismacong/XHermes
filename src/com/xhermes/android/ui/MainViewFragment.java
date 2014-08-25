@@ -238,16 +238,16 @@ public class MainViewFragment extends Fragment{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Bundle bundle = new Bundle();  
-				bundle.putString("terminalId", terminalId);
-				VehicleExmFragment vFragment = new VehicleExmFragment(); 
-				vFragment.setArguments(bundle);
-				OverallFragmentController.removeFragment("exam");
-				OverallFragmentController.addFragment("exam", vFragment);
-				FragmentManager fm=getFragmentManager();
-				FragmentTransaction transaction = fm.beginTransaction();
-				transaction.replace(R.id.fragment_container, vFragment); 
-				transaction.commit();
+//				Bundle bundle = new Bundle();  
+//				bundle.putString("terminalId", terminalId);
+//				VehicleExmFragment vFragment = new VehicleExmFragment(); 
+//				vFragment.setArguments(bundle);
+//				OverallFragmentController.removeFragment("exam");
+//				OverallFragmentController.addFragment("exam", vFragment);
+//				FragmentManager fm=getFragmentManager();
+//				FragmentTransaction transaction = fm.beginTransaction();
+//				transaction.replace(R.id.fragment_container, vFragment); 
+//				transaction.commit();
 			}
 		});
 		button_functional_1.setOnClickListener(new OnClickListener(){
