@@ -29,6 +29,7 @@ public class NoticeDao extends Dao{
 			tempData.setContent(cursor.getString(cursor.getColumnIndex("content")));
 			tempData.setRead(cursor.getInt(cursor.getColumnIndex("isRead")));
 			tempData.setTime(cursor.getString(cursor.getColumnIndex("time")));
+			tempData.setSender(cursor.getString(cursor.getColumnIndex("sender")));
 			list.add(tempData);
 		}
 		if(cursor!=null)
@@ -37,6 +38,22 @@ public class NoticeDao extends Dao{
 		return list;
 	}
 
+	public Notice queryById(String eqid,int id){
+		db=helper.getReadableDatabase();
+		Cursor cursor=db.query(TBL_NAME, null,  "eqid=? and id=?", new String[]{eqid,id+""}, null, null, null,null);
+		Notice tempData =new Notice();
+		if(cursor.moveToNext()){
+			tempData.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex("id"))));
+			tempData.setEqid(cursor.getString(cursor.getColumnIndex("eqid")));
+			tempData.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+			tempData.setContent(cursor.getString(cursor.getColumnIndex("content")));
+			tempData.setRead(cursor.getInt(cursor.getColumnIndex("isRead")));
+			tempData.setTime(cursor.getString(cursor.getColumnIndex("time")));
+			tempData.setSender(cursor.getString(cursor.getColumnIndex("sender")));
+		}
+		return tempData;
+	}
+	
 	public int queryReadOrNot(String eqid,String arg){
 		db=helper.getReadableDatabase();
 		Cursor cursor=db.query(TBL_NAME, null, "isRead=?",new String[]{arg}, null, null, null);

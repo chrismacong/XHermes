@@ -9,6 +9,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -38,15 +39,9 @@ public class DataReceiver extends BroadcastReceiver {
 	private static String eqid;
 	private static Handler mapHandler;
 	private static Handler obdHandler;
+	private static Handler mainActivityHandler;
 	private SystemSetControl syscontrol;
 	public final static int nid=0;
-	public static Handler getObdHandler() {
-		return obdHandler;
-	}
-
-	public static void setObdHandler(Handler obdHandler) {
-		DataReceiver.obdHandler = obdHandler;
-	}
 	private static Activity act;
 	private NotificationManager nm;
 	@Override
@@ -127,6 +122,7 @@ public class DataReceiver extends BroadcastReceiver {
 	}
 
 	public void send(String tickerText,String title,String content){
+		mainActivityHandler.sendEmptyMessage(0);
 		if(act==null)
 			return;
 
@@ -160,6 +156,7 @@ public class DataReceiver extends BroadcastReceiver {
 
 		Builder nBuilder=new Builder(act);
 		nBuilder.setAutoCancel(true)
+		.setLargeIcon((BitmapFactory.decodeResource(act.getResources(), R.drawable.ic_launcher)))
 		.setSmallIcon(R.drawable.message)
 		.setContentIntent(pi)
 		.setTicker(tickerText)
@@ -198,5 +195,21 @@ public class DataReceiver extends BroadcastReceiver {
 
 	public static void setAct(Activity act) {
 		DataReceiver.act = act;
+	}
+
+	public static Handler getMainActivityHandler() {
+		return mainActivityHandler;
+	}
+
+	public static void setMainActivityHandler(Handler mainActivityHandler) {
+		DataReceiver.mainActivityHandler = mainActivityHandler;
+	}
+	
+	public static Handler getObdHandler() {
+		return obdHandler;
+	}
+
+	public static void setObdHandler(Handler obdHandler) {
+		DataReceiver.obdHandler = obdHandler;
 	}
 }

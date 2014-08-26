@@ -9,6 +9,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -33,6 +34,7 @@ public class DrivingMonthlyReportFragment extends Fragment{
 	private String terminalId;
 	private TextView monthText;
 	private PagerSlidingTabStrip tabs;
+	private ProgressDialog pd;
 	private ViewPager pager;
 	private SwipeChartAdapter sca; 
 	private int global_year;
@@ -53,13 +55,14 @@ public class DrivingMonthlyReportFragment extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View rootview = inflater.inflate(R.layout.drivinghabit_view, container, false);
+		View rootview = inflater.inflate(R.layout.drivingmonthlyreport_view, container, false);
 		left_btn = (ImageButton) rootview.findViewById(R.id.button_chart_left);
 		right_btn = (ImageButton) rootview.findViewById(R.id.button_chart_right);
 		Calendar c = Calendar.getInstance();
 		global_year = c.get(Calendar.YEAR);
 		global_month = c.get(Calendar.MONTH);
 		global_day = c.get(Calendar.DAY_OF_MONTH);
+		pd= new CustomProgressDialog(this.getActivity(), R.style.dialog,"正在拉取数据...");
 		//testTextView = (TextView) rootview.findViewById(R.id.testTextView);
 		pager = (ViewPager) rootview.findViewById(R.id.pager);
 		tabs = (PagerSlidingTabStrip) rootview.findViewById(R.id.tabs);
@@ -176,6 +179,7 @@ public class DrivingMonthlyReportFragment extends Fragment{
 			final int this_monthOfYear = monthOfYear;
 			global_year = year;
 			global_month = monthOfYear;
+			pd.show();
 			new AsyncTask<Void, Void, String>() {
 				@Override
 				protected void onPreExecute() {
@@ -209,6 +213,7 @@ public class DrivingMonthlyReportFragment extends Fragment{
 					seperated_data_group = signInResult.split("@");
 					sca.resetFragments();
 					pager.setAdapter(sca);
+					pd.dismiss();
 				}
 			}.execute();
 		}
@@ -244,6 +249,7 @@ public class DrivingMonthlyReportFragment extends Fragment{
 	public void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
+		pd.show();
 		new AsyncTask<Void, Void, String>() {
 			@Override
 			protected void onPreExecute() {
@@ -278,6 +284,7 @@ public class DrivingMonthlyReportFragment extends Fragment{
 				sca.resetFragments();
 				pager.setAdapter(sca);
 				tabs.setViewPager(pager);
+				pd.dismiss();
 			}
 		}.execute();
 	}

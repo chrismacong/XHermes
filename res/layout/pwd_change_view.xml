@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fbfbea"
+    android:orientation="vertical"
+    android:padding="25dp" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginTop="5sp" >
+
+        <TextView
+            android:id="@+id/oldpwd_textview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/oldpwd"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/oldpwd_wrong_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="bottom"
+            android:textColor="#cc5457"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/oldpwd_edittext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:gravity="center_vertical"
+        android:hint="@string/oldpwd_edittext"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginTop="5sp" >
+
+        <TextView
+            android:id="@+id/newpwd_textview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/newpwd"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/newpwd_wrong_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="bottom"
+            android:textColor="#cc5457"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/newpwd_edittext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:gravity="center_vertical"
+        android:hint="@string/newpwd_edittext"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginTop="5sp" >
+
+        <TextView
+            android:id="@+id/newpwd_check_textview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/newpwd_check"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/newpwd_check_wrong_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="bottom"
+            android:textColor="#cc5457"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/newpwd_check_edittext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:gravity="center_vertical"
+        android:hint="@string/newpwd_check_edittext"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/pwdChange_confirm_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10sp"
+        android:layout_marginTop="15sp"
+        android:background="@drawable/blue_btn_selector"
+        android:gravity="center"
+        android:text="@string/pwdChange_confirm"
+        android:textSize="16sp" />
+
+</LinearLayout>

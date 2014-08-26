@@ -4,7 +4,7 @@
     package="com.xhermes.android"
     android:label="@string/app_name"
     android:versionCode="1"
-    android:versionName="Beta 0.3.3" >
+    android:versionName="Beta 0.3.8" >
 
     <!-- Required -->
     <permission
@@ -53,7 +53,8 @@
         android:name="com.xhermes.android.util.MyApplication" >
         <activity
             android:name="com.xhermes.android.ui.LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustUnspecified" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,7 +65,8 @@
             android:name="com.xhermes.android.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/MyActionBar"
-            android:launchMode="singleTask" >
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustUnspecified" >
         </activity>
 
         <receiver
