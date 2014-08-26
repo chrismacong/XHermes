@@ -80,14 +80,14 @@ public class DrivingHabitFragment extends Fragment{
 		current_year = global_year;
 		global_month = calendar.get(Calendar.MONTH);
 		current_month = global_month;
-		if(global_month==0){
-			global_year--;
-			global_month = 11;
-		}
-		else
-			global_month--;
+//		if(global_month==0){
+//			global_year--;
+//			global_month = 11;
+//		}
+//		else
+//			global_month--;
 		global_day = calendar.get(Calendar.DAY_OF_MONTH);
-		monthText.setText(calendar.get(Calendar.YEAR) + "-" + (calendar.get(Calendar.MONTH)));
+		monthText.setText(calendar.get(Calendar.YEAR) + "-" + (calendar.get(Calendar.MONTH)+1));
 		monthText.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -117,7 +117,7 @@ public class DrivingHabitFragment extends Fragment{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				if(global_month==current_month&&global_year==current_year){
+				if(global_month+global_year*12==current_month+current_year*12){
 					Toast.makeText(getActivity(), "日期超出范围",
 							Toast.LENGTH_SHORT).show();
 				}
@@ -140,7 +140,7 @@ public class DrivingHabitFragment extends Fragment{
 		public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 			final int this_year = year;
 			final int this_monthOfYear = monthOfYear;
-			if(this_year>current_year||(this_year==current_year&&this_monthOfYear>=current_month)){
+			if(this_year>current_year||(this_year==current_year&&this_monthOfYear>current_month)){
 				Toast.makeText(getActivity(), "日期超出范围",
 						Toast.LENGTH_SHORT).show();
 			}
@@ -260,6 +260,9 @@ public class DrivingHabitFragment extends Fragment{
 	//规则判断
 	private ArrayList<Integer> getStamps(String[] habits){
 		ArrayList<Integer> stamps_list = new ArrayList<Integer>();
+		//当前月不进行规则判断
+		if(global_year==current_year&&global_month==current_month)
+			return stamps_list;
 		//distance
 		int distance = Integer.parseInt(habits[0]);
 		if(distance<100)
@@ -323,13 +326,13 @@ public class DrivingHabitFragment extends Fragment{
 	private DatePickerDialog createDialogWithoutDateField(){
 		DatePickerDialog dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
 				global_year ,global_month ,global_day);
-				if(global_month==0){
-					dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
-						global_year-1,11,global_day);
-				}
-				else
-					dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
-							global_year,global_month-1,global_day);
+//				if(global_month==0){
+//					dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
+//						global_year-1,11,global_day);
+//				}
+//				else
+//					dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
+//							global_year,global_month-1,global_day);
 		try{
 			java.lang.reflect.Field[] datePickerDialogFields = dpd.getClass().getDeclaredFields();
 			for (java.lang.reflect.Field datePickerDialogField : datePickerDialogFields) {
