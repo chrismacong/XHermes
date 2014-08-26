@@ -3,6 +3,7 @@
     android:id="@+id/systemset_scrollView"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
     android:background="#fbfbea" >
 
     <LinearLayout
@@ -14,13 +15,13 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/isNoticeReceive_textView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="45dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:gravity="center_vertical"
@@ -39,19 +40,10 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/isShock_relativelayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/isShock_textView"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="5dp"
-                android:gravity="center_vertical"
-                android:text="@string/isShock"
-                android:textSize="16sp" />
 
             <com.xhermes.android.ui.Switch
                 android:id="@+id/isShock_switchBtn"
@@ -62,22 +54,23 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5dip"
                 android:clickable="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
 
             <TextView
-                android:id="@+id/isBeep_textView"
+                android:id="@+id/isShock_textView"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="45dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:gravity="center_vertical"
-                android:text="@string/isBeep"
+                android:text="@string/isShock"
                 android:textSize="16sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/isBeep_relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal" >
 
             <com.xhermes.android.ui.Switch
                 android:id="@+id/isBeep_switchBtn"
@@ -88,6 +81,16 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5dip"
                 android:clickable="true" />
+
+            <TextView
+                android:id="@+id/isBeep_textView"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/isBeep"
+                android:textSize="16sp" />
         </RelativeLayout>
 
         <Button
@@ -96,7 +99,7 @@
             android:layout_height="fill_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
-            android:background="#F0F0F0"
+            android:background="@drawable/gray_btn_selector"
             android:gravity="center"
             android:text="@string/pwdChange"
             android:textColor="#000000"
@@ -108,10 +111,10 @@
             android:layout_height="fill_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:background="#d1161e"
+            android:background="@drawable/gray_btn_selector"
             android:gravity="center"
             android:text="@string/logout"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:textSize="16sp" />
 
         <Button
@@ -120,7 +123,7 @@
             android:layout_height="fill_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:background="#d1161e"
+            android:background="@drawable/exit_btn_selector"
             android:gravity="center"
             android:text="@string/exit"
             android:textColor="#ffffff"

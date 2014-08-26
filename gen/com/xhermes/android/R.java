@@ -1197,152 +1197,155 @@ containing a value of this type.
         public static final int background_tabs=0x7f020077;
         public static final int background_tabs_diagonal=0x7f020078;
         public static final int bg_bombbox=0x7f020079;
-        public static final int blue_piece=0x7f02007a;
-        public static final int blue_piece_selec=0x7f02007b;
-        public static final int blue_selector=0x7f02007c;
-        public static final int btn_cancel=0x7f02007d;
-        public static final int btn_cancel_pressed=0x7f02007e;
-        public static final int btn_cancel_selector=0x7f02007f;
-        public static final int btn_ok_normal=0x7f020080;
-        public static final int btn_ok_pressed=0x7f020081;
-        public static final int btn_ok_selector=0x7f020082;
-        public static final int card=0x7f020083;
-        public static final int carinfo=0x7f020084;
-        public static final int cartest=0x7f020085;
-        public static final int color_progressbar=0x7f020086;
-        public static final int comicon=0x7f020087;
-        public static final int date_btn_selector=0x7f020088;
-        public static final int dialog_bottom_bg=0x7f020089;
-        public static final int dialog_style_xml_icon=0x7f02008a;
-        public static final int dials_background=0x7f02008b;
-        public static final int distance_ico=0x7f02008c;
-        public static final int distance_stamp_1=0x7f02008d;
-        public static final int distance_stamp_2=0x7f02008e;
-        public static final int distance_stamp_3=0x7f02008f;
-        public static final int done=0x7f020090;
-        public static final int empty=0x7f020091;
-        public static final int end_point_icon_new=0x7f020092;
-        public static final int endpoint=0x7f020093;
-        public static final int exm_finish_btn=0x7f020094;
-        public static final int exm_front_0=0x7f020095;
-        public static final int exm_front_1=0x7f020096;
-        public static final int exm_front_2=0x7f020097;
-        public static final int exm_front_3=0x7f020098;
-        public static final int exm_front_4=0x7f020099;
-        public static final int exm_front_error1=0x7f02009a;
-        public static final int exm_front_error2=0x7f02009b;
-        public static final int exm_front_error3=0x7f02009c;
-        public static final int exm_front_error4=0x7f02009d;
-        public static final int exm_front_error5=0x7f02009e;
-        public static final int exm_front_mini=0x7f02009f;
-        public static final int exm_start_btn=0x7f0200a0;
-        public static final int exmpoint=0x7f0200a1;
-        public static final int fault=0x7f0200a2;
-        public static final int fuel_stamp_1=0x7f0200a3;
-        public static final int fuel_stamp_2=0x7f0200a4;
-        public static final int fuel_stamp_3=0x7f0200a5;
-        public static final int green_piece=0x7f0200a6;
-        public static final int green_piece_selec=0x7f0200a7;
-        public static final int green_selector=0x7f0200a8;
-        public static final int habit=0x7f0200a9;
-        public static final int habit_front_mini=0x7f0200aa;
-        public static final int home=0x7f0200ab;
-        public static final int ic_launcher=0x7f0200ac;
-        public static final int left=0x7f0200ad;
-        public static final int left_btn=0x7f0200ae;
-        public static final int loading=0x7f0200af;
-        public static final int loading26=0x7f0200b0;
-        public static final int login_img=0x7f0200b1;
-        public static final int mail=0x7f0200b2;
-        public static final int mail_background=0x7f0200b3;
-        public static final int mail_icon=0x7f0200b4;
-        public static final int mail_icon_1=0x7f0200b5;
-        public static final int mail_icon_2=0x7f0200b6;
-        public static final int mail_icon_3=0x7f0200b7;
-        public static final int mail_icon_4=0x7f0200b8;
-        public static final int mail_icon_5=0x7f0200b9;
-        public static final int mail_icon_6=0x7f0200ba;
-        public static final int mail_icon_7=0x7f0200bb;
-        public static final int mail_icon_8=0x7f0200bc;
-        public static final int mail_icon_9=0x7f0200bd;
-        public static final int mail_icon_n=0x7f0200be;
-        public static final int main_view=0x7f0200bf;
-        public static final int map_btn=0x7f0200c0;
-        public static final int menu=0x7f0200c1;
-        public static final int menu_icon=0x7f0200c2;
-        public static final int message=0x7f0200c3;
-        public static final int message_unread=0x7f0200c4;
-        public static final int mileage_icon=0x7f0200c5;
-        public static final int oil_icon=0x7f0200c6;
-        public static final int p1=0x7f0200c7;
-        public static final int p2=0x7f0200c8;
-        public static final int p3=0x7f0200c9;
-        public static final int p4=0x7f0200ca;
-        public static final int p5=0x7f0200cb;
-        public static final int p6=0x7f0200cc;
-        public static final int pass=0x7f0200cd;
-        public static final int pressure_dial=0x7f0200ce;
-        public static final int pressure_dial_pointer=0x7f0200cf;
-        public static final int progress_large=0x7f0200d0;
-        public static final int records=0x7f0200d1;
-        public static final int red_piece=0x7f0200d2;
-        public static final int red_piece_selec=0x7f0200d3;
-        public static final int red_selector=0x7f0200d4;
-        public static final int report=0x7f0200d5;
-        public static final int right=0x7f0200d6;
-        public static final int right_btn=0x7f0200d7;
-        public static final int road_icon=0x7f0200d8;
-        public static final int rotate=0x7f0200d9;
-        public static final int rotate_speed_dial=0x7f0200da;
-        public static final int rotate_speed_dial_pointer=0x7f0200db;
-        public static final int score_present=0x7f0200dc;
-        public static final int search=0x7f0200dd;
-        public static final int select_main_bar=0x7f0200de;
-        public static final int setting=0x7f0200df;
-        public static final int shadow=0x7f0200e0;
-        public static final int sos_icon=0x7f0200e1;
-        public static final int sos_m_icon=0x7f0200e2;
-        public static final int speed_average_icon=0x7f0200e3;
-        public static final int speed_dial=0x7f0200e4;
-        public static final int speed_icon=0x7f0200e5;
-        public static final int speed_pointer=0x7f0200e6;
-        public static final int stable_stamp_1=0x7f0200e7;
-        public static final int stable_stamp_2=0x7f0200e8;
-        public static final int stable_stamp_3=0x7f0200e9;
-        public static final int start_point_icon_new=0x7f0200ea;
-        public static final int startpoint=0x7f0200eb;
-        public static final int switch_bg_disabled_holo_dark=0x7f0200ec;
-        public static final int switch_bg_focused_holo_dark=0x7f0200ed;
-        public static final int switch_bg_holo_dark=0x7f0200ee;
-        public static final int switch_inner_holo_dark=0x7f0200ef;
-        public static final int switch_inner_holo_light=0x7f0200f0;
-        public static final int switch_thumb_activated_holo_dark=0x7f0200f1;
-        public static final int switch_thumb_activated_holo_light=0x7f0200f2;
-        public static final int switch_thumb_disabled_holo_dark=0x7f0200f3;
-        public static final int switch_thumb_disabled_holo_light=0x7f0200f4;
-        public static final int switch_thumb_holo_dark=0x7f0200f5;
-        public static final int switch_thumb_holo_light=0x7f0200f6;
-        public static final int switch_thumb_pressed_holo_dark=0x7f0200f7;
-        public static final int switch_thumb_pressed_holo_light=0x7f0200f8;
-        public static final int switch_track_holo_dark=0x7f0200f9;
-        public static final int tabs_pattern=0x7f0200fa;
-        public static final int tabs_pattern_diagonal=0x7f0200fb;
-        public static final int temperature_dial=0x7f0200fc;
-        public static final int temperature_dial_pointer=0x7f0200fd;
-        public static final int test=0x7f0200fe;
-        public static final int text_info_background=0x7f0200ff;
-        public static final int time_ico=0x7f020100;
-        public static final int tired_stamp_1=0x7f020101;
-        public static final int tired_stamp_2=0x7f020102;
-        public static final int tired_stamp_3=0x7f020103;
-        public static final int travelinfo=0x7f020104;
-        public static final int undone=0x7f020105;
-        public static final int unread=0x7f020106;
-        public static final int voltage_dial=0x7f020107;
-        public static final int voltage_dial_pointer=0x7f020108;
-        public static final int yellow_piece=0x7f020109;
-        public static final int yellow_piece_selec=0x7f02010a;
-        public static final int yellow_selector=0x7f02010b;
+        public static final int blue_btn_selector=0x7f02007a;
+        public static final int blue_piece=0x7f02007b;
+        public static final int blue_piece_selec=0x7f02007c;
+        public static final int blue_selector=0x7f02007d;
+        public static final int btn_cancel=0x7f02007e;
+        public static final int btn_cancel_pressed=0x7f02007f;
+        public static final int btn_cancel_selector=0x7f020080;
+        public static final int btn_ok_normal=0x7f020081;
+        public static final int btn_ok_pressed=0x7f020082;
+        public static final int btn_ok_selector=0x7f020083;
+        public static final int card=0x7f020084;
+        public static final int carinfo=0x7f020085;
+        public static final int cartest=0x7f020086;
+        public static final int color_progressbar=0x7f020087;
+        public static final int comicon=0x7f020088;
+        public static final int date_btn_selector=0x7f020089;
+        public static final int dialog_bottom_bg=0x7f02008a;
+        public static final int dialog_style_xml_icon=0x7f02008b;
+        public static final int dials_background=0x7f02008c;
+        public static final int distance_ico=0x7f02008d;
+        public static final int distance_stamp_1=0x7f02008e;
+        public static final int distance_stamp_2=0x7f02008f;
+        public static final int distance_stamp_3=0x7f020090;
+        public static final int done=0x7f020091;
+        public static final int empty=0x7f020092;
+        public static final int end_point_icon_new=0x7f020093;
+        public static final int endpoint=0x7f020094;
+        public static final int exit_btn_selector=0x7f020095;
+        public static final int exm_finish_btn=0x7f020096;
+        public static final int exm_front_0=0x7f020097;
+        public static final int exm_front_1=0x7f020098;
+        public static final int exm_front_2=0x7f020099;
+        public static final int exm_front_3=0x7f02009a;
+        public static final int exm_front_4=0x7f02009b;
+        public static final int exm_front_error1=0x7f02009c;
+        public static final int exm_front_error2=0x7f02009d;
+        public static final int exm_front_error3=0x7f02009e;
+        public static final int exm_front_error4=0x7f02009f;
+        public static final int exm_front_error5=0x7f0200a0;
+        public static final int exm_front_mini=0x7f0200a1;
+        public static final int exm_start_btn=0x7f0200a2;
+        public static final int exmpoint=0x7f0200a3;
+        public static final int fault=0x7f0200a4;
+        public static final int fuel_stamp_1=0x7f0200a5;
+        public static final int fuel_stamp_2=0x7f0200a6;
+        public static final int fuel_stamp_3=0x7f0200a7;
+        public static final int gray_btn_selector=0x7f0200a8;
+        public static final int green_piece=0x7f0200a9;
+        public static final int green_piece_selec=0x7f0200aa;
+        public static final int green_selector=0x7f0200ab;
+        public static final int habit=0x7f0200ac;
+        public static final int habit_front_mini=0x7f0200ad;
+        public static final int home=0x7f0200ae;
+        public static final int ic_launcher=0x7f0200af;
+        public static final int left=0x7f0200b0;
+        public static final int left_btn=0x7f0200b1;
+        public static final int loading=0x7f0200b2;
+        public static final int loading26=0x7f0200b3;
+        public static final int login_img=0x7f0200b4;
+        public static final int mail=0x7f0200b5;
+        public static final int mail_background=0x7f0200b6;
+        public static final int mail_icon=0x7f0200b7;
+        public static final int mail_icon_1=0x7f0200b8;
+        public static final int mail_icon_2=0x7f0200b9;
+        public static final int mail_icon_3=0x7f0200ba;
+        public static final int mail_icon_4=0x7f0200bb;
+        public static final int mail_icon_5=0x7f0200bc;
+        public static final int mail_icon_6=0x7f0200bd;
+        public static final int mail_icon_7=0x7f0200be;
+        public static final int mail_icon_8=0x7f0200bf;
+        public static final int mail_icon_9=0x7f0200c0;
+        public static final int mail_icon_n=0x7f0200c1;
+        public static final int main_view=0x7f0200c2;
+        public static final int map_btn=0x7f0200c3;
+        public static final int menu=0x7f0200c4;
+        public static final int menu_icon=0x7f0200c5;
+        public static final int message=0x7f0200c6;
+        public static final int message_unread=0x7f0200c7;
+        public static final int mileage_icon=0x7f0200c8;
+        public static final int oil_icon=0x7f0200c9;
+        public static final int p1=0x7f0200ca;
+        public static final int p2=0x7f0200cb;
+        public static final int p3=0x7f0200cc;
+        public static final int p4=0x7f0200cd;
+        public static final int p5=0x7f0200ce;
+        public static final int p6=0x7f0200cf;
+        public static final int pass=0x7f0200d0;
+        public static final int pressure_dial=0x7f0200d1;
+        public static final int pressure_dial_pointer=0x7f0200d2;
+        public static final int progress_large=0x7f0200d3;
+        public static final int records=0x7f0200d4;
+        public static final int red_piece=0x7f0200d5;
+        public static final int red_piece_selec=0x7f0200d6;
+        public static final int red_selector=0x7f0200d7;
+        public static final int report=0x7f0200d8;
+        public static final int right=0x7f0200d9;
+        public static final int right_btn=0x7f0200da;
+        public static final int road_icon=0x7f0200db;
+        public static final int rotate=0x7f0200dc;
+        public static final int rotate_speed_dial=0x7f0200dd;
+        public static final int rotate_speed_dial_pointer=0x7f0200de;
+        public static final int score_present=0x7f0200df;
+        public static final int search=0x7f0200e0;
+        public static final int select_main_bar=0x7f0200e1;
+        public static final int setting=0x7f0200e2;
+        public static final int shadow=0x7f0200e3;
+        public static final int sos_icon=0x7f0200e4;
+        public static final int sos_m_icon=0x7f0200e5;
+        public static final int speed_average_icon=0x7f0200e6;
+        public static final int speed_dial=0x7f0200e7;
+        public static final int speed_icon=0x7f0200e8;
+        public static final int speed_pointer=0x7f0200e9;
+        public static final int stable_stamp_1=0x7f0200ea;
+        public static final int stable_stamp_2=0x7f0200eb;
+        public static final int stable_stamp_3=0x7f0200ec;
+        public static final int start_point_icon_new=0x7f0200ed;
+        public static final int startpoint=0x7f0200ee;
+        public static final int switch_bg_disabled_holo_dark=0x7f0200ef;
+        public static final int switch_bg_focused_holo_dark=0x7f0200f0;
+        public static final int switch_bg_holo_dark=0x7f0200f1;
+        public static final int switch_inner_holo_dark=0x7f0200f2;
+        public static final int switch_inner_holo_light=0x7f0200f3;
+        public static final int switch_thumb_activated_holo_dark=0x7f0200f4;
+        public static final int switch_thumb_activated_holo_light=0x7f0200f5;
+        public static final int switch_thumb_disabled_holo_dark=0x7f0200f6;
+        public static final int switch_thumb_disabled_holo_light=0x7f0200f7;
+        public static final int switch_thumb_holo_dark=0x7f0200f8;
+        public static final int switch_thumb_holo_light=0x7f0200f9;
+        public static final int switch_thumb_pressed_holo_dark=0x7f0200fa;
+        public static final int switch_thumb_pressed_holo_light=0x7f0200fb;
+        public static final int switch_track_holo_dark=0x7f0200fc;
+        public static final int tabs_pattern=0x7f0200fd;
+        public static final int tabs_pattern_diagonal=0x7f0200fe;
+        public static final int temperature_dial=0x7f0200ff;
+        public static final int temperature_dial_pointer=0x7f020100;
+        public static final int test=0x7f020101;
+        public static final int text_info_background=0x7f020102;
+        public static final int time_ico=0x7f020103;
+        public static final int tired_stamp_1=0x7f020104;
+        public static final int tired_stamp_2=0x7f020105;
+        public static final int tired_stamp_3=0x7f020106;
+        public static final int travelinfo=0x7f020107;
+        public static final int undone=0x7f020108;
+        public static final int unread=0x7f020109;
+        public static final int voltage_dial=0x7f02010a;
+        public static final int voltage_dial_pointer=0x7f02010b;
+        public static final int yellow_piece=0x7f02010c;
+        public static final int yellow_piece_selec=0x7f02010d;
+        public static final int yellow_selector=0x7f02010e;
     }
     public static final class id {
         public static final int abs__action_bar=0x7f040025;
@@ -1384,16 +1387,16 @@ containing a value of this type.
         public static final int abs__textButton=0x7f040018;
         public static final int abs__title=0x7f040020;
         public static final int abs__up=0x7f04000b;
-        public static final int action_settings=0x7f0400d1;
+        public static final int action_settings=0x7f0400dd;
         public static final int autoLoginCheckBox=0x7f04003d;
-        public static final int average_fuel_consumption=0x7f0400cc;
-        public static final int average_fuel_consumption_cell=0x7f0400cd;
+        public static final int average_fuel_consumption=0x7f0400d8;
+        public static final int average_fuel_consumption_cell=0x7f0400d9;
         public static final int b1_view=0x7f040037;
         public static final int bcarView=0x7f04008b;
-        public static final int black_line=0x7f0400c7;
+        public static final int black_line=0x7f0400d3;
         public static final int bmapView=0x7f04008a;
         public static final int bold=0x7f040010;
-        public static final int bottom=0x7f0400ca;
+        public static final int bottom=0x7f0400d6;
         public static final int button_chart_left=0x7f04005b;
         public static final int button_chart_right=0x7f04005c;
         public static final int button_divider=0x7f040040;
@@ -1404,46 +1407,46 @@ containing a value of this type.
         public static final int buttons_group=0x7f040039;
         public static final int car_number=0x7f040071;
         public static final int chartTextView=0x7f04005d;
-        public static final int check_text=0x7f0400b0;
-        public static final int check_text_english=0x7f0400b1;
-        public static final int circle_bar=0x7f0400b7;
+        public static final int check_text=0x7f0400bc;
+        public static final int check_text_english=0x7f0400bd;
+        public static final int circle_bar=0x7f0400c3;
         public static final int circle_select=0x7f04006a;
         public static final int customer_button=0x7f04003f;
         public static final int date=0x7f04005a;
-        public static final int date_btn=0x7f0400ae;
+        public static final int date_btn=0x7f0400ba;
         public static final int description_in_chart=0x7f04005e;
-        public static final int detail_down_layout=0x7f04009d;
-        public static final int detail_end_image_View=0x7f04009e;
-        public static final int detail_end_layout=0x7f04009f;
-        public static final int detail_endp_TextView=0x7f0400a1;
-        public static final int detail_endt_TextView=0x7f0400a0;
-        public static final int detail_map_image=0x7f0400a2;
-        public static final int detail_start_image_View=0x7f040099;
-        public static final int detail_start_layout=0x7f04009a;
-        public static final int detail_startp_TextView=0x7f04009c;
-        public static final int detail_startt_TextView=0x7f04009b;
-        public static final int detail_travel_info_list_item_content=0x7f040097;
-        public static final int detail_travel_info_list_item_title=0x7f040096;
-        public static final int detail_travelinfo_listview=0x7f0400a3;
-        public static final int detail_up_layout=0x7f040098;
+        public static final int detail_down_layout=0x7f0400a9;
+        public static final int detail_end_image_View=0x7f0400aa;
+        public static final int detail_end_layout=0x7f0400ab;
+        public static final int detail_endp_TextView=0x7f0400ad;
+        public static final int detail_endt_TextView=0x7f0400ac;
+        public static final int detail_map_image=0x7f0400ae;
+        public static final int detail_start_image_View=0x7f0400a5;
+        public static final int detail_start_layout=0x7f0400a6;
+        public static final int detail_startp_TextView=0x7f0400a8;
+        public static final int detail_startt_TextView=0x7f0400a7;
+        public static final int detail_travel_info_list_item_content=0x7f0400a3;
+        public static final int detail_travel_info_list_item_title=0x7f0400a2;
+        public static final int detail_travelinfo_listview=0x7f0400af;
+        public static final int detail_up_layout=0x7f0400a4;
         public static final int dialog_textview=0x7f040045;
         public static final int dialog_view=0x7f040043;
-        public static final int dials=0x7f0400be;
+        public static final int dials=0x7f0400ca;
         public static final int disableHome=0x7f040009;
         public static final int distance_imageview=0x7f040074;
         public static final int distance_intro=0x7f040076;
         public static final int distance_text=0x7f040075;
-        public static final int doing_image_1=0x7f0400b3;
-        public static final int doing_image_2=0x7f0400b4;
-        public static final int doing_image_3=0x7f0400b5;
-        public static final int doing_image_4=0x7f0400b6;
+        public static final int doing_image_1=0x7f0400bf;
+        public static final int doing_image_2=0x7f0400c0;
+        public static final int doing_image_3=0x7f0400c1;
+        public static final int doing_image_4=0x7f0400c2;
         public static final int edit_query=0x7f04002b;
-        public static final int endtime_btn=0x7f0400ab;
-        public static final int exit_btn=0x7f040095;
+        public static final int endtime_btn=0x7f0400b7;
+        public static final int exit_btn=0x7f0400a1;
         public static final int exm_comment=0x7f040072;
         public static final int exm_mark=0x7f040070;
-        public static final int exm_mark_title=0x7f0400d0;
-        public static final int exmlist=0x7f0400ba;
+        public static final int exm_mark_title=0x7f0400dc;
+        public static final int exmlist=0x7f0400c6;
         public static final int exmlist_front_image=0x7f040063;
         public static final int exmlist_result_image=0x7f040065;
         public static final int exmlist_text=0x7f040064;
@@ -1463,24 +1466,26 @@ containing a value of this type.
         public static final int habitlist_name=0x7f040061;
         public static final int habitmonthly_title=0x7f04004f;
         public static final int homeAsUp=0x7f040006;
-        public static final int image=0x7f0400bc;
-        public static final int isBeep_switchBtn=0x7f040092;
-        public static final int isBeep_textView=0x7f040091;
-        public static final int isNoticeReceive_switchBtn=0x7f04008e;
-        public static final int isNoticeReceive_textView=0x7f04008d;
-        public static final int isShock_switchBtn=0x7f040090;
-        public static final int isShock_textView=0x7f04008f;
+        public static final int image=0x7f0400c8;
+        public static final int isBeep_relativelayout=0x7f04009c;
+        public static final int isBeep_switchBtn=0x7f04009d;
+        public static final int isBeep_textView=0x7f04009e;
+        public static final int isNoticeReceive_switchBtn=0x7f040098;
+        public static final int isNoticeReceive_textView=0x7f040097;
+        public static final int isShock_relativelayout=0x7f040099;
+        public static final int isShock_switchBtn=0x7f04009a;
+        public static final int isShock_textView=0x7f04009b;
         public static final int italic=0x7f040011;
-        public static final int left_img=0x7f0400ad;
+        public static final int left_img=0x7f0400b9;
         public static final int leftlistView=0x7f040066;
         public static final int listMode=0x7f040002;
         public static final int listTextView=0x7f040068;
         public static final int listimageView=0x7f040067;
         public static final int login_checkbox_table=0x7f04003b;
-        public static final int logout_btn=0x7f040094;
-        public static final int mail=0x7f0400d2;
+        public static final int logout_btn=0x7f0400a0;
+        public static final int mail=0x7f0400de;
         public static final int map_relative_layout=0x7f040089;
-        public static final int mark_text=0x7f0400b8;
+        public static final int mark_text=0x7f0400c4;
         public static final int message=0x7f040047;
         public static final int message_content=0x7f04007e;
         public static final int message_listview=0x7f040085;
@@ -1490,8 +1495,14 @@ containing a value of this type.
         public static final int mtext=0x7f040084;
         public static final int mtime=0x7f040082;
         public static final int mtitle=0x7f040083;
-        public static final int myprogress=0x7f0400b2;
+        public static final int myprogress=0x7f0400be;
         public static final int negativeButton=0x7f040049;
+        public static final int newpwd_check_edittext=0x7f040094;
+        public static final int newpwd_check_textview=0x7f040092;
+        public static final int newpwd_check_wrong_textview=0x7f040093;
+        public static final int newpwd_edittext=0x7f040091;
+        public static final int newpwd_textview=0x7f04008f;
+        public static final int newpwd_wrong_textview=0x7f040090;
         public static final int nimage=0x7f040086;
         public static final int normal=0x7f040001;
         public static final int ntext=0x7f040088;
@@ -1499,20 +1510,24 @@ containing a value of this type.
         public static final int oil_imageview=0x7f040077;
         public static final int oil_intro=0x7f040079;
         public static final int oil_text=0x7f040078;
+        public static final int oldpwd_edittext=0x7f04008e;
+        public static final int oldpwd_textview=0x7f04008c;
+        public static final int oldpwd_wrong_textview=0x7f04008d;
         public static final int pager=0x7f040059;
         public static final int password=0x7f040038;
         public static final int pointer=0x7f04006f;
         public static final int positiveButton=0x7f040048;
-        public static final int pressure=0x7f0400c6;
-        public static final int pressure_dial_pointer=0x7f0400c2;
+        public static final int pressure=0x7f0400d2;
+        public static final int pressure_dial_pointer=0x7f0400ce;
         public static final int progressBar1=0x7f040044;
         public static final int ptime=0x7f040080;
         public static final int publisher=0x7f04007f;
-        public static final int pwdChange_btn=0x7f040093;
-        public static final int reset_btn=0x7f0400ac;
-        public static final int right_img=0x7f0400af;
-        public static final int rotate_speed=0x7f0400c4;
-        public static final int rotate_speed_dial_pointer=0x7f0400c0;
+        public static final int pwdChange_btn=0x7f04009f;
+        public static final int pwdChange_confirm_btn=0x7f040095;
+        public static final int reset_btn=0x7f0400b8;
+        public static final int right_img=0x7f0400bb;
+        public static final int rotate_speed=0x7f0400d0;
+        public static final int rotate_speed_dial_pointer=0x7f0400cc;
         public static final int sans=0x7f040012;
         public static final int saveUserCheckBox=0x7f04003c;
         public static final int scrollview_main=0x7f040069;
@@ -1521,41 +1536,41 @@ containing a value of this type.
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
         public static final int sign_in_button=0x7f040041;
-        public static final int sos=0x7f0400d3;
-        public static final int speed_dial_pointer=0x7f0400c8;
+        public static final int sos=0x7f0400df;
+        public static final int speed_dial_pointer=0x7f0400d4;
         public static final int speed_intro=0x7f04007c;
         public static final int speedtime_layout=0x7f040054;
         public static final int stamp1=0x7f04004b;
         public static final int stamp2=0x7f04004c;
         public static final int stamp3=0x7f04004d;
         public static final int stamp4=0x7f04004e;
-        public static final int start_exm_btn=0x7f0400b9;
-        public static final int starttime_btn=0x7f0400aa;
-        public static final int systemset_scrollView=0x7f04008c;
+        public static final int start_exm_btn=0x7f0400c5;
+        public static final int starttime_btn=0x7f0400b6;
+        public static final int systemset_scrollView=0x7f040096;
         public static final int tabMode=0x7f040003;
-        public static final int tablelayout_in_main=0x7f0400cf;
+        public static final int tablelayout_in_main=0x7f0400db;
         public static final int tabs=0x7f040058;
-        public static final int temperature=0x7f0400c5;
-        public static final int temperature_dial_pointer=0x7f0400c1;
-        public static final int text1=0x7f0400bd;
-        public static final int text_info=0x7f0400c9;
+        public static final int temperature=0x7f0400d1;
+        public static final int temperature_dial_pointer=0x7f0400cd;
+        public static final int text1=0x7f0400c9;
+        public static final int text_info=0x7f0400d5;
         public static final int time_imageview=0x7f04007a;
         public static final int time_layout=0x7f040052;
         public static final int time_text=0x7f04007b;
         public static final int title=0x7f040046;
-        public static final int total_distance=0x7f0400cb;
-        public static final int total_fuel_consumption=0x7f0400ce;
-        public static final int travelinfo_endp_textview=0x7f0400a8;
-        public static final int travelinfo_endt_textview=0x7f0400a7;
-        public static final int travelinfo_image_view=0x7f0400a6;
-        public static final int travelinfo_list_View=0x7f0400a9;
-        public static final int travelinfo_startp_textview=0x7f0400a5;
-        public static final int travelinfo_startt_textview=0x7f0400a4;
+        public static final int total_distance=0x7f0400d7;
+        public static final int total_fuel_consumption=0x7f0400da;
+        public static final int travelinfo_endp_textview=0x7f0400b4;
+        public static final int travelinfo_endt_textview=0x7f0400b3;
+        public static final int travelinfo_image_view=0x7f0400b2;
+        public static final int travelinfo_list_View=0x7f0400b5;
+        public static final int travelinfo_startp_textview=0x7f0400b1;
+        public static final int travelinfo_startt_textview=0x7f0400b0;
         public static final int useLogo=0x7f040004;
         public static final int username=0x7f04003a;
-        public static final int vel_list=0x7f0400bb;
-        public static final int voltage=0x7f0400c3;
-        public static final int voltage_dial_pointer=0x7f0400bf;
+        public static final int vel_list=0x7f0400c7;
+        public static final int voltage=0x7f0400cf;
+        public static final int voltage_dial_pointer=0x7f0400cb;
         public static final int wrap_content=0x7f040000;
     }
     public static final class integer {
@@ -1601,17 +1616,18 @@ containing a value of this type.
         public static final int message_view=0x7f030023;
         public static final int notification_view=0x7f030024;
         public static final int posiiton_view=0x7f030025;
-        public static final int sherlock_spinner_dropdown_item=0x7f030026;
-        public static final int sherlock_spinner_item=0x7f030027;
-        public static final int systemset_view=0x7f030028;
-        public static final int travelinfo_detail_list_item=0x7f030029;
-        public static final int travelinfo_detail_view=0x7f03002a;
-        public static final int travelinfo_list_item_view=0x7f03002b;
-        public static final int travelinfo_view=0x7f03002c;
-        public static final int vehicleexm_view=0x7f03002d;
-        public static final int vehicleinfo=0x7f03002e;
-        public static final int vehicleinfo_detail=0x7f03002f;
-        public static final int vehicleinfo_view=0x7f030030;
+        public static final int pwd_change_view=0x7f030026;
+        public static final int sherlock_spinner_dropdown_item=0x7f030027;
+        public static final int sherlock_spinner_item=0x7f030028;
+        public static final int systemset_view=0x7f030029;
+        public static final int travelinfo_detail_list_item=0x7f03002a;
+        public static final int travelinfo_detail_view=0x7f03002b;
+        public static final int travelinfo_list_item_view=0x7f03002c;
+        public static final int travelinfo_view=0x7f03002d;
+        public static final int vehicleexm_view=0x7f03002e;
+        public static final int vehicleinfo=0x7f03002f;
+        public static final int vehicleinfo_detail=0x7f030030;
+        public static final int vehicleinfo_view=0x7f030031;
     }
     public static final class menu {
         public static final int default_style=0x7f0b0000;
@@ -1720,16 +1736,25 @@ containing a value of this type.
         public static final int network_failed=0x7f090016;
         public static final int newalert=0x7f090046;
         public static final int newnotification=0x7f090045;
+        public static final int newpwd=0x7f090080;
+        public static final int newpwd_check=0x7f090081;
+        public static final int newpwd_check_edittext=0x7f090084;
+        public static final int newpwd_edittext=0x7f090083;
         public static final int no_value=0x7f090047;
         public static final int odo=0x7f09004e;
         public static final int oil_extra_title=0x7f09002c;
         public static final int ok=0x7f09001b;
+        /**  pwd change 
+         */
+        public static final int oldpwd=0x7f09007f;
+        public static final int oldpwd_edittext=0x7f090082;
         public static final int password=0x7f090011;
         public static final int password_unpass=0x7f090015;
         public static final int pressure=0x7f09005d;
         public static final int pressure_dial_desc=0x7f090058;
         public static final int pressure_dial_pointer_desc=0x7f090059;
         public static final int pwdChange=0x7f090061;
+        public static final int pwdChange_confirm=0x7f090085;
         public static final int records=0x7f090022;
         public static final int report=0x7f090024;
         public static final int rotate_speed=0x7f09005b;
@@ -1742,8 +1767,8 @@ containing a value of this type.
         public static final int sos=0x7f090029;
         public static final int speed_dial_desc=0x7f090048;
         public static final int speed_pointer_desc=0x7f090049;
-        public static final int switch_off=0x7f090080;
-        public static final int switch_on=0x7f09007f;
+        public static final int switch_off=0x7f090087;
+        public static final int switch_on=0x7f090086;
         public static final int tag_name_avgfuel=0x7f090069;
         public static final int tag_name_avgspeed=0x7f09006a;
         public static final int tag_name_brake=0x7f090066;
@@ -3156,4 +3181,1472 @@ containing a value of this type.
            <tr><td><code>{@link #SherlockSpinner_android_popupBackground android:popupBackground}</code></td><td> Background drawable to use for the dropdown in spinnerMode="dropdown".</td></tr>
            <tr><td><code>{@link #SherlockSpinner_android_popupPromptView android:popupPromptView}</code></td><td> Reference to a layout to use for displaying a prompt in the dropdown for
              spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_prompt android:prompt}</code></td>
+           <tr><td><code>{@link #SherlockSpinner_android_prompt android:prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
+           </table>
+           @see #SherlockSpinner_android_dropDownHorizontalOffset
+           @see #SherlockSpinner_android_dropDownSelector
+           @see #SherlockSpinner_android_dropDownVerticalOffset
+           @see #SherlockSpinner_android_dropDownWidth
+           @see #SherlockSpinner_android_gravity
+           @see #SherlockSpinner_android_popupBackground
+           @see #SherlockSpinner_android_popupPromptView
+           @see #SherlockSpinner_android_prompt
+         */
+        public static final int[] SherlockSpinner = {
+            0x010100af, 0x01010175, 0x01010176, 0x0101017b,
+            0x01010262, 0x010102ac, 0x010102ad, 0x0101041f
+        };
+        /**
+          <p>
+          @attr description
+           Horizontal offset from the spinner widget for positioning the dropdown
+             in spinnerMode="dropdown". 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#dropDownHorizontalOffset}.
+          @attr name android:dropDownHorizontalOffset
+        */
+        public static final int SherlockSpinner_android_dropDownHorizontalOffset = 5;
+        /**
+          <p>
+          @attr description
+           List selector to use for spinnerMode="dropdown" display. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#dropDownSelector}.
+          @attr name android:dropDownSelector
+        */
+        public static final int SherlockSpinner_android_dropDownSelector = 1;
+        /**
+          <p>
+          @attr description
+           Vertical offset from the spinner widget for positioning the dropdown in
+             spinnerMode="dropdown". 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#dropDownVerticalOffset}.
+          @attr name android:dropDownVerticalOffset
+        */
+        public static final int SherlockSpinner_android_dropDownVerticalOffset = 6;
+        /**
+          <p>
+          @attr description
+           Width of the dropdown in spinnerMode="dropdown". 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#dropDownWidth}.
+          @attr name android:dropDownWidth
+        */
+        public static final int SherlockSpinner_android_dropDownWidth = 4;
+        /**
+          <p>
+          @attr description
+           Gravity setting for positioning the currently selected item. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#gravity}.
+          @attr name android:gravity
+        */
+        public static final int SherlockSpinner_android_gravity = 0;
+        /**
+          <p>
+          @attr description
+           Background drawable to use for the dropdown in spinnerMode="dropdown". 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#popupBackground}.
+          @attr name android:popupBackground
+        */
+        public static final int SherlockSpinner_android_popupBackground = 2;
+        /**
+          <p>
+          @attr description
+           Reference to a layout to use for displaying a prompt in the dropdown for
+             spinnerMode="dropdown". This layout must contain a TextView with the id
+             @android:id/text1 to be populated with the prompt text. 
+          <p>This is a private symbol.
+          @attr name android:popupPromptView
+        */
+        public static final int SherlockSpinner_android_popupPromptView = 7;
+        /**
+          <p>
+          @attr description
+           The prompt to display when the spinner's dialog is shown. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#prompt}.
+          @attr name android:prompt
+        */
+        public static final int SherlockSpinner_android_prompt = 3;
+        /** Attributes that can be used with a SherlockTheme.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarDivider com.xhermes.android:actionBarDivider}</code></td><td> Custom divider drawable to use for elements in the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarItemBackground com.xhermes.android:actionBarItemBackground}</code></td><td> Custom item state list drawable background for action bar items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarSize com.xhermes.android:actionBarSize}</code></td><td> Size of the Action Bar, including the contextual
+             bar used to present Action Modes.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarSplitStyle com.xhermes.android:actionBarSplitStyle}</code></td><td> Reference to a style for the split Action Bar.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarStyle com.xhermes.android:actionBarStyle}</code></td><td> Reference to a style for the Action Bar </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarTabBarStyle com.xhermes.android:actionBarTabBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarTabStyle com.xhermes.android:actionBarTabStyle}</code></td><td> Default style for tabs within an action bar </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarTabTextStyle com.xhermes.android:actionBarTabTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarWidgetTheme com.xhermes.android:actionBarWidgetTheme}</code></td><td> Reference to a theme that should be used to inflate widgets
+             and layouts destined for the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionButtonStyle com.xhermes.android:actionButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionDropDownStyle com.xhermes.android:actionDropDownStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionMenuTextAppearance com.xhermes.android:actionMenuTextAppearance}</code></td><td> TextAppearance style that will be applied to text that
+             appears within action menu items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionMenuTextColor com.xhermes.android:actionMenuTextColor}</code></td><td> Color for text that appears within action menu items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeBackground com.xhermes.android:actionModeBackground}</code></td><td> Background drawable to use for action mode UI </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeCloseButtonStyle com.xhermes.android:actionModeCloseButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeCloseDrawable com.xhermes.android:actionModeCloseDrawable}</code></td><td> Drawable to use for the close action mode button </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModePopupWindowStyle com.xhermes.android:actionModePopupWindowStyle}</code></td><td> PopupWindow style to use for action modes when showing as a window overlay.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeShareDrawable com.xhermes.android:actionModeShareDrawable}</code></td><td> Drawable to use for the Share action button in WebView selection action modes </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeSplitBackground com.xhermes.android:actionModeSplitBackground}</code></td><td> Background drawable to use for action mode UI in the lower split bar </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeStyle com.xhermes.android:actionModeStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionOverflowButtonStyle com.xhermes.android:actionOverflowButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionSpinnerItemStyle com.xhermes.android:actionSpinnerItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_activatedBackgroundIndicator com.xhermes.android:activatedBackgroundIndicator}</code></td><td> Drawable used as a background for activated items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_activityChooserViewStyle com.xhermes.android:activityChooserViewStyle}</code></td><td> Default ActivityChooserView style.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_buttonStyleSmall com.xhermes.android:buttonStyleSmall}</code></td><td> Small Button style.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_dividerVertical com.xhermes.android:dividerVertical}</code></td><td> Drawable to use for generic vertical dividers.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_dropDownHintAppearance com.xhermes.android:dropDownHintAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_dropDownListViewStyle com.xhermes.android:dropDownListViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_dropdownListPreferredItemHeight com.xhermes.android:dropdownListPreferredItemHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_homeAsUpIndicator com.xhermes.android:homeAsUpIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPopupWindowStyle com.xhermes.android:listPopupWindowStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPreferredItemHeightSmall com.xhermes.android:listPreferredItemHeightSmall}</code></td><td> A smaller, sleeker list item height.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingLeft com.xhermes.android:listPreferredItemPaddingLeft}</code></td><td> The preferred padding along the left edge of list items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingRight com.xhermes.android:listPreferredItemPaddingRight}</code></td><td> The preferred padding along the right edge of list items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_popupMenuStyle com.xhermes.android:popupMenuStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchAutoCompleteTextView com.xhermes.android:searchAutoCompleteTextView}</code></td><td> SearchView AutoCompleteTextView style </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchDropdownBackground com.xhermes.android:searchDropdownBackground}</code></td><td> SearchView dropdown background </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchResultListItemHeight com.xhermes.android:searchResultListItemHeight}</code></td><td> The list item height for search results.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewCloseIcon com.xhermes.android:searchViewCloseIcon}</code></td><td> SearchView close button icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewEditQuery com.xhermes.android:searchViewEditQuery}</code></td><td> SearchView query refinement icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewEditQueryBackground com.xhermes.android:searchViewEditQueryBackground}</code></td><td> SearchView query refinement icon background </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewGoIcon com.xhermes.android:searchViewGoIcon}</code></td><td> SearchView Go button icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewSearchIcon com.xhermes.android:searchViewSearchIcon}</code></td><td> SearchView Search icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewTextField com.xhermes.android:searchViewTextField}</code></td><td> SearchView text field background for the left section </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewTextFieldRight com.xhermes.android:searchViewTextFieldRight}</code></td><td> SearchView text field background for the right section </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewVoiceIcon com.xhermes.android:searchViewVoiceIcon}</code></td><td> SearchView Voice button icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_selectableItemBackground com.xhermes.android:selectableItemBackground}</code></td><td> Background drawable for standalone items that need focus/pressed states.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_spinnerDropDownItemStyle com.xhermes.android:spinnerDropDownItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_spinnerItemStyle com.xhermes.android:spinnerItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceLargePopupMenu com.xhermes.android:textAppearanceLargePopupMenu}</code></td><td> Text color, typeface, size, and style for the text inside of a popup menu.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceListItemSmall com.xhermes.android:textAppearanceListItemSmall}</code></td><td> The preferred TextAppearance for the primary text of small list items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultSubtitle com.xhermes.android:textAppearanceSearchResultSubtitle}</code></td><td> Text color, typeface, size, and style for system search result subtitle.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultTitle com.xhermes.android:textAppearanceSearchResultTitle}</code></td><td> Text color, typeface, size, and style for system search result title.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSmall com.xhermes.android:textAppearanceSmall}</code></td><td> Text color, typeface, size, and style for "small" text.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSmallPopupMenu com.xhermes.android:textAppearanceSmallPopupMenu}</code></td><td> Text color, typeface, size, and style for small text inside of a popup menu.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorPrimary com.xhermes.android:textColorPrimary}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorPrimaryDisableOnly com.xhermes.android:textColorPrimaryDisableOnly}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorPrimaryInverse com.xhermes.android:textColorPrimaryInverse}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorSearchUrl com.xhermes.android:textColorSearchUrl}</code></td><td> Text color for urls in search suggestions, used by things like global search and the browser.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowActionBar com.xhermes.android:windowActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowActionBarOverlay com.xhermes.android:windowActionBarOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowActionModeOverlay com.xhermes.android:windowActionModeOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowContentOverlay com.xhermes.android:windowContentOverlay}</code></td><td> This Drawable is overlaid over the foreground of the Window's content area, usually
+             to place a shadow below the title.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowMinWidthMajor com.xhermes.android:windowMinWidthMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowMinWidthMinor com.xhermes.android:windowMinWidthMinor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowNoTitle com.xhermes.android:windowNoTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowSplitActionBar com.xhermes.android:windowSplitActionBar}</code></td><td></td></tr>
+           </table>
+           @see #SherlockTheme_actionBarDivider
+           @see #SherlockTheme_actionBarItemBackground
+           @see #SherlockTheme_actionBarSize
+           @see #SherlockTheme_actionBarSplitStyle
+           @see #SherlockTheme_actionBarStyle
+           @see #SherlockTheme_actionBarTabBarStyle
+           @see #SherlockTheme_actionBarTabStyle
+           @see #SherlockTheme_actionBarTabTextStyle
+           @see #SherlockTheme_actionBarWidgetTheme
+           @see #SherlockTheme_actionButtonStyle
+           @see #SherlockTheme_actionDropDownStyle
+           @see #SherlockTheme_actionMenuTextAppearance
+           @see #SherlockTheme_actionMenuTextColor
+           @see #SherlockTheme_actionModeBackground
+           @see #SherlockTheme_actionModeCloseButtonStyle
+           @see #SherlockTheme_actionModeCloseDrawable
+           @see #SherlockTheme_actionModePopupWindowStyle
+           @see #SherlockTheme_actionModeShareDrawable
+           @see #SherlockTheme_actionModeSplitBackground
+           @see #SherlockTheme_actionModeStyle
+           @see #SherlockTheme_actionOverflowButtonStyle
+           @see #SherlockTheme_actionSpinnerItemStyle
+           @see #SherlockTheme_activatedBackgroundIndicator
+           @see #SherlockTheme_activityChooserViewStyle
+           @see #SherlockTheme_buttonStyleSmall
+           @see #SherlockTheme_dividerVertical
+           @see #SherlockTheme_dropDownHintAppearance
+           @see #SherlockTheme_dropDownListViewStyle
+           @see #SherlockTheme_dropdownListPreferredItemHeight
+           @see #SherlockTheme_homeAsUpIndicator
+           @see #SherlockTheme_listPopupWindowStyle
+           @see #SherlockTheme_listPreferredItemHeightSmall
+           @see #SherlockTheme_listPreferredItemPaddingLeft
+           @see #SherlockTheme_listPreferredItemPaddingRight
+           @see #SherlockTheme_popupMenuStyle
+           @see #SherlockTheme_searchAutoCompleteTextView
+           @see #SherlockTheme_searchDropdownBackground
+           @see #SherlockTheme_searchResultListItemHeight
+           @see #SherlockTheme_searchViewCloseIcon
+           @see #SherlockTheme_searchViewEditQuery
+           @see #SherlockTheme_searchViewEditQueryBackground
+           @see #SherlockTheme_searchViewGoIcon
+           @see #SherlockTheme_searchViewSearchIcon
+           @see #SherlockTheme_searchViewTextField
+           @see #SherlockTheme_searchViewTextFieldRight
+           @see #SherlockTheme_searchViewVoiceIcon
+           @see #SherlockTheme_selectableItemBackground
+           @see #SherlockTheme_spinnerDropDownItemStyle
+           @see #SherlockTheme_spinnerItemStyle
+           @see #SherlockTheme_textAppearanceLargePopupMenu
+           @see #SherlockTheme_textAppearanceListItemSmall
+           @see #SherlockTheme_textAppearanceSearchResultSubtitle
+           @see #SherlockTheme_textAppearanceSearchResultTitle
+           @see #SherlockTheme_textAppearanceSmall
+           @see #SherlockTheme_textAppearanceSmallPopupMenu
+           @see #SherlockTheme_textColorPrimary
+           @see #SherlockTheme_textColorPrimaryDisableOnly
+           @see #SherlockTheme_textColorPrimaryInverse
+           @see #SherlockTheme_textColorSearchUrl
+           @see #SherlockTheme_windowActionBar
+           @see #SherlockTheme_windowActionBarOverlay
+           @see #SherlockTheme_windowActionModeOverlay
+           @see #SherlockTheme_windowContentOverlay
+           @see #SherlockTheme_windowMinWidthMajor
+           @see #SherlockTheme_windowMinWidthMinor
+           @see #SherlockTheme_windowNoTitle
+           @see #SherlockTheme_windowSplitActionBar
+         */
+        public static final int[] SherlockTheme = {
+            0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009,
+            0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d,
+            0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011,
+            0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015,
+            0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019,
+            0x7f01001a, 0x7f01001b, 0x7f01001c, 0x7f01001d,
+            0x7f01001e, 0x7f01001f, 0x7f010020, 0x7f010021,
+            0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025,
+            0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029,
+            0x7f01002a, 0x7f01002b, 0x7f01002c, 0x7f01002d,
+            0x7f01002e, 0x7f01002f, 0x7f010030, 0x7f010031,
+            0x7f010032, 0x7f010033, 0x7f010034, 0x7f010035,
+            0x7f010036, 0x7f010037, 0x7f010038, 0x7f010039,
+            0x7f01003a, 0x7f01003b, 0x7f01003c, 0x7f01003d,
+            0x7f01003e, 0x7f01003f, 0x7f010040, 0x7f010041,
+            0x7f010042, 0x7f010043, 0x7f010044, 0x7f010045,
+            0x7f010046, 0x7f010047, 0x7f010048
+        };
+        /**
+          <p>
+          @attr description
+           Custom divider drawable to use for elements in the action bar. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionBarDivider
+        */
+        public static final int SherlockTheme_actionBarDivider = 8;
+        /**
+          <p>
+          @attr description
+           Custom item state list drawable background for action bar items. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionBarItemBackground
+        */
+        public static final int SherlockTheme_actionBarItemBackground = 9;
+        /**
+          <p>
+          @attr description
+           Size of the Action Bar, including the contextual
+             bar used to present Action Modes. 
+
+
+          <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>wrap_content</code></td><td>0</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionBarSize
+        */
+        public static final int SherlockTheme_actionBarSize = 7;
+        /**
+          <p>
+          @attr description
+           Reference to a style for the split Action Bar. This style
+             controls the split component that holds the menu/action
+             buttons. actionBarStyle is still used for the primary
+             bar. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionBarSplitStyle
+        */
+        public static final int SherlockTheme_actionBarSplitStyle = 5;
+        /**
+          <p>
+          @attr description
+           Reference to a style for the Action Bar 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionBarStyle
+        */
+        public static final int SherlockTheme_actionBarStyle = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#actionBarTabBarStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:actionBarTabBarStyle
+        */
+        public static final int SherlockTheme_actionBarTabBarStyle = 1;
+        /**
+          <p>
+          @attr description
+           Default style for tabs within an action bar 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionBarTabStyle
+        */
+        public static final int SherlockTheme_actionBarTabStyle = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#actionBarTabTextStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:actionBarTabTextStyle
+        */
+        public static final int SherlockTheme_actionBarTabTextStyle = 2;
+        /**
+          <p>
+          @attr description
+           Reference to a theme that should be used to inflate widgets
+             and layouts destined for the action bar. Most of the time
+             this will be a reference to the current theme, but when
+             the action bar has a significantly different contrast
+             profile than the rest of the activity the difference
+             can become important. If this is set to @null the current
+             theme will be used.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionBarWidgetTheme
+        */
+        public static final int SherlockTheme_actionBarWidgetTheme = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#actionButtonStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:actionButtonStyle
+        */
+        public static final int SherlockTheme_actionButtonStyle = 52;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#actionDropDownStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:actionDropDownStyle
+        */
+        public static final int SherlockTheme_actionDropDownStyle = 51;
+        /**
+          <p>
+          @attr description
+           TextAppearance style that will be applied to text that
+             appears within action menu items. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionMenuTextAppearance
+        */
+        public static final int SherlockTheme_actionMenuTextAppearance = 10;
+        /**
+          <p>
+          @attr description
+           Color for text that appears within action menu items. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionMenuTextColor
+        */
+        public static final int SherlockTheme_actionMenuTextColor = 11;
+        /**
+          <p>
+          @attr description
+           Background drawable to use for action mode UI 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionModeBackground
+        */
+        public static final int SherlockTheme_actionModeBackground = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#actionModeCloseButtonStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:actionModeCloseButtonStyle
+        */
+        public static final int SherlockTheme_actionModeCloseButtonStyle = 13;
+        /**
+          <p>
+          @attr description
+           Drawable to use for the close action mode button 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionModeCloseDrawable
+        */
+        public static final int SherlockTheme_actionModeCloseDrawable = 16;
+        /**
+          <p>
+          @attr description
+           PopupWindow style to use for action modes when showing as a window overlay. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionModePopupWindowStyle
+        */
+        public static final int SherlockTheme_actionModePopupWindowStyle = 18;
+        /**
+          <p>
+          @attr description
+           Drawable to use for the Share action button in WebView selection action modes 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionModeShareDrawable
+        */
+        public static final int SherlockTheme_actionModeShareDrawable = 17;
+        /**
+          <p>
+          @attr description
+           Background drawable to use for action mode UI in the lower split bar 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:actionModeSplitBackground
+        */
+        public static final int SherlockTheme_actionModeSplitBackground = 15;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#actionModeStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:actionModeStyle
+        */
+        public static final int SherlockTheme_actionModeStyle = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#actionOverflowButtonStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:actionOverflowButtonStyle
+        */
+        public static final int SherlockTheme_actionOverflowButtonStyle = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#actionSpinnerItemStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:actionSpinnerItemStyle
+        */
+        public static final int SherlockTheme_actionSpinnerItemStyle = 57;
+        /**
+          <p>
+          @attr description
+           Drawable used as a background for activated items. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:activatedBackgroundIndicator
+        */
+        public static final int SherlockTheme_activatedBackgroundIndicator = 65;
+        /**
+          <p>
+          @attr description
+           Default ActivityChooserView style. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:activityChooserViewStyle
+        */
+        public static final int SherlockTheme_activityChooserViewStyle = 64;
+        /**
+          <p>
+          @attr description
+           Small Button style. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:buttonStyleSmall
+        */
+        public static final int SherlockTheme_buttonStyleSmall = 19;
+        /**
+          <p>
+          @attr description
+           Drawable to use for generic vertical dividers. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:dividerVertical
+        */
+        public static final int SherlockTheme_dividerVertical = 50;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#dropDownHintAppearance}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:dropDownHintAppearance
+        */
+        public static final int SherlockTheme_dropDownHintAppearance = 66;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#dropDownListViewStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:dropDownListViewStyle
+        */
+        public static final int SherlockTheme_dropDownListViewStyle = 54;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#dropdownListPreferredItemHeight}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:dropdownListPreferredItemHeight
+        */
+        public static final int SherlockTheme_dropdownListPreferredItemHeight = 56;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#homeAsUpIndicator}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:homeAsUpIndicator
+        */
+        public static final int SherlockTheme_homeAsUpIndicator = 53;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#listPopupWindowStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:listPopupWindowStyle
+        */
+        public static final int SherlockTheme_listPopupWindowStyle = 63;
+        /**
+          <p>
+          @attr description
+           A smaller, sleeker list item height. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:listPreferredItemHeightSmall
+        */
+        public static final int SherlockTheme_listPreferredItemHeightSmall = 44;
+        /**
+          <p>
+          @attr description
+           The preferred padding along the left edge of list items. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:listPreferredItemPaddingLeft
+        */
+        public static final int SherlockTheme_listPreferredItemPaddingLeft = 45;
+        /**
+          <p>
+          @attr description
+           The preferred padding along the right edge of list items. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:listPreferredItemPaddingRight
+        */
+        public static final int SherlockTheme_listPreferredItemPaddingRight = 46;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#popupMenuStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:popupMenuStyle
+        */
+        public static final int SherlockTheme_popupMenuStyle = 55;
+        /**
+          <p>
+          @attr description
+           SearchView AutoCompleteTextView style 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchAutoCompleteTextView
+        */
+        public static final int SherlockTheme_searchAutoCompleteTextView = 30;
+        /**
+          <p>
+          @attr description
+           SearchView dropdown background 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchDropdownBackground
+        */
+        public static final int SherlockTheme_searchDropdownBackground = 31;
+        /**
+          <p>
+          @attr description
+           The list item height for search results. @hide 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchResultListItemHeight
+        */
+        public static final int SherlockTheme_searchResultListItemHeight = 41;
+        /**
+          <p>
+          @attr description
+           SearchView close button icon 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchViewCloseIcon
+        */
+        public static final int SherlockTheme_searchViewCloseIcon = 32;
+        /**
+          <p>
+          @attr description
+           SearchView query refinement icon 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchViewEditQuery
+        */
+        public static final int SherlockTheme_searchViewEditQuery = 36;
+        /**
+          <p>
+          @attr description
+           SearchView query refinement icon background 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchViewEditQueryBackground
+        */
+        public static final int SherlockTheme_searchViewEditQueryBackground = 37;
+        /**
+          <p>
+          @attr description
+           SearchView Go button icon 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchViewGoIcon
+        */
+        public static final int SherlockTheme_searchViewGoIcon = 33;
+        /**
+          <p>
+          @attr description
+           SearchView Search icon 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchViewSearchIcon
+        */
+        public static final int SherlockTheme_searchViewSearchIcon = 34;
+        /**
+          <p>
+          @attr description
+           SearchView text field background for the left section 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchViewTextField
+        */
+        public static final int SherlockTheme_searchViewTextField = 38;
+        /**
+          <p>
+          @attr description
+           SearchView text field background for the right section 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchViewTextFieldRight
+        */
+        public static final int SherlockTheme_searchViewTextFieldRight = 39;
+        /**
+          <p>
+          @attr description
+           SearchView Voice button icon 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:searchViewVoiceIcon
+        */
+        public static final int SherlockTheme_searchViewVoiceIcon = 35;
+        /**
+          <p>
+          @attr description
+           Background drawable for standalone items that need focus/pressed states. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:selectableItemBackground
+        */
+        public static final int SherlockTheme_selectableItemBackground = 20;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#spinnerDropDownItemStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:spinnerDropDownItemStyle
+        */
+        public static final int SherlockTheme_spinnerDropDownItemStyle = 29;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#spinnerItemStyle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.xhermes.android:spinnerItemStyle
+        */
+        public static final int SherlockTheme_spinnerItemStyle = 28;
+        /**
+          <p>
+          @attr description
+           Text color, typeface, size, and style for the text inside of a popup menu. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textAppearanceLargePopupMenu
+        */
+        public static final int SherlockTheme_textAppearanceLargePopupMenu = 22;
+        /**
+          <p>
+          @attr description
+           The preferred TextAppearance for the primary text of small list items. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textAppearanceListItemSmall
+        */
+        public static final int SherlockTheme_textAppearanceListItemSmall = 47;
+        /**
+          <p>
+          @attr description
+           Text color, typeface, size, and style for system search result subtitle. Defaults to primary inverse text color. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textAppearanceSearchResultSubtitle
+        */
+        public static final int SherlockTheme_textAppearanceSearchResultSubtitle = 43;
+        /**
+          <p>
+          @attr description
+           Text color, typeface, size, and style for system search result title. Defaults to primary inverse text color. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textAppearanceSearchResultTitle
+        */
+        public static final int SherlockTheme_textAppearanceSearchResultTitle = 42;
+        /**
+          <p>
+          @attr description
+           Text color, typeface, size, and style for "small" text. Defaults to secondary text color. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textAppearanceSmall
+        */
+        public static final int SherlockTheme_textAppearanceSmall = 24;
+        /**
+          <p>
+          @attr description
+           Text color, typeface, size, and style for small text inside of a popup menu. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textAppearanceSmallPopupMenu
+        */
+        public static final int SherlockTheme_textAppearanceSmallPopupMenu = 23;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#textColorPrimary}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:textColorPrimary
+        */
+        public static final int SherlockTheme_textColorPrimary = 25;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#textColorPrimaryDisableOnly}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:textColorPrimaryDisableOnly
+        */
+        public static final int SherlockTheme_textColorPrimaryDisableOnly = 26;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#textColorPrimaryInverse}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:textColorPrimaryInverse
+        */
+        public static final int SherlockTheme_textColorPrimaryInverse = 27;
+        /**
+          <p>
+          @attr description
+           Text color for urls in search suggestions, used by things like global search and the browser. @hide 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textColorSearchUrl
+        */
+        public static final int SherlockTheme_textColorSearchUrl = 40;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#windowActionBar}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:windowActionBar
+        */
+        public static final int SherlockTheme_windowActionBar = 59;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#windowActionBarOverlay}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:windowActionBarOverlay
+        */
+        public static final int SherlockTheme_windowActionBarOverlay = 60;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#windowActionModeOverlay}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:windowActionModeOverlay
+        */
+        public static final int SherlockTheme_windowActionModeOverlay = 61;
+        /**
+          <p>
+          @attr description
+           This Drawable is overlaid over the foreground of the Window's content area, usually
+             to place a shadow below the title.  
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:windowContentOverlay
+        */
+        public static final int SherlockTheme_windowContentOverlay = 21;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#windowMinWidthMajor}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:windowMinWidthMajor
+        */
+        public static final int SherlockTheme_windowMinWidthMajor = 48;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#windowMinWidthMinor}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:windowMinWidthMinor
+        */
+        public static final int SherlockTheme_windowMinWidthMinor = 49;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#windowNoTitle}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:windowNoTitle
+        */
+        public static final int SherlockTheme_windowNoTitle = 58;
+        /**
+          <p>This symbol is the offset where the {@link com.xhermes.android.R.attr#windowSplitActionBar}
+          attribute's value can be found in the {@link #SherlockTheme} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.xhermes.android:windowSplitActionBar
+        */
+        public static final int SherlockTheme_windowSplitActionBar = 62;
+        /** Attributes that can be used with a SherlockView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SherlockView_android_focusable android:focusable}</code></td><td></td></tr>
+           </table>
+           @see #SherlockView_android_focusable
+         */
+        public static final int[] SherlockView = {
+            0x010100da
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#focusable}
+          attribute's value can be found in the {@link #SherlockView} array.
+          @attr name android:focusable
+        */
+        public static final int SherlockView_android_focusable = 0;
+        /** Attributes that can be used with a Switch.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Switch_switchMinWidth com.xhermes.android:switchMinWidth}</code></td><td> Minimum width for the switch component </td></tr>
+           <tr><td><code>{@link #Switch_switchPadding com.xhermes.android:switchPadding}</code></td><td> Minimum space between the switch and caption text </td></tr>
+           <tr><td><code>{@link #Switch_switchTextAppearance com.xhermes.android:switchTextAppearance}</code></td><td> TextAppearance style for text displayed on the switch thumb.</td></tr>
+           <tr><td><code>{@link #Switch_textOff com.xhermes.android:textOff}</code></td><td> Text to use when the switch is in the unchecked/"off" state.</td></tr>
+           <tr><td><code>{@link #Switch_textOn com.xhermes.android:textOn}</code></td><td> Text to use when the switch is in the checked/"on" state.</td></tr>
+           <tr><td><code>{@link #Switch_thumb com.xhermes.android:thumb}</code></td><td> Drawable to use as the "thumb" that switches back and forth.</td></tr>
+           <tr><td><code>{@link #Switch_thumbTextPadding com.xhermes.android:thumbTextPadding}</code></td><td> Amount of padding on either side of text within the switch thumb.</td></tr>
+           <tr><td><code>{@link #Switch_track com.xhermes.android:track}</code></td><td> Drawable to use as the "track" that the switch thumb slides within.</td></tr>
+           </table>
+           @see #Switch_switchMinWidth
+           @see #Switch_switchPadding
+           @see #Switch_switchTextAppearance
+           @see #Switch_textOff
+           @see #Switch_textOn
+           @see #Switch_thumb
+           @see #Switch_thumbTextPadding
+           @see #Switch_track
+         */
+        public static final int[] Switch = {
+            0x7f01006f, 0x7f010070, 0x7f010071, 0x7f010072,
+            0x7f010073, 0x7f010074, 0x7f010075, 0x7f010076
+        };
+        /**
+          <p>
+          @attr description
+           Minimum width for the switch component 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:switchMinWidth
+        */
+        public static final int Switch_switchMinWidth = 6;
+        /**
+          <p>
+          @attr description
+           Minimum space between the switch and caption text 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:switchPadding
+        */
+        public static final int Switch_switchPadding = 7;
+        /**
+          <p>
+          @attr description
+           TextAppearance style for text displayed on the switch thumb. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:switchTextAppearance
+        */
+        public static final int Switch_switchTextAppearance = 5;
+        /**
+          <p>
+          @attr description
+           Text to use when the switch is in the unchecked/"off" state. 
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textOff
+        */
+        public static final int Switch_textOff = 3;
+        /**
+          <p>
+          @attr description
+           Text to use when the switch is in the checked/"on" state. 
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textOn
+        */
+        public static final int Switch_textOn = 2;
+        /**
+          <p>
+          @attr description
+           Drawable to use as the "thumb" that switches back and forth. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:thumb
+        */
+        public static final int Switch_thumb = 0;
+        /**
+          <p>
+          @attr description
+           Amount of padding on either side of text within the switch thumb. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:thumbTextPadding
+        */
+        public static final int Switch_thumbTextPadding = 4;
+        /**
+          <p>
+          @attr description
+           Drawable to use as the "track" that the switch thumb slides within. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:track
+        */
+        public static final int Switch_track = 1;
+        /** Attributes that can be used with a Switch_Style.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Switch_Style_switchStyle com.xhermes.android:switchStyle}</code></td><td> Default style for the Switch widget.</td></tr>
+           </table>
+           @see #Switch_Style_switchStyle
+         */
+        public static final int[] Switch_Style = {
+            0x7f01006e
+        };
+        /**
+          <p>
+          @attr description
+           Default style for the Switch widget. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:switchStyle
+        */
+        public static final int Switch_Style_switchStyle = 0;
+        /** Attributes that can be used with a TextAppearance.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TextAppearance_textAllCaps com.xhermes.android:textAllCaps}</code></td><td> Present the text in ALL CAPS.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textColor com.xhermes.android:textColor}</code></td><td> Text color.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textColorHighlight com.xhermes.android:textColorHighlight}</code></td><td> Color of the text selection highlight.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textColorHint com.xhermes.android:textColorHint}</code></td><td> Color of the hint text.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textColorLink com.xhermes.android:textColorLink}</code></td><td> Color of the links.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textSize com.xhermes.android:textSize}</code></td><td> Size of the text.</td></tr>
+           <tr><td><code>{@link #TextAppearance_textStyle com.xhermes.android:textStyle}</code></td><td> Style (bold, italic, bolditalic) for the text.</td></tr>
+           <tr><td><code>{@link #TextAppearance_typeface com.xhermes.android:typeface}</code></td><td> Typeface (normal, sans, serif, monospace) for the text.</td></tr>
+           </table>
+           @see #TextAppearance_textAllCaps
+           @see #TextAppearance_textColor
+           @see #TextAppearance_textColorHighlight
+           @see #TextAppearance_textColorHint
+           @see #TextAppearance_textColorLink
+           @see #TextAppearance_textSize
+           @see #TextAppearance_textStyle
+           @see #TextAppearance_typeface
+         */
+        public static final int[] TextAppearance = {
+            0x7f010077, 0x7f010078, 0x7f010079, 0x7f01007a,
+            0x7f01007b, 0x7f01007c, 0x7f01007d, 0x7f01007e
+        };
+        /**
+          <p>
+          @attr description
+           Present the text in ALL CAPS. This may use a small-caps form when available. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textAllCaps
+        */
+        public static final int TextAppearance_textAllCaps = 7;
+        /**
+          <p>
+          @attr description
+           Text color. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textColor
+        */
+        public static final int TextAppearance_textColor = 0;
+        /**
+          <p>
+          @attr description
+           Color of the text selection highlight. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textColorHighlight
+        */
+        public static final int TextAppearance_textColorHighlight = 4;
+        /**
+          <p>
+          @attr description
+           Color of the hint text. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textColorHint
+        */
+        public static final int TextAppearance_textColorHint = 5;
+        /**
+          <p>
+          @attr description
+           Color of the links. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textColorLink
+        */
+        public static final int TextAppearance_textColorLink = 6;
+        /**
+          <p>
+          @attr description
+           Size of the text. Recommended dimension type for text is "sp" for scaled-pixels (example: 15sp). 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textSize
+        */
+        public static final int TextAppearance_textSize = 1;
+        /**
+          <p>
+          @attr description
+           Style (bold, italic, bolditalic) for the text. 
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>bold</code></td><td>1</td><td></td></tr>
+<tr><td><code>italic</code></td><td>2</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:textStyle
+        */
+        public static final int TextAppearance_textStyle = 2;
+        /**
+          <p>
+          @attr description
+           Typeface (normal, sans, serif, monospace) for the text. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>sans</code></td><td>1</td><td></td></tr>
+<tr><td><code>serif</code></td><td>2</td><td></td></tr>
+<tr><td><code>monospace</code></td><td>3</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.xhermes.android:typeface
+        */
+        public static final int TextAppearance_typeface = 3;
+    };
+}

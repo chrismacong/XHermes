@@ -18,7 +18,6 @@
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
     <string name="title_alert">提示信息</string>
-    
     <string name="menu">菜单</string>
     <string name="home">主页</string>
     <string name="carinfo">车辆信息</string>
@@ -31,7 +30,6 @@
     <string name="about">关于</string>
     <string name="mail">消息</string>
     <string name="sos">紧急救援</string>
-    
     <string name="exm_mark_title">爱车健康评分</string>
     <string name="distance_extra_title">当日行驶里程</string>
     <string name="oil_extra_title">当日平均耗油</string>
@@ -61,11 +59,9 @@
     <string name="tr_engine_highest_rotation_speed">发动机最高转速：</string>
     <string name="tr_engine_highest_temperature">发动机最高水温：</string>
     <string name="tr_voltage">电瓶电压：</string>
-    
     <string name="newnotification">【XHermes】新消息</string>
     <string name="newalert">【XHermes】新的警告消息</string>
     <string name="no_value">--/--</string>
-    
     <string name="speed_dial_desc">速度仪表盘</string>
     <string name="speed_pointer_desc">速度仪表盘指针</string>
     <string name="first_view">仪表盘界面</string>
@@ -96,8 +92,7 @@
     <string name="pwdChange">修改密码</string>
     <string name="logout">注销登录</string>
     <string name="exit">退出XHermes</string>
-    
-        
+
     <!-- tag names -->
     <string name="tag_name_distance">里程</string>
     <string name="tag_name_fuel">油耗</string>
@@ -106,7 +101,7 @@
     <string name="tag_name_drivingtime">驾驶时间</string>
     <string name="tag_name_avgfuel">百公里油耗</string>
     <string name="tag_name_avgspeed">平均速度</string>
-    
+
     <!-- habit names -->
     <string name="habit_name_1">总距离（km）</string>
     <string name="habit_name_2">最大距离（km）</string>
@@ -123,12 +118,21 @@
     <string name="habit_name_13">平均油耗（百公里升）</string>
     <string name="habit_name_14">总疲劳驾驶时间（分钟）</string>
     <string name="habit_name_15">总驾驶时间（分钟）</string>
-    
+
     <!-- habit title -->
     <string name="habit_graph_time">驾车时间/时钟曲线</string>
     <string name="habit_graph_speedtime">驾车速度/时钟曲线</string>
     <string name="axis_y1">驾车时间(min)</string>
     <string name="axis_y2">速度(km/h))</string>
     <string name="axis_x">时钟</string>
-    
+
+    <!-- pwd change -->
+    <string name="oldpwd">当前密码:</string>
+    <string name="newpwd">新密码:</string>
+    <string name="newpwd_check">确认密码:</string>
+    <string name="oldpwd_edittext">请输入当前密码</string>
+    <string name="newpwd_edittext">请输入新密码</string>
+    <string name="newpwd_check_edittext">请再次输入新密码</string>
+    <string name="pwdChange_confirm">确认</string>
+
 </resources>
