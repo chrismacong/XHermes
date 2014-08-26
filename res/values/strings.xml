@@ -25,7 +25,7 @@
     <string name="message">消息提醒</string>
     <string name="records">维修记录</string>
     <string name="travelinfo">行车记录</string>
-    <string name="report">月度报表</string>
+    <string name="report">统计数据</string>
     <string name="setting">设置</string>
     <string name="help">帮助</string>
     <string name="about">关于</string>
@@ -96,4 +96,32 @@
     <string name="pwdChange">修改密码</string>
     <string name="logout">注销登录</string>
     <string name="exit">退出XHermes</string>
+    
+        
+    <!-- tag names -->
+    <string name="tag_name_distance">里程</string>
+    <string name="tag_name_fuel">油耗</string>
+    <string name="tag_name_brake">刹车</string>
+    <string name="tag_name_speedup">加速</string>
+    <string name="tag_name_drivingtime">驾驶时间</string>
+    <string name="tag_name_avgfuel">百公里油耗</string>
+    <string name="tag_name_avgspeed">平均速度</string>
+    
+    <!-- habit names -->
+    <string name="habit_name_1">总距离（km）</string>
+    <string name="habit_name_2">最大距离（km）</string>
+    <string name="habit_name_3">最大速度（km/h）</string>
+    <string name="habit_name_4">总超时时长（分钟）</string>
+    <string name="habit_name_5">总急刹车次数</string>
+    <string name="habit_name_6">总紧急刹车次数</string>
+    <string name="habit_name_7">总急加速次数</string>
+    <string name="habit_name_8">总紧急加速次数</string>
+    <string name="habit_name_9">平均速度（km/h）</string>
+    <string name="habit_name_10">发动机最高水温（摄氏度）</string>
+    <string name="habit_name_11">发动机最高转速</string>
+    <string name="habit_name_12">总油耗（升）</string>
+    <string name="habit_name_13">平均油耗（百公里升）</string>
+    <string name="habit_name_14">总疲劳驾驶时间（分钟）</string>
+    <string name="habit_name_15">总驾驶时间（分钟）</string>
+    
 </resources>

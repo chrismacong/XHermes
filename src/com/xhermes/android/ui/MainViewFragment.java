@@ -90,7 +90,7 @@ public class MainViewFragment extends Fragment{
 		button_functional_2 = (Button)rootview.findViewById(R.id.button_functional_2);
 		button_functional_3 = (Button)rootview.findViewById(R.id.button_functional_3);
 		pointer = (ImageView)rootview.findViewById(R.id.pointer);
-		content = (ImageView)rootview.findViewById(R.id.content);
+		//content = (ImageView)rootview.findViewById(R.id.content);
 		
 		WindowManager w = this.getActivity().getWindowManager();
 		int windowHeight = w.getDefaultDisplay().getHeight()/2;
@@ -110,8 +110,8 @@ public class MainViewFragment extends Fragment{
 		button_functional_4.getLayoutParams().height = yy_size;
 		pointer.getLayoutParams().width = middle_size;
 		pointer.getLayoutParams().height = middle_size;
-		content.getLayoutParams().width = middle_size;
-		content.getLayoutParams().height = middle_size;
+		//content.getLayoutParams().width = middle_size;
+		//content.getLayoutParams().height = middle_size;
 //		ViewTreeObserver vto1 = button_functional_1.getViewTreeObserver();
 //		vto1.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener()
 //        {
@@ -232,6 +232,24 @@ public class MainViewFragment extends Fragment{
 		//		layoutParams4.setMargins(0, 0, 0, 0);
 		//		button_functional_4.setLayoutParams(layoutParams4);
 
+		
+		pointer.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+//				Bundle bundle = new Bundle();  
+//				bundle.putString("terminalId", terminalId);
+//				VehicleExmFragment vFragment = new VehicleExmFragment(); 
+//				vFragment.setArguments(bundle);
+//				OverallFragmentController.removeFragment("exam");
+//				OverallFragmentController.addFragment("exam", vFragment);
+//				FragmentManager fm=getFragmentManager();
+//				FragmentTransaction transaction = fm.beginTransaction();
+//				transaction.replace(R.id.fragment_container, vFragment); 
+//				transaction.commit();
+			}
+		});
 		button_functional_1.setOnClickListener(new OnClickListener(){
 
 			@Override

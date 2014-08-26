@@ -14,21 +14,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import cn.jpush.android.api.JPushInterface;
-import cn.jpush.android.api.TagAliasCallback;
 
 import com.xhermes.android.R;
 import com.xhermes.android.network.URLMaker;
-import com.xhermes.android.util.Utilities;
 
-public class VehicleDetailFragment extends ListFragment{
+public class VehicleDetailFragment extends Fragment{
 	@Override
 	public void onDestroy() {
 		System.out.println("fragment onDestroy");
@@ -135,12 +132,12 @@ public class VehicleDetailFragment extends ListFragment{
 		System.out.println("fragment oncreateView");
 		View root=inflater.inflate(R.layout.vehicleinfo, null);
 		//vehicle_listview=getListView();
-		vehicle_listview=(ListView) root.findViewById(android.R.id.list);
+		vehicle_listview=(ListView) root.findViewById(R.id.vel_list);
 	
 		ctx=getActivity();
 		adapter = new SimpleAdapter(getActivity(),vehicle_data,R.layout.vehicleinfo_detail,  
 				new String[]{"image","title","text"},new int[]{R.id.image,R.id.title,R.id.text1});
-		setListAdapter(adapter);
+		vehicle_listview.setAdapter(adapter);
 		return root;
 	}
 }

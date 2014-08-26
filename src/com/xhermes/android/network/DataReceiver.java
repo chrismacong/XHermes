@@ -1,5 +1,7 @@
 package com.xhermes.android.network;
 
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -7,24 +9,26 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat.Builder;
 import android.util.Log;
-import android.widget.RemoteViews;
 import cn.jpush.android.api.JPushInterface;
 
 import com.xhermes.android.R;
+import com.xhermes.android.dao.NoticeDao;
 import com.xhermes.android.dao.OBDDataDao;
 import com.xhermes.android.dao.OBDParametersDao;
 import com.xhermes.android.dao.PositionDataDao;
 import com.xhermes.android.dao.TravelInfoDao;
+import com.xhermes.android.model.Notice;
 import com.xhermes.android.model.OBDData;
 import com.xhermes.android.model.OBDParameters;
 import com.xhermes.android.model.PositionData;
 import com.xhermes.android.model.TravelInfo;
-import com.xhermes.android.ui.MainActivity;
+import com.xhermes.android.util.OverallFragmentController;
 import com.xhermes.android.util.SystemSetControl;
 
 /**
@@ -35,16 +39,10 @@ public class DataReceiver extends BroadcastReceiver {
 	private static String eqid;
 	private static Handler mapHandler;
 	private static Handler obdHandler;
+	private static Handler mainActivityHandler;
 	private SystemSetControl syscontrol;
-	public static Handler getObdHandler() {
-		return obdHandler;
-	}
-
-	public static void setObdHandler(Handler obdHandler) {
-		DataReceiver.obdHandler = obdHandler;
-	}
+	public final static int nid=0;
 	private static Activity act;
-	private static int nid=0;
 	private NotificationManager nm;
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -95,13 +93,18 @@ public class DataReceiver extends BroadcastReceiver {
 				if(obdHandler!=null&&b)
 					obdHandler.sendEmptyMessage(1);
 			}else if(title.contains("Alert")){	//alert
-				//Toast.makeText(context, message, Toast.LENGTH_LONG);
+				String date = title.substring(title.indexOf("(")+1,title.indexOf(")"));
+				String ntitle="警告";
+				String sender="系统通知";
 				if(message.indexOf("%%%")>-1)
 					message = message.substring(0,message.lastIndexOf("%%%"));
 				String alerts[] = message.split("%%%");
 				String alertStr ="您有新的未读提醒";
-//				for(int i=0;i<alerts.length;i++)
-//					alertStr += "\n"+"○ "+alerts[i];
+				for(int i=0;i<alerts.length;i++){
+					Notice n=new Notice(ntitle,alerts[i],date,sender,eqid);
+					NoticeDao ndao=new NoticeDao(context);
+					ndao.insert(n);
+				}
 				send(context.getResources().getString(R.string.newnotification),context.getResources().getString(R.string.newalert),alertStr);
 
 			}
@@ -119,41 +122,58 @@ public class DataReceiver extends BroadcastReceiver {
 	}
 
 	public void send(String tickerText,String title,String content){
-		syscontrol=new SystemSetControl(act);
-		System.out.println(syscontrol.isNoticeReceive());
-		
-		if(act==null||!syscontrol.isNoticeReceive())
+		mainActivityHandler.sendEmptyMessage(0);
+		if(act==null)
 			return;
-		
-		nid++;
+
+		syscontrol=new SystemSetControl(act);
+		if(!syscontrol.isNoticeReceive())
+			return;
+
 		nm=(NotificationManager) act.getSystemService(Activity.NOTIFICATION_SERVICE);
-		Intent intent=new Intent(act,MainActivity.class);
+
+		Bundle bundle=new Bundle();
+		for(HashMap hm:OverallFragmentController.list){
+			if(hm.get("tag").equals("main")){
+				Fragment f=(Fragment) hm.get("fragment");
+				bundle=f.getArguments();
+				break;
+			}
+		}
+		Intent intent=new Intent(act,act.getClass());
+		intent.setFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		bundle.putString("fragment", "messageFragment");
+		intent.putExtra("bundle", bundle);
 		PendingIntent pi=PendingIntent.getActivity(act, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-//		RemoteViews contentView = new RemoteViews(act.getPackageName(), R.layout.notification_view);
-//		contentView.setImageViewResource(R.id.nimage, R.drawable.ic_launcher);
-//		contentView.setTextViewText(R.id.ntitle, title);
-//		contentView.setTextViewText(R.id.ntext, content);
-		
+		//		RemoteViews contentView = new RemoteViews(act.getPackageName(), R.layout.notification_view);
+		//		contentView.setImageViewResource(R.id.nimage, R.drawable.ic_launcher);
+		//		contentView.setTextViewText(R.id.ntitle, title);
+		//		contentView.setTextViewText(R.id.ntext, content);
+
+		NoticeDao ndao=new NoticeDao(act);
+		int notRead=ndao.queryReadOrNot(eqid, 0+"");
+
 		Builder nBuilder=new Builder(act);
 		nBuilder.setAutoCancel(true)
+		.setLargeIcon((BitmapFactory.decodeResource(act.getResources(), R.drawable.ic_launcher)))
 		.setSmallIcon(R.drawable.message)
 		.setContentIntent(pi)
 		.setTicker(tickerText)
 		.setContentTitle(title)
 		.setContentText(content)
-		.setContentInfo(nid+"")
+		.setContentInfo(notRead+"")
 		.setWhen(System.currentTimeMillis());
-		
+
 		int defSet = 0;
 		if(syscontrol.isBeep())
 			defSet|=Notification.DEFAULT_SOUND;
 		if(syscontrol.isShock())
 			defSet|=Notification.DEFAULT_VIBRATE;
-		
+
 		nBuilder.setDefaults(defSet);
 		Notification n=nBuilder.getNotification();
-		nm.notify(0, n);
+		nm.notify(nid, n);
 	}
 
 	public static String getEqid() {
@@ -175,5 +195,21 @@ public class DataReceiver extends BroadcastReceiver {
 
 	public static void setAct(Activity act) {
 		DataReceiver.act = act;
+	}
+
+	public static Handler getMainActivityHandler() {
+		return mainActivityHandler;
+	}
+
+	public static void setMainActivityHandler(Handler mainActivityHandler) {
+		DataReceiver.mainActivityHandler = mainActivityHandler;
+	}
+	
+	public static Handler getObdHandler() {
+		return obdHandler;
+	}
+
+	public static void setObdHandler(Handler obdHandler) {
+		DataReceiver.obdHandler = obdHandler;
 	}
 }
