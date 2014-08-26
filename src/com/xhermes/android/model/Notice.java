@@ -14,7 +14,7 @@ public class Notice {
 	}
 
 	public Notice(String notice){
-
+		
 	}
 
 	public Notice(String title, String content, String date, String sender,String eqid) {
