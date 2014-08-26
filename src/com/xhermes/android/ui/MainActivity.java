@@ -7,6 +7,8 @@ import android.app.Activity;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
@@ -30,6 +32,7 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.slidingmenu.lib.SlidingMenu;
 import com.xhermes.android.R;
+import com.xhermes.android.dao.NoticeDao;
 import com.xhermes.android.network.DataReceiver;
 import com.xhermes.android.util.DateController;
 import com.xhermes.android.util.OverallFragmentController;
@@ -94,13 +97,11 @@ public class MainActivity extends SherlockFragmentActivity {
 		}
 	}
 
-	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-		// TODO Auto-generated method stub
-		super.onPrepareOptionsMenu(menu);
-
-		int random_test_num = (int) (Math.random()*11);
-		MenuItem menuItem = menu.findItem(R.id.mail);
+	public void refreshMailMenuItem(){
+		//int random_test_num = (int) (Math.random()*11);
+		NoticeDao ndao=new NoticeDao(this);
+		int notRead=ndao.queryReadOrNot(terminalId, 0+"");
+		MenuItem menuItem = (MenuItem) mailMenu.findItem(R.id.mail);
 		int test_int_str[] = {0,1,2,3,4,5,6,7,8,9,10};
 		int test_R_str[] = {R.drawable.mail_icon,
 				R.drawable.mail_icon_1,
@@ -115,10 +116,20 @@ public class MainActivity extends SherlockFragmentActivity {
 				R.drawable.mail_icon_n
 		};
 		for(int i=0;i<test_int_str.length;i++){
-			if(test_int_str[i]==random_test_num){
+			if(test_int_str[i]==notRead){
 				menuItem.setIcon(test_R_str[i]);
 			}
+			if(notRead>=10){
+				menuItem.setIcon(test_R_str[10]);
+			}
 		}
+	}
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		super.onPrepareOptionsMenu(menu);
+		mailMenu=menu;
+		refreshMailMenuItem();
 		return true;
 	}
 
@@ -129,6 +140,19 @@ public class MainActivity extends SherlockFragmentActivity {
 		switch(item.getItemId()){  
 		case android.R.id.home: 
 			menu.toggle();
+			break;
+		case R.id.mail:
+			Bundle arguments2 = new Bundle();
+			arguments2.putString("terminalId", terminalId);
+			MessageFragment mFragment = new MessageFragment();
+			mFragment.setArguments(arguments2);
+			OverallFragmentController.removeFragment("message");
+			OverallFragmentController.addFragment("message", mFragment);
+			FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
+			transaction2.replace(R.id.fragment_container, mFragment,"message"); 
+			transaction2.commit();
+			break;
+			
 		}  
 		return super.onOptionsItemSelected(item);  
 	}
@@ -152,6 +176,8 @@ public class MainActivity extends SherlockFragmentActivity {
 	String terminalId;
 	private static final String TAG = MainActivity.class.getSimpleName(); 
 	private long clickTime = 0; 
+	private Handler mainActivityHandler;
+	private Menu mailMenu;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		System.out.println("onCreate");
@@ -183,6 +209,14 @@ public class MainActivity extends SherlockFragmentActivity {
 		OverallFragmentController.removeAll();
 		OverallFragmentController.addFragment("main", mFragment);
 
+		mainActivityHandler=new Handler(){
+			@Override
+			public void handleMessage(Message msg) {
+				refreshMailMenuItem();
+			}
+		};
+		DataReceiver.setMainActivityHandler(mainActivityHandler);
+		MessageFragment.setMainActivityHandler(mainActivityHandler);
 	}
 
 	private void exit() { 
@@ -224,7 +258,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		leftViewIcons=new int[]{
 				R.drawable.home,
 				R.drawable.carinfo,
-				R.drawable.message,
+				R.drawable.mail,
 				R.drawable.records,
 				R.drawable.travelinfo,
 				R.drawable.report,
