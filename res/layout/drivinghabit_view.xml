@@ -1,40 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="#fbfbea"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/habitmonthly_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:textSize="20sp" >
-    </TextView>
-    <!--
-        <TextView
-        android:id="@+id/testTextView_report"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/habitmonthly_title"
-         android:textColor="@color/black"
-        ></TextView>
-    -->
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="vertical"
+        android:layout_above="@+id/habit_date" >
+		
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignTop="@+id/habit_date" >
+             <ImageView
+                    android:id="@+id/stamp1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="40dp" />
 
-    <ListView
-        android:id="@+id/habitlist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/habitmonthly_title"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:scrollbars="none" >
-    </ListView>
+                <ImageView
+                    android:id="@+id/stamp2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/stamp1"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp" />
+
+                <ImageView
+                    android:id="@+id/stamp3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/stamp2"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp" />
+
+                <ImageView
+                    android:id="@+id/stamp4"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/stamp3"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/habitmonthly_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textSize="20sp" >
+            </TextView>
+
+            <ListView
+                android:id="@+id/habitlist"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_below="@+id/habitmonthly_title"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:scrollbars="none" >
+            </ListView>
+
+            <RelativeLayout
+                android:id="@+id/habit_ral_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/habitlist" >
+
+               
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/card"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/mileage_icon" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="0dp"
+                            android:text="@string/habit_graph_time"
+                            android:textColor="@color/title_color"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/time_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/habit_ral_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/habit_ral_1" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/card"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/speed_average_icon" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="0dp"
+                            android:text="@string/habit_graph_speedtime"
+                            android:textColor="@color/title_color"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/speedtime_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 
     <RelativeLayout
         android:id="@+id/habit_date"
@@ -73,42 +204,5 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#585858" />
     </RelativeLayout>
-	
-	<RelativeLayout
-	    android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        >
-        <ImageView   
-            android:id="@+id/stamp1"
-    		android:layout_width="60dp"  
-    		android:layout_height="60dp"
-    		android:layout_alignParentRight="true"
-    		android:layout_alignParentTop="true"
-    		android:layout_marginRight="20dp"
-    		android:layout_marginTop="40dp"/>  
-        <ImageView   
-            android:id="@+id/stamp2"
-    		android:layout_width="60dp"  
-    		android:layout_height="60dp"
-    		android:layout_below="@+id/stamp1"
-    		android:layout_alignParentRight="true"
-    		android:layout_marginRight="20dp"
-    		android:layout_marginTop="10dp"/>  
-        <ImageView   
-            android:id="@+id/stamp3"
-    		android:layout_width="60dp"  
-    		android:layout_height="60dp"
-    		android:layout_below="@+id/stamp2"
-    		android:layout_alignParentRight="true"
-    		android:layout_marginRight="20dp"
-    		android:layout_marginTop="10dp"/>   
-        <ImageView   
-            android:id="@+id/stamp4"
-    		android:layout_width="60dp"  
-    		android:layout_height="60dp"
-    		android:layout_below="@+id/stamp3"
-    		android:layout_alignParentRight="true"
-    		android:layout_marginRight="20dp"
-    		android:layout_marginTop="10dp"/>   
-	</RelativeLayout>
+
 </RelativeLayout>

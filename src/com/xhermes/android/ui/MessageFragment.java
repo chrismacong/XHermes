@@ -39,6 +39,7 @@ public class MessageFragment extends Fragment{
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		Bundle b=getArguments();
+		ctx=getActivity();
 		terminalId=b.getString("terminalId");
 		message_data=new ArrayList<Map<String,Object>>();
 		message_title =new ArrayList<String>();
@@ -75,7 +76,6 @@ public class MessageFragment extends Fragment{
 
 		View root=inflater.inflate(R.layout.message_view, null);
 		message_list=(ListView) root.findViewById(R.id.message_listview);
-		ctx=getActivity();
 		adapter = new SimpleAdapter(getActivity(),message_data,R.layout.message_listview,  
 				new String[]{"image","title","text","time"},new int[]{R.id.mimage,R.id.mtitle,R.id.mtext,R.id.mtime});
 		message_list.setAdapter(adapter);

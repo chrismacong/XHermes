@@ -10,5 +10,19 @@
     <color name="exm_blue">#04AEDA</color>
     <color name="main_color">#6DD30D</color>
     <color name="background_tab_pressed">#6633B5E5</color>
+    
+    <!-- card colors -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_shadow_1">#D4D4D4</color>
+    <color name="card_shadow_2">#DDDDDD</color>
+    <color name="card_detailing">#EEE</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- chart colors -->
+    <color name="axis_color">#ff828282</color>
+    <color name="chart_background">#f9f7f4</color>
+    <color name="time_series_color">#FE4365</color>
+    <color name="speedtime_series_color">#458994</color>
+    <color name="title_color">#ffa7a7a7</color>
 
 </resources>

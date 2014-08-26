@@ -124,4 +124,11 @@
     <string name="habit_name_14">总疲劳驾驶时间（分钟）</string>
     <string name="habit_name_15">总驾驶时间（分钟）</string>
     
+    <!-- habit title -->
+    <string name="habit_graph_time">驾车时间/时钟曲线</string>
+    <string name="habit_graph_speedtime">驾车速度/时钟曲线</string>
+    <string name="axis_y1">驾车时间(min)</string>
+    <string name="axis_y2">速度(km/h))</string>
+    <string name="axis_x">时钟</string>
+    
 </resources>
