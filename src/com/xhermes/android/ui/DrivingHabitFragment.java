@@ -98,7 +98,10 @@ public class DrivingHabitFragment extends Fragment{
 		right_btn = (ImageButton) rootview.findViewById(R.id.habit_button_chart_right);
 		monthText = (TextView)rootview.findViewById(R.id.habit_chartTextView);
 		listview = (ListView)rootview.findViewById(R.id.habitlist);
+		
 		pd= new CustomProgressDialog(this.getActivity(), R.style.dialog,"正在拉取数据...");
+		pd.setCanceledOnTouchOutside(false);
+		
 		stamp1 = (ImageView)rootview.findViewById(R.id.stamp1);
 		stamp2 = (ImageView)rootview.findViewById(R.id.stamp2);
 		stamp3 = (ImageView)rootview.findViewById(R.id.stamp3);

@@ -87,6 +87,7 @@ public class TravelInfoFragment extends Fragment{
 		travelInfoList=new ArrayList<TravelInfo>();
 		
 		pd= new CustomProgressDialog(ctx,R.style.dialog,"");
+		pd.setCanceledOnTouchOutside(false);
 		getTravelInfo(sdate,edate);
 		//travelInfoList=travelDao.queryByDate(terminalId, "starttime asc", "", sdate, edate);
 	}
