@@ -148,6 +148,7 @@ public class LoginActivity extends Activity {
 					}
 					else{
 						pd=new CustomProgressDialog(LoginActivity.this, R.style.dialog, "ÕýÔÚµÇÂ½¡­");
+						pd.setCanceledOnTouchOutside(false);
 						pd.show();
 						new AsyncTask<Void, Void, String>() {
 							String username = username_uncheck;
