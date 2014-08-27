@@ -52,7 +52,7 @@
                 android:clickable="false"
                 android:text="————"
                 android:textSize="12sp"
-                android:textColor="#5FA2DD" />
+                android:textColor="#81cbab" />
 
             <Button
                 android:id="@+id/endtime_btn"
@@ -87,7 +87,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1.5"
             android:scaleType="fitCenter"
-            android:src="@drawable/left" >
+            android:src="@drawable/left_date_btn_selector" >
         </ImageView>
 
         <Button
@@ -107,7 +107,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1.5"
             android:scaleType="fitCenter"
-            android:src="@drawable/right" >
+            android:src="@drawable/right_date_btn_selector" >
         </ImageView>
     </LinearLayout>
 

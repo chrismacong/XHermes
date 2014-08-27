@@ -63,6 +63,7 @@ public class DrivingMonthlyReportFragment extends Fragment{
 		global_month = c.get(Calendar.MONTH);
 		global_day = c.get(Calendar.DAY_OF_MONTH);
 		pd= new CustomProgressDialog(this.getActivity(), R.style.dialog,"正在拉取数据...");
+		pd.setCanceledOnTouchOutside(false);
 		//testTextView = (TextView) rootview.findViewById(R.id.testTextView);
 		pager = (ViewPager) rootview.findViewById(R.id.pager);
 		tabs = (PagerSlidingTabStrip) rootview.findViewById(R.id.tabs);
