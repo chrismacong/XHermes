@@ -23,7 +23,9 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xhermes.android.R;
@@ -31,6 +33,17 @@ import com.xhermes.android.util.MyThreadFor;
 import com.xhermes.android.util.OverallFragmentController;
 
 public class MainViewFragment extends Fragment{
+
+	@Override
+	public void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		double float_x_of_pointer = button_functional_3.getLayoutParams().width - (pointer.getLayoutParams().width/2);
+		double float_y_of_pointer = button_functional_4.getLayoutParams().height - (pointer.getLayoutParams().height/2);
+		FrameLayout.LayoutParams layoutParams =new FrameLayout.LayoutParams(pointer.getLayoutParams().width, pointer.getLayoutParams().height);
+		layoutParams.setMargins((int) float_x_of_pointer, (int) float_y_of_pointer, 0, 0);
+		pointer.setLayoutParams(layoutParams);
+	}
 
 	//	private TextView exm_mark_title;
 	private TextView exm_mark;
@@ -46,6 +59,7 @@ public class MainViewFragment extends Fragment{
 	private TextView car_number_textview;
 	private ImageView pointer;
 	private ImageView content;
+	private RelativeLayout circle_relative;
 	private int testsize;
 	String terminalId;
 	String vehicleexm_score;
@@ -89,6 +103,7 @@ public class MainViewFragment extends Fragment{
 		button_functional_4 = (Button)rootview.findViewById(R.id.button_functional_4);
 		button_functional_2 = (Button)rootview.findViewById(R.id.button_functional_2);
 		button_functional_3 = (Button)rootview.findViewById(R.id.button_functional_3);
+		circle_relative = (RelativeLayout)rootview.findViewById(R.id.circle_relative);
 		pointer = (ImageView)rootview.findViewById(R.id.pointer);
 		//content = (ImageView)rootview.findViewById(R.id.content);
 		
