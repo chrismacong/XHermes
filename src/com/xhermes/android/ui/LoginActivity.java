@@ -186,6 +186,7 @@ public class LoginActivity extends Activity {
 									Utilities.showMessage(LoginActivity.this, R.string.network_failed);
 								}
 								else{
+									System.out.println(signs[0]);
 									final int passOrNot = Integer.parseInt(signs[0]);
 									final String terminalId = signs[1];
 									if(passOrNot==0){

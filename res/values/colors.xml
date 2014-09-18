@@ -10,6 +10,7 @@
     <color name="exm_blue">#04AEDA</color>
     <color name="main_color">#6DD30D</color>
     <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="text_blue">#000099</color>
     
     <!-- card colors -->
     <color name="card_background">#FFFFFF</color>
