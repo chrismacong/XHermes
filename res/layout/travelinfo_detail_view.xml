@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#fbfbea">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/detail_up_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/detail_start_image_View"
+                        android:layout_width="20dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/startpoint" />
+
+                    <LinearLayout
+                        android:id="@+id/detail_start_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/detail_start_image_View"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/detail_startt_TextView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000000" />
+
+                        <View
+                            android:layout_width="180sp"
+                            android:layout_height="1sp"
+                            android:background="?android:attr/listDivider" />
+
+                        <TextView
+                            android:id="@+id/detail_startp_TextView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000000"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/detail_down_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_up_layout"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/detail_end_image_View"
+                        android:layout_width="20dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/endpoint" />
+
+                    <LinearLayout
+                        android:id="@+id/detail_end_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/detail_end_image_View"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/detail_endt_TextView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000000" />
+
+                        <View
+                            android:layout_width="180sp"
+                            android:layout_height="1sp"
+                            android:background="?android:attr/listDivider" />
+
+                        <TextView
+                            android:id="@+id/detail_endp_TextView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000000"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/detail_map_image"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/map_btn" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/detail_travelinfo_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000"
+        android:clickable="false"
+        android:divider="@null"
+        android:listSelector="#fbfbea" >
+    </ListView>
+
+</LinearLayout>

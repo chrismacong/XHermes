@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+ 
+    <item
+        android:id="@+id/mail"
+        android:icon="@drawable/mail_icon"
+        android:showAsAction="always"
+        android:title="@string/mail"
+        android:titleCondensed="@string/mail">
+    </item>
+    <item
+        android:id="@+id/sos"
+        android:icon="@drawable/sos_m_icon"
+        android:showAsAction="always"
+        android:title="@string/sos"
+        android:titleCondensed="@string/sos">
+    </item>
+ 
+</menu>
