@@ -86,7 +86,7 @@ public class TravelInfoFragment extends Fragment{
 		edate=date+this.getTime(DateController.getEnd_hourOfDay(), DateController.getEnd_minute()) + "00";
 		travelDao=new TravelInfoDao(ctx);
 		travelInfoList=new ArrayList<TravelInfo>();
-
+		
 		pd= new CustomProgressDialog(ctx,R.style.dialog,"");
 		pd.setCanceledOnTouchOutside(false);
 		getTravelInfo(sdate,edate);
@@ -115,7 +115,7 @@ public class TravelInfoFragment extends Fragment{
 		edate=getEndDateFromFormat();
 		//		System.out.println(sdate+"    "+edate);
 		//ArrayList<TravelInfo> tmpList=travelDao.queryByDate(terminalId, "starttime asc", "", sdate, edate);
-
+		
 		getTravelInfo(sdate, edate);
 		travel_adapter.notifyDataSetChanged();
 	}
@@ -145,7 +145,7 @@ public class TravelInfoFragment extends Fragment{
 	public String getTime(int arg1,int arg2){
 		return String.format("%02d", arg1)+":"+String.format("%02d", arg2);
 	}
-
+	
 	public String getTimeInFormat(String time_Str){
 		return time_Str.substring(0,2) + "-" + 
 				time_Str.substring(2,4) + "-" + 
@@ -156,14 +156,14 @@ public class TravelInfoFragment extends Fragment{
 	}
 
 	private void getTravelInfo(final String sdate,final String edate){
-
+		
 		pd.show();
-
+		
 		new AsyncTask<Void, Void, String>() {
 			ArrayList<TravelInfo> tempList=new ArrayList<TravelInfo>();
 			@Override
 			protected void onPreExecute() {
-
+				
 			}
 
 			@Override
@@ -186,23 +186,17 @@ public class TravelInfoFragment extends Fragment{
 				signInResult = signInResult.trim();
 				System.out.println("execute:" + signInResult);
 				String[] stringList=signInResult.split("@");
-				if(stringList.length<=1){
-					pd.dismiss();
-					Utilities.showMessage(getActivity(), R.string.network_failed);
-				}
-				else{
-					String terminalId=stringList[0];
-					travelInfoList.clear();
-					if(stringList.length>1){
-						for(int i=1;i<stringList.length;i++){
-							TravelInfo t=new TravelInfo(stringList[i]);
-							travelInfoList.add(t);
-						}
+				String terminalId=stringList[0];
+				travelInfoList.clear();
+				if(stringList.length>1){
+					for(int i=1;i<stringList.length;i++){
+						TravelInfo t=new TravelInfo(stringList[i]);
+						travelInfoList.add(t);
 					}
-					travel_adapter.notifyDataSetChanged();
-					pd.dismiss();
-					System.out.println("dismiss");
 				}
+				travel_adapter.notifyDataSetChanged();
+				pd.dismiss();
+				System.out.println("dismiss");
 			}
 		}.execute();
 	}
@@ -325,11 +319,11 @@ public class TravelInfoFragment extends Fragment{
 				DateController.setYear(tyear);
 				DateController.setMonthOfYear(tmonth);
 				DateController.setDayOfMonth(tday);
-				//				tmonth-=1;
-				//				if(tmonth<0){
-				//					tmonth=11;
-				//					tyear-=1;
-				//				}
+//				tmonth-=1;
+//				if(tmonth<0){
+//					tmonth=11;
+//					tyear-=1;
+//				}
 				date_btn.setText(getDate(tyear,tmonth,tday));
 				dataRefresh();
 			}
@@ -351,11 +345,11 @@ public class TravelInfoFragment extends Fragment{
 				DateController.setYear(tyear);
 				DateController.setMonthOfYear(tmonth);
 				DateController.setDayOfMonth(tday);
-				//				tmonth+=1;
-				//				if(tmonth>11){
-				//					tmonth=0;
-				//					tyear+=1;
-				//				}
+//				tmonth+=1;
+//				if(tmonth>11){
+//					tmonth=0;
+//					tyear+=1;
+//				}
 				date_btn.setText(getDate(tyear,tmonth,tday));
 				dataRefresh();
 			}
