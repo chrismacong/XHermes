@@ -113,6 +113,7 @@ public class VehicleExmFragment extends Fragment{
 					@Override
 					protected void onPostExecute(String signInResult) {
 						signInResult = signInResult.trim();
+						System.out.println(signInResult);
 						final String[] signs = signInResult.split(";");
 						HashMap map = listItems.get(1);
 						map.remove("exmlist_result_image");
