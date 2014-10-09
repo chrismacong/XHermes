@@ -195,11 +195,18 @@ public class LoginActivity extends Activity {
 									}
 									else{
 										JPushInterface.setDebugMode(true);
+										System.out.println("0001");
 										JPushInterface.init(LoginActivity.this);
+
+										System.out.println("0002");
 										JPushInterface.setAlias(LoginActivity.this, terminalId, new TagAliasCallback() {
 											@Override
 											public void gotResult(int code, String alias, Set<String> strings) {
 												Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
+												System.out.println("0003");
+												System.out
+														.println(signs.length);
 												Bundle bundle = new Bundle();//　　Bundle的底层是一个HashMap<String, Object
 												bundle.putString("terminalId", terminalId);
 												bundle.putString("email", username);
@@ -217,10 +224,16 @@ public class LoginActivity extends Activity {
 												bundle.putString("today_emer_speedup_times", signs[13]);
 												bundle.putString("today_max_speed", signs[14]);
 												bundle.putString("today_travel_times", signs[15]);
-												bundle.putString("city", signs[16]);
-												bundle.putString("cityNum", signs[17]);
+												if(signs.length>16){
+													bundle.putString("city", signs[16]);
+													bundle.putString("cityNum", signs[17]);
+												}
 												intent.putExtra("bundle", bundle);
+
+												System.out.println("0004");
 												pd.dismiss();
+
+												System.out.println("0005");
 												startActivity(intent);
 												finish();
 											}
