@@ -47,7 +47,7 @@ public class VehicleInfoFragment extends Fragment{
 	private static final float DEGREE_PER_PRESSURE =
 			PRESSURE_MAX_ANGLE / (PRESSURE_MAX_VALUE - PRESSURE_MIN_VALUE);
 	private static final float SPEED_MIN_VALUE = 0;
-	private static final float SPEED_MAX_VALUE = 120;
+	private static final float SPEED_MAX_VALUE = 180;
 	private static final float SPEED_MAX_ANGLE = 246.33f;
 	private static final float DEGREE_PER_SPEED =
 			SPEED_MAX_ANGLE / (SPEED_MAX_VALUE - SPEED_MIN_VALUE);
