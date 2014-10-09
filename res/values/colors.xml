@@ -11,6 +11,7 @@
     <color name="main_color">#6DD30D</color>
     <color name="background_tab_pressed">#6633B5E5</color>
     <color name="text_blue">#000099</color>
+    <color name="msg_blue">#2558AB</color>
     
     <!-- card colors -->
     <color name="card_background">#FFFFFF</color>

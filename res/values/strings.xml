@@ -135,4 +135,7 @@
     <string name="newpwd_check_edittext">请再次输入新密码</string>
     <string name="pwdChange_confirm">确认</string>
 
+    <!--  msg  -->
+    <string name="unread_message">未读消息</string>
+    <string name="all_message">全部消息</string>
 </resources>

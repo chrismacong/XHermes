@@ -47,7 +47,7 @@ import com.xhermes.android.util.Utilities;
 public class LoginActivity extends Activity {
 
 	private TextView forget_pwd_textview;
-	private final String TEST_USER_NAME = "user@gmail.com";
+	private final String TEST_USER_NAME = "testcar3@gmail.com";
 	private EditText username_edittext;
 	private EditText password_edittext;
 	private Button sign_in_as_user;
@@ -110,8 +110,8 @@ public class LoginActivity extends Activity {
 		autoLog=(CheckBox) findViewById(R.id.autoLoginCheckBox);
 		preference=getSharedPreferences("userinfo",MODE_PRIVATE);
 		
-//		username_edittext.setText(TEST_USER_NAME);
-//		password_edittext.setText("123456");
+		username_edittext.setText(TEST_USER_NAME);
+		password_edittext.setText("123456");
 		password_edittext.setOnEditorActionListener(new TextView.OnEditorActionListener() {  
 			@Override  
 			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {  
