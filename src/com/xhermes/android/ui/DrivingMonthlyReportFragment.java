@@ -213,9 +213,19 @@ public class DrivingMonthlyReportFragment extends Fragment{
 					//					.println(signInResult);
 					signInResult = signInResult.trim();
 					seperated_data_group = signInResult.split("@");
-					sca.resetFragments();
-					pager.setAdapter(sca);
-					pd.dismiss();
+					if(seperated_data_group==null){
+						pd.dismiss();
+						Utilities.showMessage(getActivity(), R.string.network_failed);
+					}
+					else if(seperated_data_group.length<=1){
+						pd.dismiss();
+						Utilities.showMessage(getActivity(), R.string.network_failed);
+					}
+					else{
+						sca.resetFragments();
+						pager.setAdapter(sca);
+						pd.dismiss();
+					}
 				}
 			}.execute();
 		}
