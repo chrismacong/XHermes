@@ -42,6 +42,7 @@
     <string name="exm_item_2">底盘系统</string>
     <string name="exm_item_3">车身系统</string>
     <string name="exm_item_4">网络通信</string>
+    <string name="from_sohu_auto">图片来源：搜狐汽车</string>
 
     <!-- Travel info details -->
     <string name="travel_info_detail">行程详情</string>
