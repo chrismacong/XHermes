@@ -214,11 +214,17 @@ public class DrivingHabitFragment extends Fragment{
 
 						/*-----------Test code below-------------*/
 						String[] strs_split = signInResult.split("@");
-						for(int i=0;i<strs_split.length;i++){
-							if(strs_split[i]==null||("null").equals(strs_split[i]))
-								strs_split[i]="0";
+						if(strs_split.length<=1){
+							pd.dismiss();
+							Utilities.showMessage(getActivity(), R.string.network_failed);
 						}
-						/*String temp = "";
+						else{
+
+							for(int i=0;i<strs_split.length;i++){
+								if(strs_split[i]==null||("null").equals(strs_split[i]))
+									strs_split[i]="0";
+							}
+							/*String temp = "";
 					temp += "总距离：" + strs_split[0] + "\n";
 					temp += "最大距离：" + strs_split[1] + "\n";
 					temp += "最大速度：" + strs_split[2] + "\n";
@@ -236,58 +242,59 @@ public class DrivingHabitFragment extends Fragment{
 					temp += "驾驶时间数组：" + strs_split[14] + "\n";
 					temp += "驾驶时间和平均速度关系数组：" + strs_split[15];
 					testTextView.setText(temp);*/
-						/*-----------Test code above-------------*/
+							/*-----------Test code above-------------*/
 
-						initListView(strs_split);
-						listview.setAdapter(habitAdapter);
-						habitmonthly_title.setText(global_year + "年" + (global_month + 1) + "月驾驶习惯报表");
-						showStamps(getStamps(strs_split));
-						MyHandler handler = new MyHandler();
-						new Thread(new MyHabitThread(handler)).start();
-						String time_data[] = strs_split[14].split(",");
-						//add line series
-						mTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_time));
-						mTimeDataset.clear();
-						mTimeDataset.addSeries(mTimeCurrentSeries);
-						mTimeChartView = ChartFactory.getLineChartView(getActivity(), mTimeDataset, mTimeRenderer);
-						timeLayout.removeAllViews();
-						timeLayout.addView(mTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-								ViewGroup.LayoutParams.MATCH_PARENT));
-						int max_time = 0;
-						for(int i=0;i<24;i++){
-							int time_in_that_hour = Integer.parseInt(time_data[i].trim());
-							max_time = max_time>time_in_that_hour?max_time:time_in_that_hour;
-							mTimeCurrentSeries.add(i, time_in_that_hour);
-						}
-						if(max_time<200)
-							mTimeRenderer.setYAxisMax(200);
-						else if(max_time<500)
-							mTimeRenderer.setYAxisMax(500);
-						else if(max_time<1000)
-							mTimeRenderer.setYAxisMax(1000);
-						if(mTimeChartView!=null)
-							mTimeChartView.repaint();
+							initListView(strs_split);
+							listview.setAdapter(habitAdapter);
+							habitmonthly_title.setText(global_year + "年" + (global_month + 1) + "月驾驶习惯报表");
+							showStamps(getStamps(strs_split));
+							MyHandler handler = new MyHandler();
+							new Thread(new MyHabitThread(handler)).start();
+							String time_data[] = strs_split[14].split(",");
+							//add line series
+							mTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_time));
+							mTimeDataset.clear();
+							mTimeDataset.addSeries(mTimeCurrentSeries);
+							mTimeChartView = ChartFactory.getLineChartView(getActivity(), mTimeDataset, mTimeRenderer);
+							timeLayout.removeAllViews();
+							timeLayout.addView(mTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+									ViewGroup.LayoutParams.MATCH_PARENT));
+							int max_time = 0;
+							for(int i=0;i<24;i++){
+								int time_in_that_hour = Integer.parseInt(time_data[i].trim());
+								max_time = max_time>time_in_that_hour?max_time:time_in_that_hour;
+								mTimeCurrentSeries.add(i, time_in_that_hour);
+							}
+							if(max_time<200)
+								mTimeRenderer.setYAxisMax(200);
+							else if(max_time<500)
+								mTimeRenderer.setYAxisMax(500);
+							else if(max_time<1000)
+								mTimeRenderer.setYAxisMax(1000);
+							if(mTimeChartView!=null)
+								mTimeChartView.repaint();
 
-						String speedtime_data[] = strs_split[15].split(",");
-						//add line series
-						mSpeedTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_speedtime));
-						mSpeedTimeDataset.clear();
-						mSpeedTimeDataset.addSeries(mSpeedTimeCurrentSeries);
-						mSpeedTimeChartView = ChartFactory.getLineChartView(getActivity(), mSpeedTimeDataset, mSpeedTimeRenderer);
-						speedtimeLayout.removeAllViews();
-						speedtimeLayout.addView(mSpeedTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-								ViewGroup.LayoutParams.MATCH_PARENT));
-						int max_speedtime = 0;
-						for(int i=0;i<24;i++){
-							int speedtime_in_that_hour = Integer.parseInt(speedtime_data[i].trim());
-							max_speedtime = max_speedtime>speedtime_in_that_hour?max_speedtime:speedtime_in_that_hour;
-							mSpeedTimeCurrentSeries.add(i, speedtime_in_that_hour);
+							String speedtime_data[] = strs_split[15].split(",");
+							//add line series
+							mSpeedTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_speedtime));
+							mSpeedTimeDataset.clear();
+							mSpeedTimeDataset.addSeries(mSpeedTimeCurrentSeries);
+							mSpeedTimeChartView = ChartFactory.getLineChartView(getActivity(), mSpeedTimeDataset, mSpeedTimeRenderer);
+							speedtimeLayout.removeAllViews();
+							speedtimeLayout.addView(mSpeedTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+									ViewGroup.LayoutParams.MATCH_PARENT));
+							int max_speedtime = 0;
+							for(int i=0;i<24;i++){
+								int speedtime_in_that_hour = Integer.parseInt(speedtime_data[i].trim());
+								max_speedtime = max_speedtime>speedtime_in_that_hour?max_speedtime:speedtime_in_that_hour;
+								mSpeedTimeCurrentSeries.add(i, speedtime_in_that_hour);
+							}
+							if(max_speedtime<100)
+								mSpeedTimeRenderer.setYAxisMax(100);
+							if(mSpeedTimeChartView!=null)
+								mSpeedTimeChartView.repaint();
+							pd.dismiss();
 						}
-						if(max_speedtime<100)
-							mSpeedTimeRenderer.setYAxisMax(100);
-						if(mSpeedTimeChartView!=null)
-							mSpeedTimeChartView.repaint();
-						pd.dismiss();
 					}
 				}.execute();
 			}
