@@ -1,5 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
- 
+
     <item
         android:id="@+id/mail"
         android:icon="@drawable/mail_icon"
@@ -13,6 +13,20 @@
         android:showAsAction="always"
         android:title="@string/sos"
         android:titleCondensed="@string/sos">
+        <menu>
+            <item
+                android:id="@+id/emergencySOS"
+                android:actionLayout="@layout/menu_item"
+                android:showAsAction="always|withText"
+                android:title="@string/sos"
+                android:titleCondensed="@string/sos"/>
+            <item
+                android:id="@+id/vipSOS"
+                android:actionLayout="@layout/menu_item"
+                android:showAsAction="always|withText"
+                android:title="@string/vipSOS"
+                android:titleCondensed="@string/vipSOS"/>
+        </menu>
     </item>
- 
+
 </menu>

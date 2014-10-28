@@ -28,6 +28,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.xhermes.android.R;
 import com.xhermes.android.util.MyThreadFor;
 import com.xhermes.android.util.OverallFragmentController;
@@ -265,6 +267,7 @@ public class MainViewFragment extends Fragment{
 //				transaction.commit();
 			}
 		});
+		final ActionBar actionBar=((SherlockFragmentActivity)getActivity()).getSupportActionBar();
 		button_functional_1.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -280,6 +283,7 @@ public class MainViewFragment extends Fragment{
 				FragmentTransaction transaction = fm.beginTransaction();
 				transaction.replace(R.id.fragment_container, vFragment); 
 				transaction.commit();
+				actionBar.setTitle(R.string.exam);
 			}
 		});
 		button_functional_2.setOnClickListener(new OnClickListener(){
@@ -297,6 +301,7 @@ public class MainViewFragment extends Fragment{
 				FragmentTransaction transaction = fm.beginTransaction();
 				transaction.replace(R.id.fragment_container, dFragment); 
 				transaction.commit();
+				actionBar.setTitle(R.string.habit);
 			}
 		});
 		button_functional_3.setOnClickListener(new OnClickListener(){
@@ -308,12 +313,13 @@ public class MainViewFragment extends Fragment{
 				bundle.putString("terminalId", terminalId);
 				VehicleInfoFragment viFragment = new VehicleInfoFragment(); 
 				viFragment.setArguments(bundle);
-				OverallFragmentController.removeFragment("info");
-				OverallFragmentController.addFragment("info", viFragment);
+				OverallFragmentController.removeFragment("realtimeinfo");
+				OverallFragmentController.addFragment("realtimeinfo", viFragment);
 				FragmentManager fm=getFragmentManager();
 				FragmentTransaction transaction = fm.beginTransaction();
 				transaction.replace(R.id.fragment_container, viFragment); 
 				transaction.commit();
+				actionBar.setTitle(R.string.realtimeinfo);
 			}
 		});
 		button_functional_4.setOnClickListener(new OnClickListener(){
@@ -325,12 +331,13 @@ public class MainViewFragment extends Fragment{
 				bundle.putString("terminalId", terminalId);
 				MapFragment mFragment = new MapFragment(); 
 				mFragment.setArguments(bundle);
-				OverallFragmentController.removeFragment("map");
-				OverallFragmentController.addFragment("map", mFragment);
+				OverallFragmentController.removeFragment("track");
+				OverallFragmentController.addFragment("track", mFragment);
 				FragmentTransaction transaction = getFragmentManager().beginTransaction();
 				transaction.replace(R.id.fragment_container, mFragment); 
 				transaction.addToBackStack(null);
 				transaction.commit();
+				actionBar.setTitle(R.string.track);
 			}
 
 		});

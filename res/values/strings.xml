@@ -30,6 +30,9 @@
     <string name="about">关于</string>
     <string name="mail">消息</string>
     <string name="sos">紧急救援</string>
+    <string name="habit">驾驶习惯</string>
+    <string name="track">爱车追踪</string>
+    <string name="realtimeinfo">实时车况</string>
     <string name="exm_mark_title">爱车健康评分</string>
     <string name="distance_extra_title">当日行驶里程</string>
     <string name="oil_extra_title">当日平均耗油</string>
@@ -38,6 +41,7 @@
     <string name="click_state_english">CLICK TO START ALL CARS CHECK</string>
     <string name="check_state">正在进行全车检查</string>
     <string name="check_state_english">ALL CARS IN PROGRESS CHECKED</string>
+    <string name="exam">爱车体检</string>
     <string name="exm_item_1">动力总成系统</string>
     <string name="exm_item_2">底盘系统</string>
     <string name="exm_item_3">车身系统</string>
@@ -136,7 +140,9 @@
     <string name="newpwd_check_edittext">请再次输入新密码</string>
     <string name="pwdChange_confirm">确认</string>
 
-    <!--  msg  -->
+    <!-- msg -->
     <string name="unread_message">未读消息</string>
     <string name="all_message">全部消息</string>
+    <string name="vipSOS">加盟店救援</string>
+
 </resources>

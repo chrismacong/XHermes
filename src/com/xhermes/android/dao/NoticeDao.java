@@ -53,13 +53,19 @@ public class NoticeDao extends Dao{
 		}
 		return tempData;
 	}
-	
+
 	public int queryReadOrNot(String eqid,String arg){
 		db=helper.getReadableDatabase();
 		Cursor cursor=db.query(TBL_NAME, null, "isRead=?",new String[]{arg}, null, null, null);
-		return cursor.getCount();
+		int num=0;
+		if(cursor!=null){
+			num=cursor.getCount();
+			cursor.close();
+			db.close();
+		}
+		return num;
 	}
-	
+
 	public boolean insert(Notice data){
 		db=helper.getReadableDatabase();
 		ContentValues value=new ContentValues();
@@ -75,7 +81,7 @@ public class NoticeDao extends Dao{
 			rowid=db.insertOrThrow(TBL_NAME, null, value);
 			//isOutOfRange(TBL_NAME);
 		}catch(Exception e){
-			
+
 		}
 		db.close();
 		if(rowid!=-1)
@@ -89,6 +95,7 @@ public class NoticeDao extends Dao{
 		ContentValues value=new ContentValues();
 		value.put("isRead", isRead);
 		int num=db.update(TBL_NAME, value, "id= ?", new String[]{id+""});
+		db.close();
 		if(num>0)
 			return true;
 		else
