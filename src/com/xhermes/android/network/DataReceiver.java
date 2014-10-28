@@ -83,7 +83,7 @@ public class DataReceiver extends BroadcastReceiver {
 				info.setEqid(eqid);
 				TravelInfoDao infoDao=new TravelInfoDao(context);
 				boolean b=infoDao.insert(info);
-			}else if(title.contains("0008")){	//OBD数据
+			}else if(title.contains("0008") || title.contains("0108")){	//OBD数据
 				String date = title.substring(title.indexOf("(")+1,title.indexOf(")"));
 				message += ";" + date;
 				OBDData data=new OBDData(message);

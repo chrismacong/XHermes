@@ -46,6 +46,7 @@ import com.xhermes.android.model.TravelInfo;
 import com.xhermes.android.network.URLMaker;
 import com.xhermes.android.util.DateController;
 import com.xhermes.android.util.OverallFragmentController;
+import com.xhermes.android.util.Utilities;
 
 public class TravelInfoFragment extends Fragment{
 

@@ -66,4 +66,19 @@ public class Utilities {
             return "";
         }
     }
+    public static String toBrowserCode(String word, String encoding)
+            throws UnsupportedEncodingException
+    {
+        byte[] textByte = word.getBytes(encoding);
+        StringBuilder strBuilder = new StringBuilder();
+       
+        for (int j = 0; j < textByte.length; j++)
+        {
+            // 转换为16进制字符
+            String hexStr = Integer.toHexString(textByte[j] & 0xff);
+            strBuilder.append("%" + hexStr.toUpperCase());
+        }
+       
+        return strBuilder.toString();
+    }
 }

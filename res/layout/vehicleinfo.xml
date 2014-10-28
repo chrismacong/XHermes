@@ -8,13 +8,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:layout_gravity="center"
         android:text="车辆信息"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:textColor="@color/black"
         />
+    
+    <ImageView
+        android:id="@+id/car_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"
+        android:visibility="gone"
+        ></ImageView>
+    
+    <TextView
+        android:id="@+id/from_sohu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:text="@string/from_sohu_auto"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:visibility="gone"></TextView>
     
     <ListView
         android:id="@+id/vel_list"

@@ -41,6 +41,7 @@ import android.widget.Toast;
 import com.xhermes.android.R;
 import com.xhermes.android.network.URLMaker;
 import com.xhermes.android.util.MyHabitThread;
+import com.xhermes.android.util.Utilities;
 
 public class DrivingHabitFragment extends Fragment{
 	private final String get_monthlytravelexm_url = URLMaker.makeURL("mobile/mobilegetmonthlytravelexmbydate.html");
@@ -65,23 +66,23 @@ public class DrivingHabitFragment extends Fragment{
 	private int current_month;
 	private RelativeLayout habit_ral_1;
 	private RelativeLayout habit_ral_2;
-	
+
 	//achartengine
 	private XYMultipleSeriesDataset mTimeDataset;
-    private XYMultipleSeriesRenderer mTimeRenderer;
-    private XYSeries mTimeCurrentSeries;
-    private XYSeriesRenderer mTimeCurrentRenderer;
-    private GraphicalView mTimeChartView;
-    private LinearLayout timeLayout;
-    private LinearLayout speedtimeLayout;
-    
+	private XYMultipleSeriesRenderer mTimeRenderer;
+	private XYSeries mTimeCurrentSeries;
+	private XYSeriesRenderer mTimeCurrentRenderer;
+	private GraphicalView mTimeChartView;
+	private LinearLayout timeLayout;
+	private LinearLayout speedtimeLayout;
 
-    private XYMultipleSeriesDataset mSpeedTimeDataset;
-    private XYMultipleSeriesRenderer mSpeedTimeRenderer;
-    private XYSeries mSpeedTimeCurrentSeries;
-    private XYSeriesRenderer mSpeedTimeCurrentRenderer;
-    private GraphicalView mSpeedTimeChartView;
-    
+
+	private XYMultipleSeriesDataset mSpeedTimeDataset;
+	private XYMultipleSeriesRenderer mSpeedTimeRenderer;
+	private XYSeries mSpeedTimeCurrentSeries;
+	private XYSeriesRenderer mSpeedTimeCurrentRenderer;
+	private GraphicalView mSpeedTimeChartView;
+
 	@Override
 	public void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
@@ -98,10 +99,10 @@ public class DrivingHabitFragment extends Fragment{
 		right_btn = (ImageButton) rootview.findViewById(R.id.habit_button_chart_right);
 		monthText = (TextView)rootview.findViewById(R.id.habit_chartTextView);
 		listview = (ListView)rootview.findViewById(R.id.habitlist);
-		
+
 		pd= new CustomProgressDialog(this.getActivity(), R.style.dialog,"正在拉取数据...");
 		pd.setCanceledOnTouchOutside(false);
-		
+
 		stamp1 = (ImageView)rootview.findViewById(R.id.stamp1);
 		stamp2 = (ImageView)rootview.findViewById(R.id.stamp2);
 		stamp3 = (ImageView)rootview.findViewById(R.id.stamp3);
@@ -115,12 +116,12 @@ public class DrivingHabitFragment extends Fragment{
 		current_year = global_year;
 		global_month = calendar.get(Calendar.MONTH);
 		current_month = global_month;
-//		if(global_month==0){
-//			global_year--;
-//			global_month = 11;
-//		}
-//		else
-//			global_month--;
+		//		if(global_month==0){
+		//			global_year--;
+		//			global_month = 11;
+		//		}
+		//		else
+		//			global_month--;
 		global_day = calendar.get(Calendar.DAY_OF_MONTH);
 		monthText.setText(calendar.get(Calendar.YEAR) + "-" + (calendar.get(Calendar.MONTH)+1));
 		monthText.setOnClickListener(new View.OnClickListener() {
@@ -213,11 +214,17 @@ public class DrivingHabitFragment extends Fragment{
 
 						/*-----------Test code below-------------*/
 						String[] strs_split = signInResult.split("@");
-						for(int i=0;i<strs_split.length;i++){
-							if(strs_split[i]==null||("null").equals(strs_split[i]))
-								strs_split[i]="0";
+						if(strs_split.length<=1){
+							pd.dismiss();
+							Utilities.showMessage(getActivity(), R.string.network_failed);
 						}
-						/*String temp = "";
+						else{
+
+							for(int i=0;i<strs_split.length;i++){
+								if(strs_split[i]==null||("null").equals(strs_split[i]))
+									strs_split[i]="0";
+							}
+							/*String temp = "";
 					temp += "总距离：" + strs_split[0] + "\n";
 					temp += "最大距离：" + strs_split[1] + "\n";
 					temp += "最大速度：" + strs_split[2] + "\n";
@@ -235,58 +242,59 @@ public class DrivingHabitFragment extends Fragment{
 					temp += "驾驶时间数组：" + strs_split[14] + "\n";
 					temp += "驾驶时间和平均速度关系数组：" + strs_split[15];
 					testTextView.setText(temp);*/
-						/*-----------Test code above-------------*/
+							/*-----------Test code above-------------*/
 
-						initListView(strs_split);
-						listview.setAdapter(habitAdapter);
-						habitmonthly_title.setText(global_year + "年" + (global_month + 1) + "月驾驶习惯报表");
-						showStamps(getStamps(strs_split));
-						MyHandler handler = new MyHandler();
-						new Thread(new MyHabitThread(handler)).start();
-						String time_data[] = strs_split[14].split(",");
-						//add line series
-				        mTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_time));
-				        mTimeDataset.clear();
-				        mTimeDataset.addSeries(mTimeCurrentSeries);
-				        mTimeChartView = ChartFactory.getLineChartView(getActivity(), mTimeDataset, mTimeRenderer);
-				        timeLayout.removeAllViews();
-				        timeLayout.addView(mTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-				                ViewGroup.LayoutParams.MATCH_PARENT));
-						int max_time = 0;
-				        for(int i=0;i<24;i++){
-				        	int time_in_that_hour = Integer.parseInt(time_data[i].trim());
-				        	max_time = max_time>time_in_that_hour?max_time:time_in_that_hour;
-				        	mTimeCurrentSeries.add(i, time_in_that_hour);
-				        }
-				        if(max_time<200)
-				        	mTimeRenderer.setYAxisMax(200);
-				        else if(max_time<500)
-				        	mTimeRenderer.setYAxisMax(500);
-				        else if(max_time<1000)
-				        	mTimeRenderer.setYAxisMax(1000);
-			        	if(mTimeChartView!=null)
-			        		mTimeChartView.repaint();
-			        	
-			        	String speedtime_data[] = strs_split[15].split(",");
-			        	//add line series
-			        	mSpeedTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_speedtime));
-			        	mSpeedTimeDataset.clear();
-			        	mSpeedTimeDataset.addSeries(mSpeedTimeCurrentSeries);
-			        	mSpeedTimeChartView = ChartFactory.getLineChartView(getActivity(), mSpeedTimeDataset, mSpeedTimeRenderer);
-			        	speedtimeLayout.removeAllViews();
-			        	speedtimeLayout.addView(mSpeedTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-			        			ViewGroup.LayoutParams.MATCH_PARENT));
-			        	int max_speedtime = 0;
-			        	for(int i=0;i<24;i++){
-			        		int speedtime_in_that_hour = Integer.parseInt(speedtime_data[i].trim());
-			        		max_speedtime = max_speedtime>speedtime_in_that_hour?max_speedtime:speedtime_in_that_hour;
-			        		mSpeedTimeCurrentSeries.add(i, speedtime_in_that_hour);
-			        	}
-			        	if(max_speedtime<100)
-			        		mSpeedTimeRenderer.setYAxisMax(100);
-			        	if(mSpeedTimeChartView!=null)
-			        		mSpeedTimeChartView.repaint();
-						pd.dismiss();
+							initListView(strs_split);
+							listview.setAdapter(habitAdapter);
+							habitmonthly_title.setText(global_year + "年" + (global_month + 1) + "月驾驶习惯报表");
+							showStamps(getStamps(strs_split));
+							MyHandler handler = new MyHandler();
+							new Thread(new MyHabitThread(handler)).start();
+							String time_data[] = strs_split[14].split(",");
+							//add line series
+							mTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_time));
+							mTimeDataset.clear();
+							mTimeDataset.addSeries(mTimeCurrentSeries);
+							mTimeChartView = ChartFactory.getLineChartView(getActivity(), mTimeDataset, mTimeRenderer);
+							timeLayout.removeAllViews();
+							timeLayout.addView(mTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+									ViewGroup.LayoutParams.MATCH_PARENT));
+							int max_time = 0;
+							for(int i=0;i<24;i++){
+								int time_in_that_hour = Integer.parseInt(time_data[i].trim());
+								max_time = max_time>time_in_that_hour?max_time:time_in_that_hour;
+								mTimeCurrentSeries.add(i, time_in_that_hour);
+							}
+							if(max_time<200)
+								mTimeRenderer.setYAxisMax(200);
+							else if(max_time<500)
+								mTimeRenderer.setYAxisMax(500);
+							else if(max_time<1000)
+								mTimeRenderer.setYAxisMax(1000);
+							if(mTimeChartView!=null)
+								mTimeChartView.repaint();
+
+							String speedtime_data[] = strs_split[15].split(",");
+							//add line series
+							mSpeedTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_speedtime));
+							mSpeedTimeDataset.clear();
+							mSpeedTimeDataset.addSeries(mSpeedTimeCurrentSeries);
+							mSpeedTimeChartView = ChartFactory.getLineChartView(getActivity(), mSpeedTimeDataset, mSpeedTimeRenderer);
+							speedtimeLayout.removeAllViews();
+							speedtimeLayout.addView(mSpeedTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+									ViewGroup.LayoutParams.MATCH_PARENT));
+							int max_speedtime = 0;
+							for(int i=0;i<24;i++){
+								int speedtime_in_that_hour = Integer.parseInt(speedtime_data[i].trim());
+								max_speedtime = max_speedtime>speedtime_in_that_hour?max_speedtime:speedtime_in_that_hour;
+								mSpeedTimeCurrentSeries.add(i, speedtime_in_that_hour);
+							}
+							if(max_speedtime<100)
+								mSpeedTimeRenderer.setYAxisMax(100);
+							if(mSpeedTimeChartView!=null)
+								mSpeedTimeChartView.repaint();
+							pd.dismiss();
+						}
 					}
 				}.execute();
 			}
@@ -404,13 +412,13 @@ public class DrivingHabitFragment extends Fragment{
 	private DatePickerDialog createDialogWithoutDateField(){
 		DatePickerDialog dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
 				global_year ,global_month ,global_day);
-//				if(global_month==0){
-//					dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
-//						global_year-1,11,global_day);
-//				}
-//				else
-//					dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
-//							global_year,global_month-1,global_day);
+		//				if(global_month==0){
+		//					dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
+		//						global_year-1,11,global_day);
+		//				}
+		//				else
+		//					dpd = new DatePickerDialog(getActivity(), new mDateSetListener(),
+		//							global_year,global_month-1,global_day);
 		try{
 			java.lang.reflect.Field[] datePickerDialogFields = dpd.getClass().getDeclaredFields();
 			for (java.lang.reflect.Field datePickerDialogField : datePickerDialogFields) {
@@ -471,11 +479,16 @@ public class DrivingHabitFragment extends Fragment{
 
 				/*-----------Test code below-------------*/
 				String[] strs_split = signInResult.split("@");
-				for(int i=0;i<strs_split.length;i++){
-					if(strs_split[i]==null||("null").equals(strs_split[i]))
-						strs_split[i]="0";
+				if(strs_split.length<=1){
+					pd.dismiss();
+					Utilities.showMessage(getActivity(), R.string.network_failed);
 				}
-				/*String temp = "";
+				else{
+					for(int i=0;i<strs_split.length;i++){
+						if(strs_split[i]==null||("null").equals(strs_split[i]))
+							strs_split[i]="0";
+					}
+					/*String temp = "";
 				temp += "总距离：" + strs_split[0] + "\n";
 				temp += "最大距离：" + strs_split[1] + "\n";
 				temp += "最大速度：" + strs_split[2] + "\n";
@@ -493,81 +506,82 @@ public class DrivingHabitFragment extends Fragment{
 				temp += "驾驶时间数组：" + strs_split[14] + "\n";
 				temp += "驾驶时间和平均速度关系数组：" + strs_split[15];
 				testTextView.setText(temp);*/
-				/*-----------Test code above-------------*/
-				initListView(strs_split);
-				listview.setAdapter(habitAdapter);
-				habitmonthly_title.setText(global_year + "年" + (global_month + 1) + "月驾驶习惯报表");
-				showStamps(getStamps(strs_split));
-				
-				//achartengine
-				mTimeDataset = new XYMultipleSeriesDataset();
-		        mTimeRenderer = new XYMultipleSeriesRenderer();
-				mTimeCurrentRenderer = new XYSeriesRenderer();
-		        mTimeRenderer.addSeriesRenderer(mTimeCurrentRenderer);
-		        setRendererStyle(mTimeRenderer, mTimeCurrentRenderer, getResources().getColor(R.color.time_series_color));
-		        //set title for axis
-		        mTimeRenderer.setXTitle(getActivity().getResources().getString(R.string.axis_x));
-		        mTimeRenderer.setYTitle(getActivity().getResources().getString(R.string.axis_y1));
-		        //set limit for axis
-		        mTimeRenderer.setXAxisMax(24);
-		        mTimeRenderer.setXAxisMin(0);
-		        mTimeRenderer.setYAxisMax(2000);
-		        mTimeRenderer.setYAxisMin(0);
-		      //add line series
-		        mTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_time));
-		        mTimeDataset.addSeries(mTimeCurrentSeries);
-		        mTimeChartView = ChartFactory.getLineChartView(getActivity(), mTimeDataset, mTimeRenderer);
-		        timeLayout.addView(mTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-		                ViewGroup.LayoutParams.MATCH_PARENT));
-				String time_data[] = strs_split[14].split(",");
-				int max_time = 0;
-		        for(int i=0;i<24;i++){
-		        	int time_in_that_hour = Integer.parseInt(time_data[i].trim());
-		        	max_time = max_time>time_in_that_hour?max_time:time_in_that_hour;
-		        	mTimeCurrentSeries.add(i, time_in_that_hour);
-		        }
-		        if(max_time<200)
-		        	mTimeRenderer.setYAxisMax(200);
-		        else if(max_time<500)
-		        	mTimeRenderer.setYAxisMax(500);
-		        else if(max_time<1000)
-		        	mTimeRenderer.setYAxisMax(1000);
-	        	if(mTimeChartView!=null)
-	        		mTimeChartView.repaint();
-	        	//achartengine
-	        	mSpeedTimeDataset = new XYMultipleSeriesDataset();
-	        	mSpeedTimeRenderer = new XYMultipleSeriesRenderer();
-	        	mSpeedTimeCurrentRenderer = new XYSeriesRenderer();
-	        	mSpeedTimeRenderer.addSeriesRenderer(mSpeedTimeCurrentRenderer);
-	        	setRendererStyle(mSpeedTimeRenderer, mSpeedTimeCurrentRenderer, getResources().getColor(R.color.speedtime_series_color));
-	        	//set title for axis
-	        	mSpeedTimeRenderer.setXTitle(getActivity().getResources().getString(R.string.axis_x));
-	        	mSpeedTimeRenderer.setYTitle(getActivity().getResources().getString(R.string.axis_y2));
-	        	//set limit for axis
-	        	mSpeedTimeRenderer.setXAxisMax(24);
-	        	mSpeedTimeRenderer.setXAxisMin(0);
-	        	mSpeedTimeRenderer.setYAxisMax(200);
-	        	mSpeedTimeRenderer.setYAxisMin(0);
-	        	//add line series
-	        	mSpeedTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_speedtime));
-	        	mSpeedTimeDataset.addSeries(mSpeedTimeCurrentSeries);
-	        	mSpeedTimeChartView = ChartFactory.getLineChartView(getActivity(), mSpeedTimeDataset, mSpeedTimeRenderer);
-	        	speedtimeLayout.addView(mSpeedTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-	        			ViewGroup.LayoutParams.MATCH_PARENT));
-	        	String speedtime_data[] = strs_split[15].split(",");
-	        	int max_speedtime = 0;
-	        	for(int i=0;i<24;i++){
-	        		int speedtime_in_that_hour = Integer.parseInt(speedtime_data[i].trim());
-	        		max_speedtime = max_speedtime>speedtime_in_that_hour?max_speedtime:speedtime_in_that_hour;
-	        		mSpeedTimeCurrentSeries.add(i, speedtime_in_that_hour);
-	        	}
-	        	if(max_speedtime<100)
-	        		mSpeedTimeRenderer.setYAxisMax(100);
-	        	if(mSpeedTimeChartView!=null)
-	        		mSpeedTimeChartView.repaint();
-	        	habit_ral_1.setVisibility(View.VISIBLE);
-	        	habit_ral_2.setVisibility(View.VISIBLE);
-				pd.dismiss();
+					/*-----------Test code above-------------*/
+					initListView(strs_split);
+					listview.setAdapter(habitAdapter);
+					habitmonthly_title.setText(global_year + "年" + (global_month + 1) + "月驾驶习惯报表");
+					showStamps(getStamps(strs_split));
+
+					//achartengine
+					mTimeDataset = new XYMultipleSeriesDataset();
+					mTimeRenderer = new XYMultipleSeriesRenderer();
+					mTimeCurrentRenderer = new XYSeriesRenderer();
+					mTimeRenderer.addSeriesRenderer(mTimeCurrentRenderer);
+					setRendererStyle(mTimeRenderer, mTimeCurrentRenderer, getResources().getColor(R.color.time_series_color));
+					//set title for axis
+					mTimeRenderer.setXTitle(getActivity().getResources().getString(R.string.axis_x));
+					mTimeRenderer.setYTitle(getActivity().getResources().getString(R.string.axis_y1));
+					//set limit for axis
+					mTimeRenderer.setXAxisMax(24);
+					mTimeRenderer.setXAxisMin(0);
+					mTimeRenderer.setYAxisMax(2000);
+					mTimeRenderer.setYAxisMin(0);
+					//add line series
+					mTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_time));
+					mTimeDataset.addSeries(mTimeCurrentSeries);
+					mTimeChartView = ChartFactory.getLineChartView(getActivity(), mTimeDataset, mTimeRenderer);
+					timeLayout.addView(mTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+							ViewGroup.LayoutParams.MATCH_PARENT));
+					String time_data[] = strs_split[14].split(",");
+					int max_time = 0;
+					for(int i=0;i<24;i++){
+						int time_in_that_hour = Integer.parseInt(time_data[i].trim());
+						max_time = max_time>time_in_that_hour?max_time:time_in_that_hour;
+						mTimeCurrentSeries.add(i, time_in_that_hour);
+					}
+					if(max_time<200)
+						mTimeRenderer.setYAxisMax(200);
+					else if(max_time<500)
+						mTimeRenderer.setYAxisMax(500);
+					else if(max_time<1000)
+						mTimeRenderer.setYAxisMax(1000);
+					if(mTimeChartView!=null)
+						mTimeChartView.repaint();
+					//achartengine
+					mSpeedTimeDataset = new XYMultipleSeriesDataset();
+					mSpeedTimeRenderer = new XYMultipleSeriesRenderer();
+					mSpeedTimeCurrentRenderer = new XYSeriesRenderer();
+					mSpeedTimeRenderer.addSeriesRenderer(mSpeedTimeCurrentRenderer);
+					setRendererStyle(mSpeedTimeRenderer, mSpeedTimeCurrentRenderer, getResources().getColor(R.color.speedtime_series_color));
+					//set title for axis
+					mSpeedTimeRenderer.setXTitle(getActivity().getResources().getString(R.string.axis_x));
+					mSpeedTimeRenderer.setYTitle(getActivity().getResources().getString(R.string.axis_y2));
+					//set limit for axis
+					mSpeedTimeRenderer.setXAxisMax(24);
+					mSpeedTimeRenderer.setXAxisMin(0);
+					mSpeedTimeRenderer.setYAxisMax(200);
+					mSpeedTimeRenderer.setYAxisMin(0);
+					//add line series
+					mSpeedTimeCurrentSeries = new XYSeries(getActivity().getResources().getString(R.string.habit_graph_speedtime));
+					mSpeedTimeDataset.addSeries(mSpeedTimeCurrentSeries);
+					mSpeedTimeChartView = ChartFactory.getLineChartView(getActivity(), mSpeedTimeDataset, mSpeedTimeRenderer);
+					speedtimeLayout.addView(mSpeedTimeChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+							ViewGroup.LayoutParams.MATCH_PARENT));
+					String speedtime_data[] = strs_split[15].split(",");
+					int max_speedtime = 0;
+					for(int i=0;i<24;i++){
+						int speedtime_in_that_hour = Integer.parseInt(speedtime_data[i].trim());
+						max_speedtime = max_speedtime>speedtime_in_that_hour?max_speedtime:speedtime_in_that_hour;
+						mSpeedTimeCurrentSeries.add(i, speedtime_in_that_hour);
+					}
+					if(max_speedtime<100)
+						mSpeedTimeRenderer.setYAxisMax(100);
+					if(mSpeedTimeChartView!=null)
+						mSpeedTimeChartView.repaint();
+					habit_ral_1.setVisibility(View.VISIBLE);
+					habit_ral_2.setVisibility(View.VISIBLE);
+					pd.dismiss();
+				}
 			}
 		}.execute();
 	}
@@ -594,38 +608,38 @@ public class DrivingHabitFragment extends Fragment{
 		}  
 	}
 	private void setRendererStyle(XYMultipleSeriesRenderer renderer, XYSeriesRenderer currentRenderer, int color) {
-        // set some properties on the main renderer
-        renderer.setApplyBackgroundColor(true);
-        renderer.setBackgroundColor(getResources().getColor(R.color.card_background));
-        renderer.setAxisTitleTextSize(20);
-        renderer.setAxesColor(getResources().getColor(R.color.axis_color));
+		// set some properties on the main renderer
+		renderer.setApplyBackgroundColor(true);
+		renderer.setBackgroundColor(getResources().getColor(R.color.card_background));
+		renderer.setAxisTitleTextSize(20);
+		renderer.setAxesColor(getResources().getColor(R.color.axis_color));
 
-        renderer.setMarginsColor(getResources().getColor(R.color.card_background));
-        renderer.setXLabelsColor(getResources().getColor(R.color.axis_color));
-        renderer.setYLabelsColor(0, getResources().getColor(R.color.axis_color));
-        renderer.setInScroll(true);//in order to use in the scroll view
+		renderer.setMarginsColor(getResources().getColor(R.color.card_background));
+		renderer.setXLabelsColor(getResources().getColor(R.color.axis_color));
+		renderer.setYLabelsColor(0, getResources().getColor(R.color.axis_color));
+		renderer.setInScroll(true);//in order to use in the scroll view
 
-        renderer.setChartTitleTextSize(30);
-        renderer.setLabelsTextSize(25);
-        renderer.setLabelsColor(getResources().getColor(R.color.axis_color));
-        renderer.setLegendTextSize(20);
-        renderer.setMargins(new int[] { 30, 100, 30, 50});
-        renderer.setZoomButtonsVisible(false);
-        renderer.setPointSize(5);
-        renderer.setPanEnabled(false, false);//block moving on both x and y side
-        renderer.setZoomEnabled(false, false);//block zoom
-        renderer.setXLabelsPadding(5);
-        renderer.setYLabelsPadding(30);//set the padding between label and axis
+		renderer.setChartTitleTextSize(30);
+		renderer.setLabelsTextSize(25);
+		renderer.setLabelsColor(getResources().getColor(R.color.axis_color));
+		renderer.setLegendTextSize(20);
+		renderer.setMargins(new int[] { 30, 100, 30, 50});
+		renderer.setZoomButtonsVisible(false);
+		renderer.setPointSize(5);
+		renderer.setPanEnabled(false, false);//block moving on both x and y side
+		renderer.setZoomEnabled(false, false);//block zoom
+		renderer.setXLabelsPadding(5);
+		renderer.setYLabelsPadding(30);//set the padding between label and axis
 
-        // set some properties on the current renderer
-        currentRenderer.setPointStyle(PointStyle.CIRCLE);
-        currentRenderer.setFillPoints(true);
-        currentRenderer.setDisplayChartValues(true);
-        currentRenderer.setColor(color);
-        currentRenderer.setLineWidth(5);
-        currentRenderer.setChartValuesTextSize(20);
-        currentRenderer.setDisplayChartValuesDistance(10);
-        currentRenderer.setShowLegendItem(false);
-    }
+		// set some properties on the current renderer
+		currentRenderer.setPointStyle(PointStyle.CIRCLE);
+		currentRenderer.setFillPoints(true);
+		currentRenderer.setDisplayChartValues(true);
+		currentRenderer.setColor(color);
+		currentRenderer.setLineWidth(5);
+		currentRenderer.setChartValuesTextSize(20);
+		currentRenderer.setDisplayChartValuesDistance(10);
+		currentRenderer.setShowLegendItem(false);
+	}
 
 }

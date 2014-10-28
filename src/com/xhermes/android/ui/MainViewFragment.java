@@ -23,14 +23,29 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.xhermes.android.R;
 import com.xhermes.android.util.MyThreadFor;
 import com.xhermes.android.util.OverallFragmentController;
 
 public class MainViewFragment extends Fragment{
+
+	@Override
+	public void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		double float_x_of_pointer = button_functional_3.getLayoutParams().width - (pointer.getLayoutParams().width/2);
+		double float_y_of_pointer = button_functional_4.getLayoutParams().height - (pointer.getLayoutParams().height/2);
+		FrameLayout.LayoutParams layoutParams =new FrameLayout.LayoutParams(pointer.getLayoutParams().width, pointer.getLayoutParams().height);
+		layoutParams.setMargins((int) float_x_of_pointer, (int) float_y_of_pointer, 0, 0);
+		pointer.setLayoutParams(layoutParams);
+	}
 
 	//	private TextView exm_mark_title;
 	private TextView exm_mark;
@@ -46,6 +61,7 @@ public class MainViewFragment extends Fragment{
 	private TextView car_number_textview;
 	private ImageView pointer;
 	private ImageView content;
+	private RelativeLayout circle_relative;
 	private int testsize;
 	String terminalId;
 	String vehicleexm_score;
@@ -89,6 +105,7 @@ public class MainViewFragment extends Fragment{
 		button_functional_4 = (Button)rootview.findViewById(R.id.button_functional_4);
 		button_functional_2 = (Button)rootview.findViewById(R.id.button_functional_2);
 		button_functional_3 = (Button)rootview.findViewById(R.id.button_functional_3);
+		circle_relative = (RelativeLayout)rootview.findViewById(R.id.circle_relative);
 		pointer = (ImageView)rootview.findViewById(R.id.pointer);
 		//content = (ImageView)rootview.findViewById(R.id.content);
 		
@@ -250,6 +267,7 @@ public class MainViewFragment extends Fragment{
 //				transaction.commit();
 			}
 		});
+		final ActionBar actionBar=((SherlockFragmentActivity)getActivity()).getSupportActionBar();
 		button_functional_1.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -265,6 +283,7 @@ public class MainViewFragment extends Fragment{
 				FragmentTransaction transaction = fm.beginTransaction();
 				transaction.replace(R.id.fragment_container, vFragment); 
 				transaction.commit();
+				actionBar.setTitle(R.string.exam);
 			}
 		});
 		button_functional_2.setOnClickListener(new OnClickListener(){
@@ -282,6 +301,7 @@ public class MainViewFragment extends Fragment{
 				FragmentTransaction transaction = fm.beginTransaction();
 				transaction.replace(R.id.fragment_container, dFragment); 
 				transaction.commit();
+				actionBar.setTitle(R.string.habit);
 			}
 		});
 		button_functional_3.setOnClickListener(new OnClickListener(){
@@ -293,12 +313,13 @@ public class MainViewFragment extends Fragment{
 				bundle.putString("terminalId", terminalId);
 				VehicleInfoFragment viFragment = new VehicleInfoFragment(); 
 				viFragment.setArguments(bundle);
-				OverallFragmentController.removeFragment("info");
-				OverallFragmentController.addFragment("info", viFragment);
+				OverallFragmentController.removeFragment("realtimeinfo");
+				OverallFragmentController.addFragment("realtimeinfo", viFragment);
 				FragmentManager fm=getFragmentManager();
 				FragmentTransaction transaction = fm.beginTransaction();
 				transaction.replace(R.id.fragment_container, viFragment); 
 				transaction.commit();
+				actionBar.setTitle(R.string.realtimeinfo);
 			}
 		});
 		button_functional_4.setOnClickListener(new OnClickListener(){
@@ -310,12 +331,13 @@ public class MainViewFragment extends Fragment{
 				bundle.putString("terminalId", terminalId);
 				MapFragment mFragment = new MapFragment(); 
 				mFragment.setArguments(bundle);
-				OverallFragmentController.removeFragment("map");
-				OverallFragmentController.addFragment("map", mFragment);
+				OverallFragmentController.removeFragment("track");
+				OverallFragmentController.addFragment("track", mFragment);
 				FragmentTransaction transaction = getFragmentManager().beginTransaction();
 				transaction.replace(R.id.fragment_container, mFragment); 
 				transaction.addToBackStack(null);
 				transaction.commit();
+				actionBar.setTitle(R.string.track);
 			}
 
 		});

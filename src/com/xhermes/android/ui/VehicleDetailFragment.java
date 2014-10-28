@@ -1,64 +1,72 @@
 package com.xhermes.android.ui;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.htmlparser.util.ParserException;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
+import android.widget.TextView;
 
 import com.xhermes.android.R;
 import com.xhermes.android.network.URLMaker;
+import com.xhermes.android.util.GrabHtml;
+import com.xhermes.android.util.Utilities;
 
 public class VehicleDetailFragment extends Fragment{
 	@Override
 	public void onDestroy() {
-		System.out.println("fragment onDestroy");
 		super.onDestroy();
 	}
 
 	@Override
 	public void onDetach() {
-		System.out.println("fragment onDetach");
 		super.onDetach();
 	}
 
 	@Override
 	public void onPause() {
-		System.out.println("fragment onPauseh");
 		super.onPause();
 	}
 
 	@Override
 	public void onResume() {
-		System.out.println("fragment onResume");
 		super.onResume();
 	}
 
 	@Override
 	public void onStart() {
-		System.out.println("fragment onStart");
 		super.onStart();
 	}
 
 	@Override
 	public void onStop() {
-		System.out.println("fragment onStop");
 		super.onStop();
 	}
 
@@ -73,6 +81,11 @@ public class VehicleDetailFragment extends Fragment{
 	private Context ctx;
 	private int id =0;
 	private SimpleAdapter adapter;
+	private ImageView imageView;
+	private Handler handler; 
+	String carName = "";
+	private WindowManager w;
+	private TextView from_sohu;
 	@Override
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
@@ -80,7 +93,6 @@ public class VehicleDetailFragment extends Fragment{
 	}
 
 	public void onCreate(Bundle savedInstanceState) {
-		System.out.println("fragment oncreate");
 		// TODO Auto-generated method stub
 		Bundle b=getArguments();
 		terminalId=b.getString("terminalId");
@@ -106,14 +118,19 @@ public class VehicleDetailFragment extends Fragment{
 
 			@Override
 			protected void onPostExecute(String signInResult) {
-				System.out.println(signInResult);
 				signInResult = signInResult.trim();
-				System.out.println(signInResult);
 				final String[] sign = signInResult.split(";");
-				for(int i=0;i<sign.length;i++){
-					list_content[i]=sign[i];
+				if(sign.length<=1){
+					Utilities.showMessage(getActivity(), R.string.network_failed);
 				}
-				
+				else{
+					for(int i=0;i<sign.length;i++){
+						list_content[i]=sign[i];
+						if(i==4)
+							carName = sign[i];
+					}
+				}
+
 				for(int i =0; i < len; i++) { 
 					Map<String,Object> item=new HashMap<String,Object>();
 					item.put("title", list_title[i]);
@@ -122,22 +139,103 @@ public class VehicleDetailFragment extends Fragment{
 					vehicle_data.add(item);
 				}
 				adapter.notifyDataSetChanged();
+
+
+				new Thread(new Runnable(){
+					@Override
+					public void run() {
+						Message msg = new Message();
+						try {
+							Bundle data = new Bundle();
+							carName = Utilities.toBrowserCode(carName, "gb2312");
+							List<String> imageList = new GrabHtml(carName).parser();
+							if(imageList.size()>0){
+								String path  = imageList.get(0);
+								Bitmap bitmap = returnBitMap(path);
+								data.putParcelable("bitmap", bitmap);
+								msg.setData(data);
+								handler.sendMessage(msg);
+							}
+						} catch (ParserException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (UnsupportedEncodingException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				}).start();
 			}
 		}.execute();
 		super.onCreate(savedInstanceState);
 	}
-
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState){
-		System.out.println("fragment oncreateView");
 		View root=inflater.inflate(R.layout.vehicleinfo, null);
 		//vehicle_listview=getListView();
 		vehicle_listview=(ListView) root.findViewById(R.id.vel_list);
-	
+		imageView = (ImageView)root.findViewById(R.id.car_image);
+		from_sohu = (TextView)root.findViewById(R.id.from_sohu);
+
+		w = this.getActivity().getWindowManager();
+		handler = new MyHandler();
+		
 		ctx=getActivity();
 		adapter = new SimpleAdapter(getActivity(),vehicle_data,R.layout.vehicleinfo_detail,  
 				new String[]{"image","title","text"},new int[]{R.id.image,R.id.title,R.id.text1});
 		vehicle_listview.setAdapter(adapter);
+		
 		return root;
 	}
+	
+	public Bitmap returnBitMap(String url){ 
+		URL myFileUrl = null;   
+		Bitmap bitmap = null;  
+		try {   
+			myFileUrl = new URL(url);   
+		} catch (MalformedURLException e) {   
+			e.printStackTrace();   
+		}   
+		try {   
+			HttpURLConnection conn = (HttpURLConnection) myFileUrl   
+					.openConnection();   
+			conn.setDoInput(true);   
+			conn.connect();   
+			InputStream is = conn.getInputStream();   
+			bitmap = BitmapFactory.decodeStream(is);   
+			is.close();   
+		} catch (IOException e) {   
+			e.printStackTrace();   
+		}   
+		return bitmap;   
+	}   
+
+class MyHandler extends Handler {  
+
+	public MyHandler() {  
+		super();  
+	}  
+
+	public MyHandler(Looper looper) {  
+		super(looper);  
+	}  
+	@Override
+	public void handleMessage(Message msg) {
+		super.handleMessage(msg);
+		Bundle data = msg.getData();
+		Bitmap bm = data.getParcelable("bitmap");
+		String visible_str = data.getString("visibleOrNot");
+		imageView.setVisibility(View.VISIBLE);
+		from_sohu.setVisibility(View.VISIBLE);
+		imageView.setImageBitmap(bm);
+		int windowHeight = w.getDefaultDisplay().getHeight();
+		int windowWidth = w.getDefaultDisplay().getWidth();
+		int image_x = bm.getWidth();
+		int image_y = bm.getHeight();
+		int image_new_x = (int) (windowWidth*0.8>800?800:windowWidth*0.8);
+		int image_new_y = (int)image_new_x * image_y/image_x;
+		imageView.getLayoutParams().width = image_new_x;
+		imageView.getLayoutParams().height = image_new_y;
+	}
+}
 }

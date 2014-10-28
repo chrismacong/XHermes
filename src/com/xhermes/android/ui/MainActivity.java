@@ -6,6 +6,8 @@ import java.util.HashMap;
 import android.app.Activity;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,14 +15,17 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -77,7 +82,9 @@ public class MainActivity extends SherlockFragmentActivity {
 		// TODO Auto-generated method stub
 		HashMap map = OverallFragmentController.popFragment();
 		if(map!=null){
+			ActionBar actBar=getSupportActionBar();
 			if(map.get("tag").equals("main")){
+				actBar.setTitle(R.string.home);
 				if(OverallFragmentController.onMain){
 					exit();
 				}
@@ -89,10 +96,29 @@ public class MainActivity extends SherlockFragmentActivity {
 				}
 			}
 			else{
+				String s=(String) map.get("tag");
 				Fragment f = (Fragment) map.get("fragment");
 				FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 				transaction.replace(R.id.fragment_container, f);
 				transaction.commit();
+				if(s.equals("message"))
+					actBar.setTitle(R.string.message);
+				else if(s.equals("info"))
+					actBar.setTitle(R.string.carinfo);
+				else if(s.equals("travelinfo"))
+					actBar.setTitle(R.string.travelinfo);
+				else if(s.equals("systemset"))
+					actBar.setTitle(R.string.setting);
+				else if(s.equals("report"))
+					actBar.setTitle(R.string.report);
+				else if(s.equals("exam"))
+					actBar.setTitle(R.string.exam);
+				else if(s.equals("habit"))
+					actBar.setTitle(R.string.habit);
+				else if(s.equals("realtimeinfo"))
+					actBar.setTitle(R.string.realtimeinfo);
+				else if(s.equals("track"))
+					actBar.setTitle(R.string.track);
 			}
 		}
 	}
@@ -137,6 +163,7 @@ public class MainActivity extends SherlockFragmentActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
+		ActionBar actionBar = getSupportActionBar();
 		switch(item.getItemId()){  
 		case android.R.id.home: 
 			menu.toggle();
@@ -151,8 +178,15 @@ public class MainActivity extends SherlockFragmentActivity {
 			FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
 			transaction2.replace(R.id.fragment_container, mFragment,"message"); 
 			transaction2.commit();
+			actionBar.setTitle(R.string.message);
 			break;
-			
+		case R.id.emergencySOS:
+			System.out.println("emergency sos");
+			actionBar.setTitle(R.string.sos);
+			break;
+		case R.id.vipSOS:
+			System.out.println("vip sos");
+			actionBar.setTitle(R.string.vipSOS);
 		}  
 		return super.onOptionsItemSelected(item);  
 	}
@@ -162,7 +196,14 @@ public class MainActivity extends SherlockFragmentActivity {
 	public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
 		// TODO Auto-generated method stub
 		MenuInflater inflator = getSupportMenuInflater();  
-		inflator.inflate(R.menu.main, menu);  
+		inflator.inflate(R.menu.main, menu);
+		
+		int titleId = Resources.getSystem().getIdentifier("action_bar_title", "id", "android");
+		TextView tv = (TextView)findViewById(titleId);
+		//tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+		//tv.setBackgroundColor(Color.BLACK);
+		//tv.setGravity(Gravity.CENTER);
+		tv.setTextColor(Color.WHITE);
 		return true;
 	}
 
@@ -197,7 +238,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		actionBar.setIcon(R.drawable.menu_icon);
 		actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.backcolor));
-		actionBar.setTitle("");
+		actionBar.setTitle(R.string.home);
 
 		MainViewFragment mFragment = new MainViewFragment();
 		mFragment.setArguments(bundle);
@@ -245,8 +286,8 @@ public class MainActivity extends SherlockFragmentActivity {
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
 		int screenWidth = dm.widthPixels;
-		if(screenWidth>600){
-			menu.setBehindWidth(600);
+		if(screenWidth>500){
+			menu.setBehindWidth((int) (screenWidth*0.6));
 		}
 		menu.setFadeDegree(0.35f);
 		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
@@ -284,11 +325,13 @@ public class MainActivity extends SherlockFragmentActivity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
+				ActionBar acbar=getSupportActionBar();
 				switch(arg2){
 
 				case 0:
 					int len=OverallFragmentController.list.size();
 					HashMap map=OverallFragmentController.popFragment();
+					acbar.setTitle(R.string.home);
 					if(map.get("tag").equals("main")){
 						if(OverallFragmentController.onMain){
 							break;
@@ -316,6 +359,7 @@ public class MainActivity extends SherlockFragmentActivity {
 							}
 						}
 					}
+					
 					break;
 
 				case 1:
@@ -328,6 +372,7 @@ public class MainActivity extends SherlockFragmentActivity {
 					FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
 					transaction1.replace(R.id.fragment_container, vdFragment,"info"); 
 					transaction1.commit();
+					acbar.setTitle(R.string.carinfo);
 					break;
 				case 2:
 					Bundle arguments2 = new Bundle();
@@ -339,6 +384,7 @@ public class MainActivity extends SherlockFragmentActivity {
 					FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
 					transaction2.replace(R.id.fragment_container, mFragment,"message"); 
 					transaction2.commit();
+					acbar.setTitle(R.string.message);
 					break;
 				case 3:
 					break;
@@ -353,6 +399,7 @@ public class MainActivity extends SherlockFragmentActivity {
 					FragmentTransaction transaction4 = getSupportFragmentManager().beginTransaction();
 					transaction4.replace(R.id.fragment_container, tFragment,"travelinfo"); 
 					transaction4.commit();
+					acbar.setTitle(R.string.travelinfo);
 					break;
 				case 5:
 					Bundle arguments5 = new Bundle();
@@ -364,6 +411,7 @@ public class MainActivity extends SherlockFragmentActivity {
 					FragmentTransaction transaction5 = getSupportFragmentManager().beginTransaction();
 					transaction5.replace(R.id.fragment_container, dFragment,"travelinfo"); 
 					transaction5.commit();
+					acbar.setTitle(R.string.report);
 					break;
 				case 6:
 					SystemSetFragment ssf=new SystemSetFragment();
@@ -373,6 +421,7 @@ public class MainActivity extends SherlockFragmentActivity {
 					FragmentTransaction transaction6 = getSupportFragmentManager().beginTransaction();
 					transaction6.replace(R.id.fragment_container, ssf,"systemset"); 
 					transaction6.commit();
+					acbar.setTitle(R.string.setting);
 					break;
 				}
 				menu.toggle();

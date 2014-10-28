@@ -20,6 +20,7 @@
             android:paddingTop="@dimen/activity_vertical_margin" >
 
             <RelativeLayout
+                android:id="@+id/circle_relative"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
@@ -64,7 +65,7 @@
                 android:id="@+id/pointer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:background="@drawable/score_present" />
 
 
@@ -74,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="15dp"
                />
             
         </FrameLayout>

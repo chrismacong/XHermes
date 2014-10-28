@@ -28,6 +28,7 @@ import android.widget.TextView;
 import com.astuetz.PagerSlidingTabStrip;
 import com.xhermes.android.R;
 import com.xhermes.android.network.URLMaker;
+import com.xhermes.android.util.Utilities;
 
 public class DrivingMonthlyReportFragment extends Fragment{
 	private final String get_monthlytravelinfo_url = URLMaker.makeURL("mobile/mobilegetmonthlytravelinfobydate.html");
@@ -92,7 +93,7 @@ public class DrivingMonthlyReportFragment extends Fragment{
 					global_month--;
 				new mDateSetListener().onDateSet(null, global_year, global_month, global_day);
 			}
-			
+
 		});
 		right_btn.setOnClickListener(new OnClickListener(){
 
@@ -107,7 +108,7 @@ public class DrivingMonthlyReportFragment extends Fragment{
 					global_month++;
 				new mDateSetListener().onDateSet(null, global_year, global_month, global_day);
 			}
-			
+
 		});
 		return rootview;
 	}
@@ -208,13 +209,23 @@ public class DrivingMonthlyReportFragment extends Fragment{
 
 				@Override
 				protected void onPostExecute(String signInResult) {
-//					System.out
-//					.println(signInResult);
+					//					System.out
+					//					.println(signInResult);
 					signInResult = signInResult.trim();
 					seperated_data_group = signInResult.split("@");
-					sca.resetFragments();
-					pager.setAdapter(sca);
-					pd.dismiss();
+					if(seperated_data_group==null){
+						pd.dismiss();
+						Utilities.showMessage(getActivity(), R.string.network_failed);
+					}
+					else if(seperated_data_group.length<=1){
+						pd.dismiss();
+						Utilities.showMessage(getActivity(), R.string.network_failed);
+					}
+					else{
+						sca.resetFragments();
+						pager.setAdapter(sca);
+						pd.dismiss();
+					}
 				}
 			}.execute();
 		}
@@ -276,16 +287,22 @@ public class DrivingMonthlyReportFragment extends Fragment{
 
 			@Override
 			protected void onPostExecute(String signInResult) {
-//				System.out
-//				.println(signInResult);
+				//				System.out
+				//				.println(signInResult);
 				signInResult = signInResult.trim();
 				seperated_data_group = signInResult.split("@");
-//				System.out.println(seperated_data_group[0]);
-				sca = new SwipeChartAdapter(getChildFragmentManager());
-				sca.resetFragments();
-				pager.setAdapter(sca);
-				tabs.setViewPager(pager);
-				pd.dismiss();
+				if(seperated_data_group.length<=1){
+					pd.dismiss();
+					Utilities.showMessage(getActivity(), R.string.network_failed);
+				}
+				else{
+					//				System.out.println(seperated_data_group[0]);
+					sca = new SwipeChartAdapter(getChildFragmentManager());
+					sca.resetFragments();
+					pager.setAdapter(sca);
+					tabs.setViewPager(pager);
+					pd.dismiss();
+				}
 			}
 		}.execute();
 	}

@@ -9,13 +9,41 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:layout_gravity="center"
         android:text="系统消息"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:textColor="@color/black"
         />
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        >
+        <Button 
+            android:id="@+id/show_unread_message_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/unread_message"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:background="@drawable/show_message_checked"></Button>
+        <Button 
+            android:id="@+id/show_all_message_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:text="@string/all_message"
+            android:textColor="@color/msg_blue"
+            android:background="@drawable/show_message_unchecked"/>
+        </LinearLayout>
     
     <ListView
         android:id="@+id/message_listview"
